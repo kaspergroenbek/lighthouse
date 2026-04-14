@@ -1,30 +1,18 @@
 -- =============================================================================
 -- 01_databases.sql — Create Lighthouse databases per environment and layer
 -- =============================================================================
--- Purpose:  Provisions the three logical-layer databases for a given environment.
---           Databases follow the naming convention LIGHTHOUSE_{ENV}_{LAYER}.
+-- Provisions the three logical-layer databases for a given environment.
+-- Databases follow the naming convention LIGHTHOUSE_{ENV}_{LAYER}.
 --
--- Usage:    Run via deploy.sql which sets the env variable, or set it manually:
---           SET env = 'DEV';  (or STAGING, PROD)
---           Then execute this script.
---
+-- Usage:    Run standalone or via deploy.sql. Change 'DEV' below as needed.
 -- Idempotency: Uses CREATE DATABASE IF NOT EXISTS — safe to re-run.
 -- =============================================================================
 
--- Inherit env from deploy.sql, or set manually if running standalone
--- SET env = 'DEV';
-
--- RAW database — landing zone for all ingested source data
-EXECUTE IMMEDIATE
-    'CREATE DATABASE IF NOT EXISTS LIGHTHOUSE_' || $env || '_RAW
-     COMMENT = ''Lighthouse raw ingestion layer — landing zone for source system data''';
-
--- ANALYTICS database — dbt transformation layers (staging, intermediate, marts, semantic)
-EXECUTE IMMEDIATE
-    'CREATE DATABASE IF NOT EXISTS LIGHTHOUSE_' || $env || '_ANALYTICS
-     COMMENT = ''Lighthouse analytics layer — dbt-managed staging, intermediate, marts, and semantic models''';
-
--- SERVING database — near-real-time serving via Dynamic Tables
-EXECUTE IMMEDIATE
-    'CREATE DATABASE IF NOT EXISTS LIGHTHOUSE_' || $env || '_SERVING
-     COMMENT = ''Lighthouse serving layer — Dynamic Tables and real-time data products''';
+DECLARE
+    env VARCHAR DEFAULT 'DEV';
+BEGIN
+    EXECUTE IMMEDIATE 'CREATE DATABASE IF NOT EXISTS LIGHTHOUSE_' || :env || '_RAW';
+    EXECUTE IMMEDIATE 'CREATE DATABASE IF NOT EXISTS LIGHTHOUSE_' || :env || '_ANALYTICS';
+    EXECUTE IMMEDIATE 'CREATE DATABASE IF NOT EXISTS LIGHTHOUSE_' || :env || '_SERVING';
+    RETURN 'Databases created for environment: ' || :env;
+END;
