@@ -1,0 +1,44 @@
+version: 2
+
+sources:
+  - name: crm
+    description: "NordHjem CRM platform — SaaS connector replicated"
+    database: "{{ env_var('LIGHTHOUSE_RAW_DB', 'LIGHTHOUSE_DEV_RAW') }}"
+    schema: CRM
+    loaded_at_field: _loaded_at
+    freshness:
+      warn_after: {count: 90, period: minute}
+      error_after: {count: 180, period: minute}
+    tables:
+      - name: accounts
+        columns:
+          - name: account_id
+            tests: [not_null]
+      - name: contacts
+        columns:
+          - name: contact_id
+            tests: [not_null]
+      - name: cases
+        columns:
+          - name: case_id
+            tests: [not_null]
+      - name: case_comments
+        columns:
+          - name: comment_id
+            tests: [not_null]
+      - name: opportunities
+        columns:
+          - name: opportunity_id
+            tests: [not_null]
+      - name: tasks
+        columns:
+          - name: task_id
+            tests: [not_null]
+      - name: campaigns
+        columns:
+          - name: campaign_id
+            tests: [not_null]
+      - name: campaign_members
+        columns:
+          - name: member_id
+            tests: [not_null]

@@ -1,0 +1,59 @@
+name: dbt CI — Pull Request
+
+on:
+  pull_request:
+    branches: [main]
+
+env:
+  DBT_PROFILES_DIR: ./dbt
+  SNOWFLAKE_ACCOUNT: ${{ secrets.SNOWFLAKE_ACCOUNT }}
+  SNOWFLAKE_USER: ${{ secrets.SNOWFLAKE_USER }}
+  SNOWFLAKE_PASSWORD: ${{ secrets.SNOWFLAKE_PASSWORD }}
+  SNOWFLAKE_ROLE: LIGHTHOUSE_TRANSFORMER
+  SNOWFLAKE_WAREHOUSE: TRANSFORM_WH
+  SNOWFLAKE_DATABASE: LIGHTHOUSE_STAGING_ANALYTICS
+  LIGHTHOUSE_ENV: STAGING
+
+jobs:
+  dbt-ci:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dbt
+        run: pip install dbt-snowflake
+
+      - name: Install dbt packages
+        run: dbt deps
+        working-directory: ./dbt
+
+      - name: Download production manifest
+        uses: actions/download-artifact@v4
+        with:
+          name: prod-manifest
+          path: ./dbt/prod-manifest/
+        continue-on-error: true
+
+      - name: dbt build (modified models only)
+        run: |
+          if [ -f prod-manifest/manifest.json ]; then
+            dbt build --select state:modified+ --defer --state prod-manifest/
+          else
+            dbt build
+          fi
+        working-directory: ./dbt
+
+      - name: dbt test (modified models only)
+        run: |
+          if [ -f prod-manifest/manifest.json ]; then
+            dbt test --select state:modified+
+          else
+            dbt test
+          fi
+        working-directory: ./dbt

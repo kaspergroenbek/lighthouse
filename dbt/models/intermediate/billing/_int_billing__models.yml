@@ -1,0 +1,80 @@
+version: 2
+
+models:
+  - name: int_billing__invoice_enriched
+    description: >
+      Invoice line items enriched with product, contract, and customer context.
+      Derives revenue classification based on product category and computes
+      net amount (amount minus tax). Joins across OLTP invoices, line items,
+      products, and contracts.
+      Grain: one row per invoice line item.
+    columns:
+      - name: line_item_id
+        description: "Primary key — natural key from invoice line items"
+      - name: invoice_id
+        description: "Foreign key to invoices"
+      - name: product_id
+        description: "Foreign key to products"
+      - name: line_description
+        description: "Line item description text"
+      - name: quantity
+        description: "Quantity of items on this line"
+      - name: unit_price
+        description: "Price per unit"
+      - name: amount
+        description: "Line item total amount (quantity x unit_price)"
+      - name: tax_amount
+        description: "Tax amount for this line item"
+      - name: customer_id
+        description: "Foreign key to customers (from invoice header)"
+      - name: household_id
+        description: "Foreign key to households (from invoice header)"
+      - name: contract_id
+        description: "Foreign key to contracts (from invoice header)"
+      - name: invoice_date
+        description: "Date the invoice was issued"
+      - name: due_date
+        description: "Invoice payment due date"
+      - name: invoice_status
+        description: "Invoice status (issued, paid, overdue, cancelled)"
+      - name: product_name
+        description: "Product display name from product master"
+      - name: product_category
+        description: "Product category (device, service, bundle)"
+      - name: pricing_tier
+        description: "Pricing tier (standard, premium)"
+      - name: contract_type
+        description: "Contract type (residential_energy, commercial_energy)"
+      - name: tariff_plan_id
+        description: "Foreign key to tariff plans (from contract)"
+      - name: revenue_classification
+        description: >
+          Derived revenue category based on product category:
+          'hardware_revenue' for devices, 'service_revenue' for services,
+          'bundle_revenue' for bundles, 'other_revenue' for unclassified.
+      - name: net_amount
+        description: "Line item amount minus tax (amount - COALESCE(tax_amount, 0))"
+
+unit_tests:
+  - name: test_revenue_classification
+    description: "Validates revenue classification derivation based on product category"
+    model: int_billing__invoice_enriched
+    given:
+      - input: ref('stg_oltp__invoice_line_items')
+        rows:
+          - {line_item_id: 1, invoice_id: 1, product_id: 101, description: "Smart Thermostat", quantity: 1, unit_price: 1299.00, amount: 1299.00, tax_amount: 324.75, created_at: "2025-01-15", updated_at: "2025-01-15", _source_ts: "2025-01-15", _loaded_at: "2025-01-15", _connector_batch_id: "b1"}
+          - {line_item_id: 2, invoice_id: 1, product_id: 201, description: "Installation Service", quantity: 1, unit_price: 500.00, amount: 500.00, tax_amount: 125.00, created_at: "2025-01-15", updated_at: "2025-01-15", _source_ts: "2025-01-15", _loaded_at: "2025-01-15", _connector_batch_id: "b1"}
+      - input: ref('stg_oltp__invoices')
+        rows:
+          - {invoice_id: 1, customer_id: 1001, household_id: 2001, contract_id: 3001, invoice_date: "2025-01-31", due_date: "2025-02-28", total_amount: 1799.00, tax_amount: 449.75, status: "issued", created_at: "2025-01-31", updated_at: "2025-01-31", _source_ts: "2025-01-31", _loaded_at: "2025-01-31", _connector_batch_id: "b1"}
+      - input: ref('stg_oltp__products')
+        rows:
+          - {product_id: 101, product_name: "Smart Thermostat v2", category: "device", description: "Smart thermostat", pricing_tier: "premium", is_active: true, created_at: "2024-01-01", updated_at: "2024-01-01", _source_ts: "2024-01-01", _loaded_at: "2024-01-01", _connector_batch_id: "b0"}
+          - {product_id: 201, product_name: "Standard Installation", category: "service", description: "Installation service", pricing_tier: "standard", is_active: true, created_at: "2024-01-01", updated_at: "2024-01-01", _source_ts: "2024-01-01", _loaded_at: "2024-01-01", _connector_batch_id: "b0"}
+      - input: ref('stg_oltp__contracts')
+        rows:
+          - {contract_id: 3001, customer_id: 1001, household_id: 2001, product_id: 101, tariff_plan_id: 1, contract_type: "residential_energy", status: "active", start_date: "2025-01-01", end_date: "2026-01-01", monthly_amount: 299.00, created_at: "2025-01-01", updated_at: "2025-01-01", _source_ts: "2025-01-01", _loaded_at: "2025-01-01", _connector_batch_id: "b0"}
+    expect:
+      rows:
+        - {line_item_id: 1, revenue_classification: "hardware_revenue", net_amount: 974.25}
+        - {line_item_id: 2, revenue_classification: "service_revenue", net_amount: 375.00}

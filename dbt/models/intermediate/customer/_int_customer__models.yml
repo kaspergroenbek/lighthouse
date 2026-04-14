@@ -1,0 +1,76 @@
+version: 2
+
+models:
+  - name: int_customer__unified_profile
+    description: >
+      Deterministic entity matching between OLTP customers and CRM contacts.
+      Joins on email (lowercased) to unify customer records across source systems.
+      Enriches with CRM account context. Produces a match_status flag indicating
+      whether each record was matched, OLTP-only, or CRM-only.
+      Grain: one row per OLTP customer (LEFT JOIN to CRM).
+    config:
+      materialized: table
+    columns:
+      - name: customer_id
+        description: "Natural key from OLTP source system"
+      - name: oltp_email
+        description: "Customer email from OLTP, used as primary match key"
+      - name: first_name
+        description: "Customer first name from OLTP"
+      - name: last_name
+        description: "Customer last name from OLTP"
+      - name: phone
+        description: "Customer phone number"
+      - name: address
+        description: "Street address"
+      - name: postal_code
+        description: "Postal/zip code"
+      - name: municipality
+        description: "Municipality or city"
+      - name: region
+        description: "Geographic region"
+      - name: country
+        description: "Country code (DK, SE, NO)"
+      - name: segment
+        description: "Customer segment classification"
+      - name: status
+        description: "Customer account status from OLTP"
+      - name: created_at
+        description: "Record creation timestamp from OLTP"
+      - name: updated_at
+        description: "Record last update timestamp from OLTP"
+      - name: crm_contact_id
+        description: "Matched CRM contact identifier (null if no match)"
+      - name: crm_account_id
+        description: "CRM account identifier from matched contact"
+      - name: crm_title
+        description: "Job title from CRM contact record"
+      - name: crm_department
+        description: "Department from CRM contact record"
+      - name: crm_account_name
+        description: "Account name from CRM account record"
+      - name: match_status
+        description: >
+          Entity matching outcome: 'matched' when OLTP customer joined to CRM contact
+          on email, 'oltp_only' when no CRM match found, 'crm_only' when CRM contact
+          has no OLTP counterpart (not produced in current LEFT JOIN implementation).
+
+unit_tests:
+  - name: test_customer_entity_matching
+    description: "Validates deterministic matching between OLTP customers and CRM contacts on email"
+    model: int_customer__unified_profile
+    given:
+      - input: ref('stg_oltp__customers')
+        rows:
+          - {customer_id: 1001, email: "anna@nordhjem.dk", first_name: "Anna", last_name: "Jensen", phone: "+4512345678", address: "Vestergade 10", postal_code: "1456", municipality: "Copenhagen", region: "Hovedstaden", country: "DK", segment: "residential", status: "active", created_at: "2025-01-15 10:00:00", updated_at: "2025-01-15 10:00:00", _source_ts: "2025-01-15 10:00:00", _loaded_at: "2025-01-15 10:05:00", _connector_batch_id: "batch_001"}
+          - {customer_id: 1002, email: "lars@nordhjem.dk", first_name: "Lars", last_name: "Nielsen", phone: "+4587654321", address: "Nørregade 5", postal_code: "8000", municipality: "Aarhus", region: "Midtjylland", country: "DK", segment: "commercial", status: "active", created_at: "2025-01-20 10:00:00", updated_at: "2025-01-20 10:00:00", _source_ts: "2025-01-20 10:00:00", _loaded_at: "2025-01-20 10:05:00", _connector_batch_id: "batch_001"}
+      - input: ref('stg_crm__contacts')
+        rows:
+          - {contact_id: "CON-001", account_id: "ACC-001", first_name: "Anna", last_name: "Jensen", email: "anna@nordhjem.dk", phone: "+4512345678", title: "Homeowner", department: null, created_date: "2025-01-15", last_modified_date: "2025-01-15", _loaded_at: "2025-01-15 11:00:00", _sync_id: "sync_001"}
+      - input: ref('stg_crm__accounts')
+        rows:
+          - {account_id: "ACC-001", account_name: "Jensen Household", industry: "residential", website: null, phone: "+4512345678", billing_address: "Vestergade 10", region: "Hovedstaden", owner_id: "USR-001", created_date: "2025-01-15", last_modified_date: "2025-01-15", _loaded_at: "2025-01-15 11:00:00", _sync_id: "sync_001"}
+    expect:
+      rows:
+        - {customer_id: 1001, match_status: "matched", crm_contact_id: "CON-001", crm_account_name: "Jensen Household"}
+        - {customer_id: 1002, match_status: "oltp_only", crm_contact_id: null, crm_account_name: null}

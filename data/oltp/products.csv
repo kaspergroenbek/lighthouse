@@ -1,0 +1,12 @@
+_op,_source_ts,_connector_batch_id,product_id,product_name,category,description,pricing_tier,is_active,created_at,updated_at
+INSERT,2025-01-02 07:00:00,batch_001,7001,Smart Thermostat v2,device,Intelligent thermostat with learning algorithms and remote control,standard,true,2025-01-02 07:00:00,2025-01-02 07:00:00
+INSERT,2025-01-02 07:05:00,batch_001,7002,Energy Meter Pro,device,Real-time energy consumption monitoring with grid feedback,standard,true,2025-01-02 07:05:00,2025-01-02 07:05:00
+INSERT,2025-01-02 07:10:00,batch_001,7003,Commercial Energy Suite,bundle,Full commercial energy monitoring and optimization package,premium,true,2025-01-02 07:10:00,2025-01-02 07:10:00
+INSERT,2025-01-02 07:15:00,batch_001,7004,Home Energy Package,bundle,Thermostat + meter + temperature sensor bundle for homes,standard,true,2025-01-02 07:15:00,2025-01-02 07:15:00
+INSERT,2025-01-02 07:20:00,batch_001,7005,Annual Service Plan,service,Annual maintenance and support for all installed devices,basic,true,2025-01-02 07:20:00,2025-01-02 07:20:00
+INSERT,2025-01-02 07:25:00,batch_001,7006,Temp Sensor Mini,device,Compact temperature and humidity sensor for room monitoring,basic,true,2025-01-02 07:25:00,2025-01-02 07:25:00
+INSERT,2025-01-02 07:30:00,batch_001,7007,Sustainability Advisory,service,Quarterly energy optimization consultation and reporting,premium,true,2025-01-02 07:30:00,2025-01-02 07:30:00
+INSERT,2025-01-02 07:35:00,batch_001,7008,Solar Integration Kit,device,Solar panel monitoring and grid export optimization module,premium,true,2025-01-02 07:35:00,2025-01-02 07:35:00
+UPDATE,2025-02-01 08:00:00,batch_010,7001,Smart Thermostat v2,device,Intelligent thermostat with learning algorithms and remote control via app,standard,true,2025-01-02 07:00:00,2025-02-01 08:00:00
+UPDATE,2025-02-15 08:00:00,batch_013,7003,Commercial Energy Suite,bundle,Full commercial energy monitoring optimization and reporting package,premium,true,2025-01-02 07:10:00,2025-02-15 08:00:00
+UPDATE,2025-03-01 08:00:00,batch_015,7008,Solar Integration Kit,device,Solar panel monitoring and grid export optimization module,premium,false,2025-01-02 07:35:00,2025-03-01 08:00:00

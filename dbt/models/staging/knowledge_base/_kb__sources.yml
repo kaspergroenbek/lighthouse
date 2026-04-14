@@ -1,0 +1,24 @@
+version: 2
+
+sources:
+  - name: knowledge_base
+    description: "NordHjem knowledge base — documents, text, chunks"
+    database: "{{ env_var('LIGHTHOUSE_RAW_DB', 'LIGHTHOUSE_DEV_RAW') }}"
+    schema: KNOWLEDGE_BASE
+    loaded_at_field: _loaded_at
+    freshness:
+      warn_after: {count: 48, period: hour}
+      error_after: {count: 96, period: hour}
+    tables:
+      - name: documents
+        columns:
+          - name: document_id
+            tests: [not_null, unique]
+      - name: document_text
+        columns:
+          - name: document_id
+            tests: [not_null]
+      - name: document_chunks
+        columns:
+          - name: chunk_id
+            tests: [not_null, unique]

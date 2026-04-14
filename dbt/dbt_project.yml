@@ -1,0 +1,83 @@
+name: lighthouse
+version: '1.0.0'
+config-version: 2
+
+profile: lighthouse
+
+model-paths: ["models"]
+analysis-paths: ["analyses"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+
+clean-targets:
+  - "target"
+  - "dbt_packages"
+
+models:
+  lighthouse:
+    staging:
+      +materialized: view
+      +schema: STAGING
+      oltp:
+        +tags: ['oltp', 'staging']
+      crm:
+        +tags: ['crm', 'staging']
+      iot:
+        +materialized: incremental
+        +tags: ['iot', 'staging']
+      partner_feeds:
+        +tags: ['partner', 'staging']
+      knowledge_base:
+        +tags: ['knowledge', 'staging']
+    intermediate:
+      +materialized: view
+      +schema: INTERMEDIATE
+      +access: protected
+      customer:
+        +group: customer
+        +tags: ['customer', 'intermediate']
+      billing:
+        +group: billing
+        +tags: ['billing', 'intermediate']
+      device:
+        +group: device
+        +tags: ['device', 'intermediate']
+      service:
+        +group: service
+        +tags: ['service', 'intermediate']
+    marts:
+      +materialized: table
+      +schema: MARTS
+      +access: public
+      core:
+        +tags: ['core', 'marts']
+      billing:
+        +group: billing
+        +tags: ['billing', 'marts']
+      device:
+        +group: device
+        +tags: ['device', 'marts']
+      service:
+        +group: service
+        +tags: ['service', 'marts']
+      customer:
+        +group: customer
+        +tags: ['customer', 'marts']
+      knowledge:
+        +tags: ['knowledge', 'marts']
+
+snapshots:
+  lighthouse:
+    +target_schema: SNAPSHOTS
+
+seeds:
+  lighthouse:
+    +schema: SEEDS
+
+vars:
+  lighthouse_env: "{{ env_var('LIGHTHOUSE_ENV', 'DEV') }}"
+
+on-run-end:
+  - "{{ elementary.edr_upload_results() if target.name == 'prod' }}"

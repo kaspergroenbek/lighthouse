@@ -1,0 +1,211 @@
+version: 2
+
+models:
+  - name: stg_crm__accounts
+    description: "Staged CRM account records. Soft-deleted records filtered out."
+    columns:
+      - name: account_id
+        description: "Primary key — natural key from CRM source"
+        tests:
+          - not_null
+          - unique
+      - name: account_name
+        description: "Account display name"
+      - name: industry
+        description: "Industry classification (residential, commercial)"
+      - name: website
+        description: "Account website URL"
+      - name: phone
+        description: "Account phone number"
+      - name: billing_address
+        description: "Billing address"
+      - name: region
+        description: "Geographic region"
+      - name: owner_id
+        description: "CRM user who owns this account"
+      - name: created_date
+        description: "Date the account was created"
+      - name: last_modified_date
+        description: "Date the account was last modified"
+
+  - name: stg_crm__contacts
+    description: "Staged CRM contact records. Soft-deleted records filtered out. Email lowercased."
+    columns:
+      - name: contact_id
+        description: "Primary key — natural key from CRM source"
+        tests:
+          - not_null
+          - unique
+      - name: account_id
+        description: "Foreign key to accounts"
+      - name: first_name
+        description: "Contact first name"
+      - name: last_name
+        description: "Contact last name"
+      - name: email
+        description: "Contact email address, lowercased"
+      - name: phone
+        description: "Contact phone number"
+      - name: title
+        description: "Contact job title"
+      - name: department
+        description: "Contact department"
+
+  - name: stg_crm__cases
+    description: "Staged CRM case (service ticket) records. Soft-deleted records filtered out."
+    columns:
+      - name: case_id
+        description: "Primary key — natural key from CRM source"
+        tests:
+          - not_null
+          - unique
+      - name: account_id
+        description: "Foreign key to accounts"
+      - name: contact_id
+        description: "Foreign key to contacts"
+      - name: subject
+        description: "Case subject line"
+      - name: description
+        description: "Case description"
+      - name: status
+        description: "Case status"
+        tests:
+          - accepted_values:
+              values: ['open', 'closed', 'escalated']
+      - name: priority
+        description: "Case priority level"
+        tests:
+          - accepted_values:
+              values: ['low', 'medium', 'high', 'critical']
+      - name: severity
+        description: "Case severity classification"
+      - name: origin
+        description: "Channel the case originated from (phone, email, web)"
+      - name: created_date
+        description: "Date the case was created"
+      - name: closed_date
+        description: "Date the case was closed"
+      - name: last_modified_date
+        description: "Date the case was last modified"
+
+  - name: stg_crm__case_comments
+    description: "Staged CRM case comment records. Soft-deleted records filtered out."
+    columns:
+      - name: comment_id
+        description: "Primary key — natural key from CRM source"
+        tests:
+          - not_null
+          - unique
+      - name: case_id
+        description: "Foreign key to cases"
+      - name: body
+        description: "Comment text body"
+      - name: is_public
+        description: "Whether the comment is visible to the customer"
+      - name: created_by
+        description: "CRM user who created the comment"
+      - name: created_date
+        description: "Date the comment was created"
+
+  - name: stg_crm__opportunities
+    description: "Staged CRM opportunity records. Soft-deleted records filtered out."
+    columns:
+      - name: opportunity_id
+        description: "Primary key — natural key from CRM source"
+        tests:
+          - not_null
+          - unique
+      - name: account_id
+        description: "Foreign key to accounts"
+      - name: name
+        description: "Opportunity name"
+      - name: stage
+        description: "Sales pipeline stage"
+        tests:
+          - accepted_values:
+              values: ['prospecting', 'qualification', 'proposal', 'negotiation', 'closed_won', 'closed_lost']
+      - name: amount
+        description: "Opportunity value"
+      - name: close_date
+        description: "Expected or actual close date"
+      - name: probability
+        description: "Win probability percentage"
+      - name: created_date
+        description: "Date the opportunity was created"
+      - name: last_modified_date
+        description: "Date the opportunity was last modified"
+
+  - name: stg_crm__tasks
+    description: "Staged CRM task records. Soft-deleted records filtered out."
+    columns:
+      - name: task_id
+        description: "Primary key — natural key from CRM source"
+        tests:
+          - not_null
+          - unique
+      - name: account_id
+        description: "Foreign key to accounts"
+      - name: contact_id
+        description: "Foreign key to contacts"
+      - name: subject
+        description: "Task subject"
+      - name: status
+        description: "Task status"
+        tests:
+          - accepted_values:
+              values: ['open', 'completed', 'deferred']
+      - name: priority
+        description: "Task priority level"
+      - name: due_date
+        description: "Task due date"
+      - name: completed_date
+        description: "Date the task was completed"
+      - name: created_date
+        description: "Date the task was created"
+
+  - name: stg_crm__campaigns
+    description: "Staged CRM campaign records. Soft-deleted records filtered out."
+    columns:
+      - name: campaign_id
+        description: "Primary key — natural key from CRM source"
+        tests:
+          - not_null
+          - unique
+      - name: name
+        description: "Campaign name"
+      - name: type
+        description: "Campaign type (product_launch, webinar, email)"
+      - name: status
+        description: "Campaign status"
+        tests:
+          - accepted_values:
+              values: ['planned', 'active', 'completed', 'aborted']
+      - name: start_date
+        description: "Campaign start date"
+      - name: end_date
+        description: "Campaign end date"
+      - name: budget
+        description: "Campaign budget"
+      - name: actual_cost
+        description: "Actual campaign spend"
+      - name: created_date
+        description: "Date the campaign was created"
+
+  - name: stg_crm__campaign_members
+    description: "Staged CRM campaign member records. Soft-deleted records filtered out."
+    columns:
+      - name: member_id
+        description: "Primary key — natural key from CRM source"
+        tests:
+          - not_null
+          - unique
+      - name: campaign_id
+        description: "Foreign key to campaigns"
+      - name: contact_id
+        description: "Foreign key to contacts"
+      - name: status
+        description: "Member participation status"
+      - name: first_responded_date
+        description: "Date the member first responded"
+      - name: created_date
+        description: "Date the member was added to the campaign"

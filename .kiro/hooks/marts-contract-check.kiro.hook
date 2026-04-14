@@ -1,0 +1,16 @@
+{
+  "enabled": true,
+  "name": "Marts Model Contract Check",
+  "description": "When a new marts model YAML or SQL file is created, reminds the agent to enforce model contracts, public access, model versions, and group assignment.",
+  "version": "1",
+  "when": {
+    "type": "fileCreated",
+    "patterns": [
+      "dbt/models/marts/**/*"
+    ]
+  },
+  "then": {
+    "type": "askAgent",
+    "prompt": "A new marts model file was created. Verify it follows these mandatory rules: 1) The corresponding YAML MUST define a model contract with enforced column names, types, and constraints. 2) Access MUST be set to 'public'. 3) A model version MUST be defined starting at v1. 4) The model MUST be assigned to a group (customer, billing, device, or service). If this file is not under dbt/models/marts/, ignore this check."
+  }
+}

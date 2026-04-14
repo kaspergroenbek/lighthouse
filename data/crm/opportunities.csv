@@ -1,0 +1,9 @@
+_loaded_at,_sync_id,_is_deleted,opportunity_id,account_id,name,stage,amount,close_date,probability,created_date,last_modified_date
+2025-01-10 02:00:00,sync_001,false,OPP-001,ACC-003,Hansen Consulting — Commercial Energy Suite,closed_won,17988.00,2025-01-05,100,2024-12-01,2025-01-05
+2025-01-10 02:00:00,sync_001,false,OPP-002,ACC-005,Johansson Energi — Commercial Monitoring,closed_won,15588.00,2025-01-06,100,2024-12-05,2025-01-06
+2025-01-20 02:00:00,sync_002,false,OPP-003,ACC-009,Dahl Eiendom — Multi-property Energy Management,negotiation,35964.00,2025-03-15,60,2025-01-12,2025-01-12
+2025-02-01 02:00:00,sync_003,false,OPP-003,ACC-009,Dahl Eiendom — Multi-property Energy Management,proposal,35964.00,2025-03-15,40,2025-01-12,2025-02-01
+2025-02-01 02:00:00,sync_003,false,OPP-004,ACC-005,Johansson Energi — Warehouse Expansion,qualification,7800.00,2025-04-01,20,2025-02-08,2025-02-08
+2025-03-01 02:00:00,sync_004,false,OPP-003,ACC-009,Dahl Eiendom — Multi-property Energy Management,negotiation,35964.00,2025-03-30,70,2025-01-12,2025-02-25
+2025-03-01 02:00:00,sync_004,false,OPP-004,ACC-005,Johansson Energi — Warehouse Expansion,proposal,7800.00,2025-04-15,50,2025-02-08,2025-02-28
+2025-03-01 02:00:00,sync_004,false,OPP-005,ACC-001,Lindberg — Solar Integration Upgrade,qualification,12000.00,2025-05-01,15,2025-03-01,2025-03-01

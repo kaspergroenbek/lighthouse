@@ -1,0 +1,9 @@
+_loaded_at,_sync_id,_is_deleted,campaign_id,name,type,status,start_date,end_date,budget,actual_cost,created_date
+2025-01-10 02:00:00,sync_001,false,CMP-001,Q1 2025 Smart Home Launch,product_launch,active,2025-01-01,2025-03-31,50000.00,12500.00,2024-12-15
+2025-01-10 02:00:00,sync_001,false,CMP-002,Nordic Energy Savings Webinar,webinar,completed,2025-01-10,2025-01-10,5000.00,4200.00,2024-12-20
+2025-01-20 02:00:00,sync_002,false,CMP-003,Commercial Energy Efficiency Program,email,active,2025-01-15,2025-04-15,15000.00,3000.00,2025-01-10
+2025-02-01 02:00:00,sync_003,false,CMP-001,Q1 2025 Smart Home Launch,product_launch,active,2025-01-01,2025-03-31,50000.00,28000.00,2024-12-15
+2025-02-01 02:00:00,sync_003,false,CMP-004,February Referral Bonus,referral,active,2025-02-01,2025-02-28,8000.00,1500.00,2025-01-28
+2025-03-01 02:00:00,sync_004,false,CMP-001,Q1 2025 Smart Home Launch,product_launch,active,2025-01-01,2025-03-31,50000.00,41000.00,2024-12-15
+2025-03-01 02:00:00,sync_004,false,CMP-004,February Referral Bonus,referral,completed,2025-02-01,2025-02-28,8000.00,6200.00,2025-01-28
+2025-03-01 02:00:00,sync_004,false,CMP-005,Spring Sustainability Campaign,content,planned,2025-04-01,2025-06-30,20000.00,0.00,2025-03-01

@@ -1,0 +1,187 @@
+version: 2
+
+models:
+  - name: fct_energy_usage_daily
+    description: "Periodic snapshot at device-day grain. Grain: one row per device per day."
+    config:
+      contract:
+        enforced: true
+      group: device
+    access: public
+    latest_version: 1
+    columns:
+      - name: energy_usage_daily_sk
+        description: "Surrogate key"
+        data_type: varchar
+        tests: [not_null, unique]
+      - name: device_sk
+        description: "FK to dim_device"
+        data_type: varchar
+        tests:
+          - relationships:
+              to: ref('dim_device')
+              field: device_sk
+          - referential_integrity:
+              to: ref('dim_device')
+              field: device_sk
+      - name: household_sk
+        description: "FK to dim_household"
+        data_type: varchar
+        tests:
+          - referential_integrity:
+              to: ref('dim_household')
+              field: household_sk
+      - name: customer_sk
+        description: "FK to dim_customer"
+        data_type: varchar
+        tests:
+          - referential_integrity:
+              to: ref('dim_customer')
+              field: customer_sk
+      - name: date_key
+        description: "FK to dim_date"
+        data_type: integer
+        tests:
+          - referential_integrity:
+              to: ref('dim_date')
+              field: date_key
+      - name: device_id
+        description: "Natural device identifier"
+        data_type: varchar
+      - name: reading_date
+        description: "Reading date"
+        data_type: date
+      - name: total_kwh
+        description: "Total kilowatt-hours for the day"
+        data_type: number
+      - name: peak_kwh
+        description: "Peak kilowatt-hour reading"
+        data_type: number
+      - name: avg_temperature
+        description: "Average temperature reading (Celsius)"
+        data_type: number
+      - name: reading_count
+        description: "Total number of readings for the day"
+        data_type: integer
+
+  - name: fct_device_telemetry
+    description: "Transaction fact at telemetry event grain. Grain: one row per device per event."
+    config:
+      contract:
+        enforced: true
+      group: device
+    access: public
+    latest_version: 1
+    columns:
+      - name: telemetry_sk
+        description: "Surrogate key"
+        data_type: varchar
+        tests: [not_null, unique]
+      - name: device_sk
+        description: "FK to dim_device"
+        data_type: varchar
+        tests:
+          - referential_integrity:
+              to: ref('dim_device')
+              field: device_sk
+      - name: household_sk
+        description: "FK to dim_household"
+        data_type: varchar
+        tests:
+          - referential_integrity:
+              to: ref('dim_household')
+              field: household_sk
+      - name: date_key
+        description: "FK to dim_date"
+        data_type: integer
+        tests:
+          - referential_integrity:
+              to: ref('dim_date')
+              field: date_key
+      - name: time_key
+        description: "FK to dim_time"
+        data_type: integer
+        tests:
+          - referential_integrity:
+              to: ref('dim_time')
+              field: time_key
+      - name: device_id
+        description: "Natural device identifier"
+        data_type: varchar
+      - name: event_timestamp
+        description: "Event timestamp"
+        data_type: timestamp_ntz
+      - name: event_type
+        description: "Telemetry event type"
+        data_type: varchar
+        tests:
+          - accepted_values:
+              values: ['energy_reading', 'temperature_reading', 'device_status', 'alert_event']
+      - name: reading_value
+        description: "Numeric reading value (type-dependent)"
+        data_type: number
+
+semantic_models:
+  - name: fct_energy_usage_daily
+    defaults:
+      agg_time_dimension: date_key
+    description: "Daily energy usage per device semantic model"
+    model: ref('fct_energy_usage_daily')
+    entities:
+      - name: energy_usage
+        type: primary
+        expr: energy_usage_daily_sk
+      - name: device
+        type: foreign
+        expr: device_sk
+      - name: household
+        type: foreign
+        expr: household_sk
+      - name: customer
+        type: foreign
+        expr: customer_sk
+      - name: usage_date
+        type: foreign
+        expr: date_key
+    measures:
+      - name: total_kwh
+        agg: sum
+        expr: total_kwh
+        description: "Total kilowatt-hours"
+      - name: peak_kwh
+        agg: max
+        expr: peak_kwh
+        description: "Peak kilowatt-hour reading"
+      - name: avg_temperature
+        agg: average
+        expr: avg_temperature
+        description: "Average temperature"
+      - name: total_reading_count
+        agg: sum
+        expr: reading_count
+        description: "Total number of readings"
+    dimensions:
+      - name: date_key
+        type: time
+        type_params:
+          time_granularity: day
+        expr: date_key
+
+metrics:
+  - name: average_daily_energy_consumption
+    type: simple
+    label: "Average Daily Energy Consumption"
+    description: "Average daily kWh per device"
+    type_params:
+      measure: total_kwh
+
+exposures:
+  - name: device_health_anomaly_detection
+    description: "Device Health Anomaly Detection Model — identifies devices with degrading performance patterns"
+    type: ml
+    owner:
+      name: Device Domain Team
+    depends_on:
+      - ref('fct_device_telemetry')
+      - ref('dim_device')
+      - ref('dim_household')

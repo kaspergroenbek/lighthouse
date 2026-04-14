@@ -1,0 +1,113 @@
+version: 2
+
+models:
+  - name: stg_iot__energy_readings
+    description: "Staged energy reading events from IoT telemetry. Extracted from VARIANT payload, deduplicated on device_id + event_timestamp."
+    columns:
+      - name: device_id
+        description: "Device identifier that produced the reading"
+        tests:
+          - not_null
+      - name: event_timestamp
+        description: "Source event timestamp"
+        tests:
+          - not_null
+      - name: kwh_reading
+        description: "Cumulative kilowatt-hour meter reading"
+      - name: voltage
+        description: "Voltage reading in volts"
+      - name: current_amps
+        description: "Current reading in amperes"
+      - name: _loaded_at
+        description: "Platform ingestion timestamp"
+      - name: _ingestion_date
+        description: "Partition date for lifecycle management"
+
+  - name: stg_iot__device_status
+    description: "Staged device status heartbeat events from IoT telemetry. Extracted from VARIANT payload, deduplicated on device_id + event_timestamp."
+    columns:
+      - name: device_id
+        description: "Device identifier"
+        tests:
+          - not_null
+      - name: event_timestamp
+        description: "Source event timestamp"
+        tests:
+          - not_null
+      - name: status
+        description: "Device connectivity status"
+        tests:
+          - accepted_values:
+              values: ['online', 'offline', 'degraded']
+      - name: battery_level
+        description: "Battery level percentage (null for mains-powered devices)"
+      - name: signal_strength
+        description: "WiFi signal strength in dBm"
+      - name: _loaded_at
+        description: "Platform ingestion timestamp"
+      - name: _ingestion_date
+        description: "Partition date for lifecycle management"
+
+  - name: stg_iot__temperature_readings
+    description: "Staged temperature reading events from IoT telemetry. Extracted from VARIANT payload, deduplicated on device_id + event_timestamp."
+    columns:
+      - name: device_id
+        description: "Device identifier (thermostat)"
+        tests:
+          - not_null
+      - name: event_timestamp
+        description: "Source event timestamp"
+        tests:
+          - not_null
+      - name: temperature_celsius
+        description: "Measured room temperature in Celsius"
+      - name: humidity_percent
+        description: "Measured relative humidity percentage"
+      - name: target_temperature
+        description: "User-configured target temperature in Celsius"
+      - name: _loaded_at
+        description: "Platform ingestion timestamp"
+      - name: _ingestion_date
+        description: "Partition date for lifecycle management"
+
+  - name: stg_iot__alert_events
+    description: "Staged alert events from IoT telemetry. Extracted from VARIANT payload, deduplicated on device_id + event_timestamp."
+    columns:
+      - name: device_id
+        description: "Device identifier that triggered the alert"
+        tests:
+          - not_null
+      - name: event_timestamp
+        description: "Source event timestamp"
+        tests:
+          - not_null
+      - name: alert_type
+        description: "Type of alert triggered"
+        tests:
+          - accepted_values:
+              values:
+                - high_consumption
+                - low_battery
+                - critical_battery
+                - signal_degraded
+                - device_offline
+                - device_recovered
+                - temperature_deviation
+                - voltage_fluctuation
+                - firmware_update_available
+                - firmware_update_applied
+      - name: severity
+        description: "Alert severity level"
+        tests:
+          - accepted_values:
+              values: ['info', 'warning', 'critical']
+      - name: message
+        description: "Human-readable alert message"
+      - name: threshold_value
+        description: "Threshold that was breached"
+      - name: actual_value
+        description: "Actual measured value that triggered the alert"
+      - name: _loaded_at
+        description: "Platform ingestion timestamp"
+      - name: _ingestion_date
+        description: "Partition date for lifecycle management"

@@ -1,0 +1,8 @@
+product_id,product_name,category,manufacturer,model_number,specifications,list_price,effective_date,is_discontinued
+7001,Smart Thermostat v2,thermostat,NordHjem,NH-TH-V2,"WiFi 802.11 b/g/n, 3.5in touchscreen, learning algorithm, geofencing, voice control compatible",1299.00,2025-01-01,false
+7002,Energy Meter Pro,energy_meter,NordHjem,NH-EM-PRO,"3-phase CT clamp, real-time monitoring, grid export measurement, 0.5% accuracy class",1899.00,2025-01-01,false
+7006,Temp Sensor Mini,temperature_sensor,NordHjem,NH-TS-MINI,"Battery powered, Zigbee 3.0, temperature + humidity, 2-year battery life",399.00,2025-01-01,false
+7008,Solar Integration Kit,solar_monitor,NordHjem,NH-SOL-V1,"PV inverter monitoring, grid export optimization, compatible with major inverter brands",3499.00,2025-01-01,false
+7001,Smart Thermostat v2,thermostat,NordHjem,NH-TH-V2,"WiFi 802.11 b/g/n/ac, 3.5in touchscreen, learning algorithm, geofencing, voice control, Matter compatible",1349.00,2025-02-01,false
+7002,Energy Meter Pro,energy_meter,NordHjem,NH-EM-PRO,"3-phase CT clamp, real-time monitoring, grid export measurement, 0.5% accuracy class, Zigbee gateway",1949.00,2025-02-01,false
+7008,Solar Integration Kit,solar_monitor,NordHjem,NH-SOL-V1,"PV inverter monitoring, grid export optimization, compatible with major inverter brands",3499.00,2025-03-01,true

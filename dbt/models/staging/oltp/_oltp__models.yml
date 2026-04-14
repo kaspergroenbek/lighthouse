@@ -1,0 +1,267 @@
+version: 2
+
+models:
+  - name: stg_oltp__customers
+    description: "Staged customer records from the NordHjem OLTP system. Deduplicated to latest record per customer_id, DELETE operations filtered out. Email lowercased, names in INITCAP."
+    columns:
+      - name: customer_id
+        description: "Primary key — natural key from OLTP source"
+        tests:
+          - not_null
+          - unique
+      - name: email
+        description: "Customer email address, lowercased"
+      - name: first_name
+        description: "Customer first name, INITCAP formatted"
+      - name: last_name
+        description: "Customer last name, INITCAP formatted"
+      - name: phone
+        description: "Customer phone number"
+      - name: address
+        description: "Street address"
+      - name: postal_code
+        description: "Postal/zip code"
+      - name: municipality
+        description: "Municipality or city"
+      - name: region
+        description: "Geographic region"
+      - name: country
+        description: "Country code (DK, SE, NO)"
+      - name: segment
+        description: "Customer segment classification"
+      - name: status
+        description: "Customer account status"
+        tests:
+          - accepted_values:
+              values: ['active', 'inactive', 'churned']
+      - name: created_at
+        description: "Record creation timestamp in source"
+      - name: updated_at
+        description: "Record last update timestamp in source"
+
+  - name: stg_oltp__households
+    description: "Staged household/site records from the NordHjem OLTP system. Deduplicated to latest record per household_id."
+    columns:
+      - name: household_id
+        description: "Primary key — natural key from OLTP source"
+        tests:
+          - not_null
+          - unique
+      - name: customer_id
+        description: "Foreign key to customers"
+      - name: address
+        description: "Household street address"
+      - name: postal_code
+        description: "Postal/zip code"
+      - name: municipality
+        description: "Municipality or city"
+      - name: country
+        description: "Country code"
+      - name: household_type
+        description: "Type of household (apartment, house, office)"
+
+  - name: stg_oltp__installations
+    description: "Staged installation records from the NordHjem OLTP system. Deduplicated to latest record per installation_id."
+    columns:
+      - name: installation_id
+        description: "Primary key — natural key from OLTP source"
+        tests:
+          - not_null
+          - unique
+      - name: household_id
+        description: "Foreign key to households"
+      - name: installation_date
+        description: "Scheduled or actual installation date"
+      - name: installer_partner_id
+        description: "Partner installer identifier"
+      - name: status
+        description: "Installation status"
+      - name: notes
+        description: "Installation notes"
+
+  - name: stg_oltp__devices
+    description: "Staged device records from the NordHjem OLTP system. Deduplicated to latest record per device_id."
+    columns:
+      - name: device_id
+        description: "Primary key — natural key from OLTP source"
+        tests:
+          - not_null
+          - unique
+      - name: household_id
+        description: "Foreign key to households"
+      - name: device_serial
+        description: "Device serial number"
+      - name: device_type
+        description: "Type of device (thermostat, energy_meter)"
+      - name: manufacturer
+        description: "Device manufacturer"
+      - name: model
+        description: "Device model name"
+      - name: firmware_version
+        description: "Current firmware version"
+      - name: installed_at
+        description: "Date the device was installed"
+      - name: status
+        description: "Device operational status"
+
+  - name: stg_oltp__contracts
+    description: "Staged contract records from the NordHjem OLTP system. Deduplicated to latest record per contract_id. Monetary amounts cast to NUMBER(12,2)."
+    columns:
+      - name: contract_id
+        description: "Primary key — natural key from OLTP source"
+        tests:
+          - not_null
+          - unique
+      - name: customer_id
+        description: "Foreign key to customers"
+      - name: household_id
+        description: "Foreign key to households"
+      - name: product_id
+        description: "Foreign key to products"
+      - name: tariff_plan_id
+        description: "Foreign key to tariff plans"
+      - name: contract_type
+        description: "Type of contract (residential_energy, commercial_energy)"
+      - name: status
+        description: "Contract status"
+        tests:
+          - accepted_values:
+              values: ['active', 'renewed', 'cancelled', 'expired']
+      - name: start_date
+        description: "Contract start date"
+      - name: end_date
+        description: "Contract end date"
+      - name: monthly_amount
+        description: "Monthly contract amount in local currency"
+
+  - name: stg_oltp__tariff_plans
+    description: "Staged tariff plan records from the NordHjem OLTP system. Low-volume reference data materialized as view."
+    columns:
+      - name: tariff_plan_id
+        description: "Primary key — natural key from OLTP source"
+        tests:
+          - not_null
+          - unique
+      - name: plan_name
+        description: "Tariff plan display name"
+      - name: plan_type
+        description: "Plan type (fixed, variable, green, commercial)"
+      - name: price_per_kwh
+        description: "Price per kilowatt-hour"
+      - name: monthly_base_fee
+        description: "Monthly base fee amount"
+      - name: valid_from
+        description: "Plan validity start date"
+      - name: valid_to
+        description: "Plan validity end date"
+
+  - name: stg_oltp__products
+    description: "Staged product records from the NordHjem OLTP system. Low-volume reference data materialized as view."
+    columns:
+      - name: product_id
+        description: "Primary key — natural key from OLTP source"
+        tests:
+          - not_null
+          - unique
+      - name: product_name
+        description: "Product display name"
+      - name: category
+        description: "Product category (device, bundle)"
+      - name: description
+        description: "Product description"
+      - name: pricing_tier
+        description: "Pricing tier (standard, premium)"
+      - name: is_active
+        description: "Whether the product is currently active"
+
+  - name: stg_oltp__services
+    description: "Staged service records from the NordHjem OLTP system. Low-volume reference data materialized as view."
+    columns:
+      - name: service_id
+        description: "Primary key — natural key from OLTP source"
+        tests:
+          - not_null
+          - unique
+      - name: service_name
+        description: "Service display name"
+      - name: category
+        description: "Service category (installation, maintenance, consulting)"
+      - name: description
+        description: "Service description"
+      - name: is_active
+        description: "Whether the service is currently active"
+
+  - name: stg_oltp__invoices
+    description: "Staged invoice records from the NordHjem OLTP system. Deduplicated to latest record per invoice_id. Monetary amounts cast to NUMBER(12,2)."
+    columns:
+      - name: invoice_id
+        description: "Primary key — natural key from OLTP source"
+        tests:
+          - not_null
+          - unique
+      - name: customer_id
+        description: "Foreign key to customers"
+      - name: household_id
+        description: "Foreign key to households"
+      - name: contract_id
+        description: "Foreign key to contracts"
+      - name: invoice_date
+        description: "Date the invoice was issued"
+      - name: due_date
+        description: "Invoice payment due date"
+      - name: total_amount
+        description: "Total invoice amount including tax"
+      - name: tax_amount
+        description: "Tax portion of the invoice"
+      - name: status
+        description: "Invoice status"
+        tests:
+          - accepted_values:
+              values: ['issued', 'paid', 'overdue', 'cancelled']
+
+  - name: stg_oltp__invoice_line_items
+    description: "Staged invoice line item records from the NordHjem OLTP system. Deduplicated to latest record per line_item_id. Monetary amounts cast to NUMBER(12,2)."
+    columns:
+      - name: line_item_id
+        description: "Primary key — natural key from OLTP source"
+        tests:
+          - not_null
+          - unique
+      - name: invoice_id
+        description: "Foreign key to invoices"
+      - name: product_id
+        description: "Foreign key to products"
+      - name: description
+        description: "Line item description"
+      - name: quantity
+        description: "Quantity of items"
+      - name: unit_price
+        description: "Price per unit"
+      - name: amount
+        description: "Line item total amount"
+      - name: tax_amount
+        description: "Tax amount for this line item"
+
+  - name: stg_oltp__payments
+    description: "Staged payment records from the NordHjem OLTP system. Deduplicated to latest record per payment_id. Monetary amounts cast to NUMBER(12,2)."
+    columns:
+      - name: payment_id
+        description: "Primary key — natural key from OLTP source"
+        tests:
+          - not_null
+          - unique
+      - name: invoice_id
+        description: "Foreign key to invoices"
+      - name: customer_id
+        description: "Foreign key to customers"
+      - name: payment_date
+        description: "Date the payment was made"
+      - name: payment_amount
+        description: "Payment amount"
+      - name: payment_method
+        description: "Payment method (card, bank_transfer)"
+      - name: status
+        description: "Payment status"
+        tests:
+          - accepted_values:
+              values: ['completed', 'pending', 'failed', 'refunded']

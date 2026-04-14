@@ -1,0 +1,140 @@
+version: 2
+
+models:
+  - name: fct_service_ticket_lifecycle
+    description: "Accumulating snapshot at service ticket grain. Grain: one row per ticket."
+    config:
+      contract:
+        enforced: true
+      group: service
+    access: public
+    latest_version: 1
+    columns:
+      - name: service_ticket_sk
+        description: "Surrogate key"
+        data_type: varchar
+        tests: [not_null, unique]
+      - name: ticket_id
+        description: "Natural key — ticket/case identifier"
+        data_type: varchar
+        tests: [not_null]
+      - name: customer_sk
+        description: "FK to dim_customer"
+        data_type: varchar
+        tests:
+          - referential_integrity:
+              to: ref('dim_customer')
+              field: customer_sk
+      - name: opened_date_key
+        description: "FK to dim_date (opened)"
+        data_type: integer
+        tests:
+          - referential_integrity:
+              to: ref('dim_date')
+              field: date_key
+      - name: closed_date_key
+        description: "FK to dim_date (closed)"
+        data_type: integer
+      - name: subject
+        description: "Ticket subject"
+        data_type: varchar
+      - name: ticket_status
+        description: "Current ticket status"
+        data_type: varchar
+      - name: priority
+        description: "Ticket priority"
+        data_type: varchar
+      - name: severity
+        description: "Ticket severity"
+        data_type: varchar
+      - name: origin
+        description: "Ticket origin channel"
+        data_type: varchar
+      - name: opened_at
+        description: "Ticket opened timestamp"
+        data_type: timestamp_ntz
+      - name: assigned_at
+        description: "Ticket assigned timestamp"
+        data_type: timestamp_ntz
+      - name: first_response_at
+        description: "First response timestamp"
+        data_type: timestamp_ntz
+      - name: resolved_at
+        description: "Resolution timestamp"
+        data_type: timestamp_ntz
+      - name: closed_at
+        description: "Closure timestamp"
+        data_type: timestamp_ntz
+      - name: time_to_assign_hours
+        description: "Hours from open to assignment"
+        data_type: integer
+      - name: time_to_first_response_hours
+        description: "Hours from open to first response"
+        data_type: integer
+      - name: time_to_resolve_hours
+        description: "Hours from open to resolution"
+        data_type: integer
+      - name: comment_count
+        description: "Number of comments on the ticket"
+        data_type: integer
+
+semantic_models:
+  - name: fct_service_ticket_lifecycle
+    defaults:
+      agg_time_dimension: opened_date_key
+    description: "Service ticket lifecycle semantic model"
+    model: ref('fct_service_ticket_lifecycle')
+    entities:
+      - name: ticket
+        type: primary
+        expr: service_ticket_sk
+      - name: customer
+        type: foreign
+        expr: customer_sk
+      - name: opened_date
+        type: foreign
+        expr: opened_date_key
+    measures:
+      - name: time_to_first_response
+        agg: average
+        expr: time_to_first_response_hours
+        description: "Average hours from open to first response"
+      - name: time_to_resolve
+        agg: average
+        expr: time_to_resolve_hours
+        description: "Average hours from open to resolution"
+      - name: ticket_count
+        agg: count
+        expr: service_ticket_sk
+        description: "Count of service tickets"
+    dimensions:
+      - name: opened_date_key
+        type: time
+        type_params:
+          time_granularity: day
+        expr: opened_date_key
+      - name: severity
+        type: categorical
+      - name: priority
+        type: categorical
+      - name: ticket_status
+        type: categorical
+
+metrics:
+  - name: median_first_response_time
+    type: simple
+    label: "Median First Response Time (Hours)"
+    description: "Median duration from ticket opened to first response"
+    type_params:
+      measure: time_to_first_response
+
+exposures:
+  - name: service_sla_compliance_monitoring
+    description: "Service SLA Compliance Monitoring — tracks ticket resolution times against SLA targets"
+    type: dashboard
+    owner:
+      name: Service Domain Team
+    depends_on:
+      - ref('fct_service_ticket_lifecycle')
+      - ref('dim_customer')
+      - ref('dim_date')

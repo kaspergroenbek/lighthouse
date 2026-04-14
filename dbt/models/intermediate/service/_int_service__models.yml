@@ -1,0 +1,50 @@
+version: 2
+
+models:
+  - name: int_service__ticket_enriched
+    description: >
+      CRM cases mapped to a service ticket model with severity mapping,
+      contact enrichment, and milestone extraction. Derives duration measures
+      between key milestones (opened, assigned, first response, resolved, closed).
+      Grain: one row per service ticket (CRM case).
+    columns:
+      - name: ticket_id
+        description: "Primary key — mapped from CRM case_id"
+      - name: account_id
+        description: "Foreign key to CRM accounts"
+      - name: contact_id
+        description: "Foreign key to CRM contacts"
+      - name: contact_email
+        description: "Contact email address from CRM contacts"
+      - name: subject
+        description: "Ticket subject line"
+      - name: description
+        description: "Ticket description text"
+      - name: ticket_status
+        description: "Ticket status (open, closed, escalated)"
+      - name: priority
+        description: "Ticket priority level (low, medium, high, critical)"
+      - name: severity
+        description: "Ticket severity classification"
+      - name: origin
+        description: "Channel the ticket originated from (phone, email, web)"
+      - name: opened_at
+        description: "Milestone: timestamp when the ticket was created"
+      - name: assigned_at
+        description: "Milestone: timestamp when the ticket was assigned (simulated as opened_at + 1 day)"
+      - name: first_response_at
+        description: "Milestone: timestamp of the first case comment"
+      - name: resolved_at
+        description: "Milestone: closed_date when ticket status is 'closed', null otherwise"
+      - name: closed_at
+        description: "Milestone: timestamp when the ticket was closed"
+      - name: time_to_assign_hours
+        description: "Hours between ticket open and assignment"
+      - name: time_to_first_response_hours
+        description: "Hours between ticket open and first comment/response"
+      - name: time_to_resolve_hours
+        description: "Hours between ticket open and closure"
+      - name: comment_count
+        description: "Total number of comments on this ticket"
+      - name: last_modified_date
+        description: "Last modification timestamp from CRM"

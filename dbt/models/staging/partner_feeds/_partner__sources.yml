@@ -1,0 +1,24 @@
+version: 2
+
+sources:
+  - name: partner_feeds
+    description: "Partner data feeds — batch CSV/Parquet files"
+    database: "{{ env_var('LIGHTHOUSE_RAW_DB', 'LIGHTHOUSE_DEV_RAW') }}"
+    schema: PARTNER_FEEDS
+    loaded_at_field: _loaded_at
+    freshness:
+      warn_after: {count: 36, period: hour}
+      error_after: {count: 72, period: hour}
+    tables:
+      - name: grid_usage_readings
+        columns:
+          - name: reading_id
+            tests: [not_null]
+      - name: installation_certifications
+        columns:
+          - name: certification_id
+            tests: [not_null]
+      - name: product_catalog_updates
+        columns:
+          - name: product_id
+            tests: [not_null]

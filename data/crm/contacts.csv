@@ -1,0 +1,15 @@
+_loaded_at,_sync_id,_is_deleted,contact_id,account_id,first_name,last_name,email,phone,title,department,created_date,last_modified_date
+2025-01-10 02:00:00,sync_001,false,CON-001,ACC-001,Erik,Lindberg,erik.lindberg@example.com,+4520123456,Homeowner,,2025-01-05,2025-01-05
+2025-01-10 02:00:00,sync_001,false,CON-002,ACC-002,Anna,Svensson,anna.svensson@example.com,+4687654321,Homeowner,,2025-01-05,2025-01-05
+2025-01-10 02:00:00,sync_001,false,CON-003,ACC-003,Lars,Hansen,lars.hansen@example.com,+4731234567,CEO,Management,2025-01-05,2025-01-05
+2025-01-10 02:00:00,sync_001,false,CON-004,ACC-004,Mette,Nielsen,mette.nielsen@example.com,+4528765432,Homeowner,,2025-01-06,2025-01-06
+2025-01-10 02:00:00,sync_001,false,CON-005,ACC-005,Olof,Johansson,olof.johansson@example.com,+46701234567,Facilities Manager,Operations,2025-01-06,2025-01-06
+2025-01-10 02:00:00,sync_001,false,CON-006,ACC-006,Ingrid,Berg,ingrid.berg@example.com,+4790123456,Homeowner,,2025-01-07,2025-01-07
+2025-01-10 02:00:00,sync_001,false,CON-007,ACC-007,Karl,Petersen,karl.petersen@example.com,+4521987654,Homeowner,,2025-01-08,2025-01-08
+2025-01-10 02:00:00,sync_001,false,CON-008,ACC-008,Sofia,Nyström,sofia.nystrom@example.com,+46739876543,Homeowner,,2025-01-10,2025-01-10
+2025-01-20 02:00:00,sync_002,false,CON-009,ACC-009,Bjørn,Dahl,bjorn.dahl@example.com,+4741234567,Property Manager,Operations,2025-01-12,2025-01-12
+2025-01-20 02:00:00,sync_002,false,CON-010,ACC-010,Freya,Madsen,freya.madsen@example.com,+4523456789,Homeowner,,2025-01-15,2025-01-15
+2025-01-20 02:00:00,sync_002,false,CON-011,ACC-003,Kari,Olsen,kari.olsen@hansen-consulting.example.no,+4732345678,Office Manager,Administration,2025-01-18,2025-01-18
+2025-02-01 02:00:00,sync_003,false,CON-002,ACC-002,Anna,Svensson,anna.svensson@newmail.se,+4687654321,Homeowner,,2025-01-05,2025-01-25
+2025-02-01 02:00:00,sync_003,false,CON-001,ACC-001,Erik,Lindberg,erik.lindberg@example.com,+4520999888,Homeowner,,2025-01-05,2025-02-15
+2025-03-01 02:00:00,sync_004,true,CON-007,ACC-007,Karl,Petersen,karl.petersen@example.com,+4521987654,Homeowner,,2025-01-08,2025-03-01

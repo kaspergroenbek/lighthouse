@@ -1,0 +1,33 @@
+lighthouse:
+  target: dev
+  outputs:
+    dev:
+      type: snowflake
+      account: "{{ env_var('SNOWFLAKE_ACCOUNT') }}"
+      user: "{{ env_var('SNOWFLAKE_USER') }}"
+      password: "{{ env_var('SNOWFLAKE_PASSWORD') }}"
+      role: LIGHTHOUSE_ENGINEER
+      warehouse: TRANSFORM_WH
+      database: LIGHTHOUSE_DEV_ANALYTICS
+      schema: MARTS
+      threads: 4
+    staging:
+      type: snowflake
+      account: "{{ env_var('SNOWFLAKE_ACCOUNT') }}"
+      user: "{{ env_var('SNOWFLAKE_USER') }}"
+      password: "{{ env_var('SNOWFLAKE_PASSWORD') }}"
+      role: LIGHTHOUSE_ENGINEER
+      warehouse: TRANSFORM_WH
+      database: LIGHTHOUSE_STAGING_ANALYTICS
+      schema: MARTS
+      threads: 4
+    prod:
+      type: snowflake
+      account: "{{ env_var('SNOWFLAKE_ACCOUNT') }}"
+      user: "{{ env_var('SNOWFLAKE_USER') }}"
+      password: "{{ env_var('SNOWFLAKE_PASSWORD') }}"
+      role: LIGHTHOUSE_ENGINEER
+      warehouse: TRANSFORM_WH
+      database: LIGHTHOUSE_PROD_ANALYTICS
+      schema: MARTS
+      threads: 4

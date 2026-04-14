@@ -1,0 +1,22 @@
+_op,_source_ts,_connector_batch_id,line_item_id,invoice_id,product_id,description,quantity,unit_price,amount,tax_amount,created_at,updated_at
+INSERT,2025-02-01 06:00:00,batch_010,10001,9001,7001,Smart Thermostat v2 — monthly subscription,1,349.00,349.00,87.25,2025-02-01 06:00:00,2025-02-01 06:00:00
+INSERT,2025-02-01 06:05:00,batch_010,10002,9002,7002,Energy Meter Pro — monthly subscription,1,299.00,299.00,74.75,2025-02-01 06:05:00,2025-02-01 06:05:00
+INSERT,2025-02-01 06:10:00,batch_010,10003,9003,7003,Commercial Energy Suite — monthly subscription,1,1499.00,1499.00,374.75,2025-02-01 06:10:00,2025-02-01 06:10:00
+INSERT,2025-02-01 06:15:00,batch_010,10004,9004,7001,Smart Thermostat v2 — monthly subscription,1,399.00,399.00,99.75,2025-02-01 06:15:00,2025-02-01 06:15:00
+INSERT,2025-02-01 06:20:00,batch_010,10005,9005,7003,Commercial Energy Suite — monthly subscription,1,1299.00,1299.00,324.75,2025-02-01 06:20:00,2025-02-01 06:20:00
+INSERT,2025-02-01 06:25:00,batch_010,10006,9006,7001,Smart Thermostat v2 — monthly subscription,1,349.00,349.00,87.25,2025-02-01 06:25:00,2025-02-01 06:25:00
+INSERT,2025-02-01 06:30:00,batch_010,10007,9007,7002,Energy Meter Pro — monthly subscription,1,449.00,449.00,112.25,2025-02-01 06:30:00,2025-02-01 06:30:00
+INSERT,2025-02-01 06:35:00,batch_010,10008,9008,7001,Smart Thermostat v2 — monthly subscription,1,399.00,399.00,99.75,2025-02-01 06:35:00,2025-02-01 06:35:00
+INSERT,2025-02-01 06:40:00,batch_010,10009,9009,7003,Commercial Energy Suite — monthly subscription,1,1499.00,1499.00,374.75,2025-02-01 06:40:00,2025-02-01 06:40:00
+INSERT,2025-02-01 06:45:00,batch_010,10010,9010,7002,Energy Meter Pro — monthly subscription,1,349.00,349.00,87.25,2025-02-01 06:45:00,2025-02-01 06:45:00
+INSERT,2025-02-01 06:50:00,batch_010,10011,9011,7004,Home Energy Package — monthly subscription,1,449.00,449.00,112.25,2025-02-01 06:50:00,2025-02-01 06:50:00
+INSERT,2025-02-01 06:55:00,batch_010,10012,9012,7005,Annual Service Plan — monthly subscription,1,99.00,99.00,24.75,2025-02-01 06:55:00,2025-02-01 06:55:00
+INSERT,2025-03-01 06:00:00,batch_015,10013,9013,7001,Smart Thermostat v2 — monthly subscription,1,449.00,449.00,112.25,2025-03-01 06:00:00,2025-03-01 06:00:00
+INSERT,2025-03-01 06:05:00,batch_015,10014,9014,7002,Energy Meter Pro — monthly subscription,1,299.00,299.00,74.75,2025-03-01 06:05:00,2025-03-01 06:05:00
+INSERT,2025-03-01 06:10:00,batch_015,10015,9015,7003,Commercial Energy Suite — monthly subscription,1,1599.00,1599.00,399.75,2025-03-01 06:10:00,2025-03-01 06:10:00
+INSERT,2025-02-01 06:00:10,batch_010,10016,9001,7005,Annual Service Plan — pro-rated,1,0.00,0.00,0.00,2025-02-01 06:00:10,2025-02-01 06:00:10
+INSERT,2025-02-01 06:10:10,batch_010,10017,9003,7007,Sustainability Advisory — quarterly,1,0.00,0.00,0.00,2025-02-01 06:10:10,2025-02-01 06:10:10
+INSERT,2025-02-01 06:20:10,batch_010,10018,9005,7007,Sustainability Advisory — quarterly,1,0.00,0.00,0.00,2025-02-01 06:20:10,2025-02-01 06:20:10
+UPDATE,2025-02-15 10:05:00,batch_013,10001,9001,7001,Smart Thermostat v2 — monthly subscription,1,349.00,349.00,87.25,2025-02-01 06:00:00,2025-02-15 10:05:00
+UPDATE,2025-02-18 09:05:00,batch_013,10002,9002,7002,Energy Meter Pro — monthly subscription,1,299.00,299.00,74.75,2025-02-01 06:05:00,2025-02-18 09:05:00
+DELETE,2025-03-10 09:35:00,batch_017,10007,9007,7002,Energy Meter Pro — monthly subscription,1,449.00,449.00,112.25,2025-02-01 06:30:00,2025-03-10 09:35:00

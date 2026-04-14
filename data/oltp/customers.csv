@@ -1,0 +1,21 @@
+_op,_source_ts,_connector_batch_id,customer_id,email,first_name,last_name,phone,address,postal_code,municipality,region,country,segment,status,created_at,updated_at
+INSERT,2025-01-05 09:12:33,batch_001,1001,erik.lindberg@example.com,Erik,Lindberg,+4520123456,Strandvejen 42,2100,København Ø,Hovedstaden,DK,residential,active,2025-01-05 09:12:33,2025-01-05 09:12:33
+INSERT,2025-01-05 09:14:01,batch_001,1002,anna.svensson@example.com,Anna,Svensson,+4687654321,Vasagatan 15,11120,Stockholm,Stockholm,SE,residential,active,2025-01-05 09:14:01,2025-01-05 09:14:01
+INSERT,2025-01-05 09:15:22,batch_001,1003,lars.hansen@example.com,Lars,Hansen,+4731234567,Bygdøy allé 8,0257,Oslo,Oslo,NO,commercial,active,2025-01-05 09:15:22,2025-01-05 09:15:22
+INSERT,2025-01-06 10:30:00,batch_002,1004,mette.nielsen@example.com,Mette,Nielsen,+4528765432,Algade 22,4000,Roskilde,Sjælland,DK,residential,active,2025-01-06 10:30:00,2025-01-06 10:30:00
+INSERT,2025-01-06 10:32:15,batch_002,1005,olof.johansson@example.com,Olof,Johansson,+46701234567,Kungsgatan 10,41119,Göteborg,Västra Götaland,SE,commercial,active,2025-01-06 10:32:15,2025-01-06 10:32:15
+INSERT,2025-01-07 08:45:00,batch_003,1006,ingrid.berg@example.com,Ingrid,Berg,+4790123456,Storgata 5,0155,Oslo,Oslo,NO,residential,active,2025-01-07 08:45:00,2025-01-07 08:45:00
+INSERT,2025-01-08 11:20:00,batch_004,1007,karl.petersen@example.com,Karl,Petersen,+4521987654,Vesterbrogade 100,1620,København V,Hovedstaden,DK,residential,active,2025-01-08 11:20:00,2025-01-08 11:20:00
+INSERT,2025-01-10 14:00:00,batch_005,1008,sofia.nystrom@example.com,Sofia,Nyström,+46739876543,Drottninggatan 55,11121,Stockholm,Stockholm,SE,residential,active,2025-01-10 14:00:00,2025-01-10 14:00:00
+INSERT,2025-01-12 09:00:00,batch_006,1009,bjorn.dahl@example.com,Bjørn,Dahl,+4741234567,Markveien 12,0554,Oslo,Oslo,NO,commercial,active,2025-01-12 09:00:00,2025-01-12 09:00:00
+INSERT,2025-01-15 16:30:00,batch_007,1010,freya.madsen@example.com,Freya,Madsen,+4523456789,Nørrebrogade 33,2200,København N,Hovedstaden,DK,residential,active,2025-01-15 16:30:00,2025-01-15 16:30:00
+UPDATE,2025-01-20 10:15:00,batch_008,1001,erik.lindberg@example.com,Erik,Lindberg,+4520123456,Strandvejen 42,2100,København Ø,Hovedstaden,DK,premium,active,2025-01-05 09:12:33,2025-01-20 10:15:00
+UPDATE,2025-01-25 14:30:00,batch_009,1002,anna.svensson@newmail.se,Anna,Svensson,+4687654321,Vasagatan 15,11120,Stockholm,Stockholm,SE,residential,active,2025-01-05 09:14:01,2025-01-25 14:30:00
+UPDATE,2025-02-01 09:00:00,batch_010,1003,lars.hansen@example.com,Lars,Hansen,+4731234567,Karl Johans gate 20,0159,Oslo,Oslo,NO,commercial,active,2025-01-05 09:15:22,2025-02-01 09:00:00
+UPDATE,2025-02-05 11:45:00,batch_011,1004,mette.nielsen@example.com,Mette,Nielsen,+4528765432,Algade 22,4000,Roskilde,Sjælland,DK,premium,active,2025-01-06 10:30:00,2025-02-05 11:45:00
+UPDATE,2025-02-10 08:30:00,batch_012,1007,karl.petersen@example.com,Karl,Petersen,+4521987654,Vesterbrogade 100,1620,København V,Hovedstaden,DK,residential,churned,2025-01-08 11:20:00,2025-02-10 08:30:00
+UPDATE,2025-02-15 13:00:00,batch_013,1001,erik.lindberg@example.com,Erik,Lindberg,+4520999888,Strandvejen 42,2100,København Ø,Hovedstaden,DK,premium,active,2025-01-05 09:12:33,2025-02-15 13:00:00
+UPDATE,2025-02-20 16:00:00,batch_014,1005,olof.johansson@example.com,Olof,Johansson,+46701234567,Kungsgatan 10,41119,Göteborg,Västra Götaland,SE,premium,active,2025-01-06 10:32:15,2025-02-20 16:00:00
+UPDATE,2025-02-28 10:00:00,batch_015,1009,bjorn.dahl@example.com,Bjørn,Dahl,+4741234567,Markveien 12,0554,Oslo,Oslo,NO,commercial,inactive,2025-01-12 09:00:00,2025-02-28 10:00:00
+DELETE,2025-03-05 09:00:00,batch_016,1007,karl.petersen@example.com,Karl,Petersen,+4521987654,Vesterbrogade 100,1620,København V,Hovedstaden,DK,residential,churned,2025-01-08 11:20:00,2025-03-05 09:00:00
+UPDATE,2025-03-10 12:00:00,batch_017,1010,freya.madsen@example.com,Freya,Madsen,+4523456789,Nørrebrogade 33,2200,København N,Hovedstaden,DK,premium,active,2025-01-15 16:30:00,2025-03-10 12:00:00

@@ -1,0 +1,15 @@
+version: 2
+
+groups:
+  - name: customer
+    owner:
+      name: Customer Domain Team
+  - name: billing
+    owner:
+      name: Billing Domain Team
+  - name: device
+    owner:
+      name: Device Domain Team
+  - name: service
+    owner:
+      name: Service Domain Team

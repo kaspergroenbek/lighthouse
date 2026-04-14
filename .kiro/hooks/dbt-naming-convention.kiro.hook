@@ -1,0 +1,17 @@
+{
+  "enabled": true,
+  "name": "dbt Naming Convention Check",
+  "description": "When a new dbt model SQL file is created, verifies it follows the Lighthouse naming conventions (stg_, int_, dim_, fct_, snp_, bridge_, customer_360, etc.).",
+  "version": "1",
+  "when": {
+    "type": "fileCreated",
+    "patterns": [
+      "dbt/models/**/*.sql",
+      "dbt/snapshots/**/*.sql"
+    ]
+  },
+  "then": {
+    "type": "askAgent",
+    "prompt": "A new dbt model file was created. Verify the filename follows Lighthouse naming conventions: staging models MUST be stg_{source}__{entity}.sql, intermediate models MUST be int_{domain}__{description}.sql, marts dimensions MUST be dim_{entity}.sql, marts facts MUST be fct_{business_process}.sql, snapshots MUST be snp_{entity}.sql, bridge tables MUST be bridge_{entity1}_{entity2}.sql. If the name does not match the expected pattern for its directory, flag it and suggest the correct name."
+  }
+}

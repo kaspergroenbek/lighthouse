@@ -1,0 +1,16 @@
+{
+  "enabled": true,
+  "name": "dbt YAML Test Coverage Check",
+  "description": "When a dbt YAML schema file is created or edited in models/, verifies it includes required tests (not_null on PKs, unique on natural keys) and source freshness checks where applicable.",
+  "version": "1",
+  "when": {
+    "type": "fileCreated",
+    "patterns": [
+      "dbt/models/**/*.yml"
+    ]
+  },
+  "then": {
+    "type": "askAgent",
+    "prompt": "A dbt YAML schema file was created. Verify it includes: 1) not_null tests on all primary key / surrogate key columns, 2) unique tests on natural key columns, 3) accepted_values tests on status/type columns if present, 4) relationships tests for foreign key columns pointing to dimension tables, 5) source freshness configuration if this is a sources YAML file. Flag any missing test coverage."
+  }
+}

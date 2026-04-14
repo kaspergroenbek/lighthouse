@@ -1,0 +1,50 @@
+version: 2
+
+models:
+  - name: knowledge_chunks
+    description: "Document chunks for Cortex Search. Grain: one row per document chunk."
+    config:
+      contract:
+        enforced: true
+    access: public
+    latest_version: 1
+    columns:
+      - name: chunk_id
+        description: "Primary key — chunk identifier"
+        data_type: varchar
+        tests: [not_null, unique]
+      - name: document_id
+        description: "FK to source document"
+        data_type: varchar
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_kb__documents')
+              field: document_id
+      - name: chunk_sequence_number
+        description: "Chunk sequence within document (1-based)"
+        data_type: integer
+      - name: chunk_text
+        description: "Chunked text segment (~512 tokens)"
+        data_type: varchar
+      - name: document_title
+        description: "Document file name"
+        data_type: varchar
+      - name: document_category
+        description: "Document category (manual, procedure, policy, support_article)"
+        data_type: varchar
+      - name: source_file_name
+        description: "Original source file name"
+        data_type: varchar
+      - name: _loaded_at
+        description: "Document ingestion timestamp"
+        data_type: timestamp_ntz
+
+exposures:
+  - name: support_agent_copilot
+    description: "Support Agent Copilot — Cortex Search over knowledge base for agent assistance"
+    type: ml
+    owner:
+      name: Service Domain Team
+    depends_on:
+      - ref('knowledge_chunks')

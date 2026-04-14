@@ -1,0 +1,89 @@
+version: 2
+
+models:
+  - name: int_device__lifecycle
+    description: >
+      Device lifecycle state derived from OLTP device records and latest IoT
+      telemetry status. Combines source system status with real-time telemetry
+      to produce a unified lifecycle state: provisioned, active, degraded,
+      inactive, or decommissioned. Devices offline for >72 hours are auto-classified
+      as decommissioned.
+      Grain: one row per device.
+    config:
+      materialized: table
+    columns:
+      - name: device_id
+        description: "Primary key — natural key from OLTP devices"
+      - name: device_serial
+        description: "Device serial number"
+      - name: household_id
+        description: "Foreign key to households"
+      - name: device_type
+        description: "Type of device (thermostat, energy_meter)"
+      - name: manufacturer
+        description: "Device manufacturer"
+      - name: model
+        description: "Device model name"
+      - name: firmware_version
+        description: "Current firmware version"
+      - name: installed_at
+        description: "Date the device was installed"
+      - name: source_status
+        description: "Device status from OLTP source system"
+      - name: latest_telemetry_status
+        description: "Most recent telemetry heartbeat status (online, offline, degraded)"
+      - name: last_status_timestamp
+        description: "Timestamp of the most recent telemetry heartbeat"
+      - name: lifecycle_state
+        description: >
+          Derived lifecycle state based on source status and telemetry:
+          'decommissioned' if source says so or offline >72h,
+          'degraded' if telemetry reports degraded,
+          'inactive' if telemetry reports offline (within 72h),
+          'active' if telemetry online or installed with active source status,
+          'provisioned' otherwise.
+      - name: created_at
+        description: "Record creation timestamp from OLTP"
+      - name: updated_at
+        description: "Record last update timestamp from OLTP"
+
+  - name: int_device__telemetry_daily
+    description: >
+      Daily device-level telemetry summaries aggregating energy readings and
+      temperature readings. Combines energy (sum kWh, peak kWh) and temperature
+      (avg Celsius) via FULL OUTER JOIN on device + date to capture days with
+      only one type of reading.
+      Grain: one row per device per calendar day.
+    config:
+      materialized: table
+    columns:
+      - name: device_id
+        description: "Device identifier (from energy or temperature readings)"
+      - name: reading_date
+        description: "Calendar date of the aggregated readings"
+      - name: total_kwh
+        description: "Sum of kWh readings for the device on this date"
+      - name: peak_kwh
+        description: "Maximum single kWh reading for the device on this date"
+      - name: avg_temperature
+        description: "Average temperature in Celsius for the device on this date"
+      - name: total_reading_count
+        description: "Total number of energy + temperature readings on this date"
+
+unit_tests:
+  - name: test_energy_usage_daily_aggregation
+    description: "Validates daily aggregation of telemetry readings — sum kWh, peak kWh, avg temperature, total count"
+    model: int_device__telemetry_daily
+    given:
+      - input: ref('stg_iot__energy_readings')
+        rows:
+          - {device_id: 4001, event_timestamp: "2025-02-01 08:00:00", kwh_reading: 5.2, voltage: 230.1, current_amps: 22.6, _loaded_at: "2025-02-01 08:05:00", _ingestion_date: "2025-02-01"}
+          - {device_id: 4001, event_timestamp: "2025-02-01 12:00:00", kwh_reading: 8.7, voltage: 229.8, current_amps: 37.8, _loaded_at: "2025-02-01 12:05:00", _ingestion_date: "2025-02-01"}
+          - {device_id: 4001, event_timestamp: "2025-02-01 18:00:00", kwh_reading: 3.1, voltage: 230.5, current_amps: 13.5, _loaded_at: "2025-02-01 18:05:00", _ingestion_date: "2025-02-01"}
+      - input: ref('stg_iot__temperature_readings')
+        rows:
+          - {device_id: 4001, event_timestamp: "2025-02-01 08:00:00", temperature_celsius: 20.5, humidity_percent: 45, target_temperature: 21.0, _loaded_at: "2025-02-01 08:05:00", _ingestion_date: "2025-02-01"}
+          - {device_id: 4001, event_timestamp: "2025-02-01 18:00:00", temperature_celsius: 22.1, humidity_percent: 42, target_temperature: 21.0, _loaded_at: "2025-02-01 18:05:00", _ingestion_date: "2025-02-01"}
+    expect:
+      rows:
+        - {device_id: 4001, reading_date: "2025-02-01", total_kwh: 17.0, peak_kwh: 8.7, avg_temperature: 21.3, total_reading_count: 5}

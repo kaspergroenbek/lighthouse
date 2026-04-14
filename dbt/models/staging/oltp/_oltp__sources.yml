@@ -1,0 +1,57 @@
+version: 2
+
+sources:
+  - name: oltp
+    description: "NordHjem PostgreSQL OLTP system — CDC replicated"
+    database: "{{ env_var('LIGHTHOUSE_RAW_DB', 'LIGHTHOUSE_DEV_RAW') }}"
+    schema: OLTP
+    loaded_at_field: _loaded_at
+    freshness:
+      warn_after: {count: 30, period: minute}
+      error_after: {count: 60, period: minute}
+    tables:
+      - name: customers
+        description: "CDC raw — customer records"
+        columns:
+          - name: customer_id
+            tests: [not_null]
+      - name: households
+        columns:
+          - name: household_id
+            tests: [not_null]
+      - name: installations
+        columns:
+          - name: installation_id
+            tests: [not_null]
+      - name: devices
+        columns:
+          - name: device_id
+            tests: [not_null]
+      - name: contracts
+        columns:
+          - name: contract_id
+            tests: [not_null]
+      - name: tariff_plans
+        columns:
+          - name: tariff_plan_id
+            tests: [not_null]
+      - name: products
+        columns:
+          - name: product_id
+            tests: [not_null]
+      - name: services
+        columns:
+          - name: service_id
+            tests: [not_null]
+      - name: invoices
+        columns:
+          - name: invoice_id
+            tests: [not_null]
+      - name: invoice_line_items
+        columns:
+          - name: line_item_id
+            tests: [not_null]
+      - name: payments
+        columns:
+          - name: payment_id
+            tests: [not_null]

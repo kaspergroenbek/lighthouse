@@ -1,0 +1,13 @@
+{
+  "enabled": true,
+  "name": "Keep Docs In Sync",
+  "description": "After the agent finishes a task, reminds it to check if the demo guide, data product catalog, or setup guide need updating based on what changed.",
+  "version": "1",
+  "when": {
+    "type": "agentStop"
+  },
+  "then": {
+    "type": "askAgent",
+    "prompt": "Before finishing, check if any changes made in this session affect the documentation in docs/. Specifically: 1) If dbt models were added, renamed, or removed, update docs/data-product-catalog.md. 2) If infrastructure scripts, deployment steps, or environment config changed, update docs/setup-and-deployment.md. 3) If new features, data products, or demo-worthy capabilities were added, update docs/demo-guide.md. Only update docs that are actually affected — do not touch docs unnecessarily."
+  }
+}

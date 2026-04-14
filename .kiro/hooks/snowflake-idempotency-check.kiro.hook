@@ -1,0 +1,16 @@
+{
+  "enabled": true,
+  "name": "Snowflake SQL Idempotency Check",
+  "description": "Before writing Snowflake infrastructure SQL files, verifies the agent uses CREATE OR REPLACE or CREATE IF NOT EXISTS for idempotency.",
+  "version": "1",
+  "when": {
+    "type": "preToolUse",
+    "toolTypes": [
+      "write"
+    ]
+  },
+  "then": {
+    "type": "askAgent",
+    "prompt": "If this write targets a file under snowflake/infrastructure/ or snowflake/governance/ or snowflake/semantic/, verify that ALL DDL statements use CREATE OR REPLACE or CREATE ... IF NOT EXISTS. This is a mandatory architecture rule — non-idempotent scripts MUST NOT be written. If the file is not under those paths, ignore this check."
+  }
+}

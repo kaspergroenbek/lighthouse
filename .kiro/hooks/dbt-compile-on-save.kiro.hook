@@ -1,0 +1,16 @@
+{
+  "enabled": false,
+  "name": "dbt Compile on Model Save",
+  "description": "Runs dbt compile when a dbt SQL model file is saved, catching Jinja and SQL errors immediately.",
+  "version": "1",
+  "when": {
+    "type": "fileEdited",
+    "patterns": [
+      "dbt/models/**/*.sql"
+    ]
+  },
+  "then": {
+    "type": "runCommand",
+    "command": "dbt compile --select $(basename \"${KIRO_FILE_PATH}\" .sql)"
+  }
+}

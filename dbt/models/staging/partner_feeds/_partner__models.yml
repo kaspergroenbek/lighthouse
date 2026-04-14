@@ -1,0 +1,100 @@
+version: 2
+
+models:
+  - name: stg_partner__grid_usage
+    description: "Staged grid usage readings from energy grid operator partner feed. One row per reading."
+    columns:
+      - name: reading_id
+        description: "Primary key — grid reading identifier"
+        tests:
+          - not_null
+          - unique
+      - name: meter_id
+        description: "Grid meter identifier"
+      - name: household_id
+        description: "Foreign key to households"
+      - name: reading_date
+        description: "Date of the grid reading"
+      - name: kwh_consumed
+        description: "Kilowatt-hours consumed"
+      - name: kwh_produced
+        description: "Kilowatt-hours produced (solar export)"
+      - name: peak_demand_kw
+        description: "Peak demand in kilowatts"
+      - name: reading_source
+        description: "Reading source method"
+        tests:
+          - accepted_values:
+              values: ['automatic', 'manual']
+      - name: _loaded_at
+        description: "Platform ingestion timestamp"
+      - name: _source_file_name
+        description: "Source file name"
+      - name: _source_file_row_number
+        description: "Row number in source file"
+
+  - name: stg_partner__installation_certifications
+    description: "Staged installation certifications from partner installers. One row per certification."
+    columns:
+      - name: certification_id
+        description: "Primary key — certification identifier"
+        tests:
+          - not_null
+          - unique
+      - name: installation_id
+        description: "Foreign key to OLTP installations"
+      - name: installer_id
+        description: "Partner installer identifier"
+      - name: certification_date
+        description: "Date of certification"
+      - name: certification_type
+        description: "Type of certification"
+        tests:
+          - accepted_values:
+              values: ['electrical_safety', 'device_commissioning']
+      - name: expiry_date
+        description: "Certification expiry date"
+      - name: status
+        description: "Certification status"
+        tests:
+          - accepted_values:
+              values: ['valid', 'expired', 'revoked']
+      - name: inspector_name
+        description: "Name of the certifying inspector"
+      - name: _loaded_at
+        description: "Platform ingestion timestamp"
+      - name: _source_file_name
+        description: "Source file name"
+      - name: _source_file_row_number
+        description: "Row number in source file"
+
+  - name: stg_partner__product_catalog
+    description: "Staged product catalog updates from manufacturer. Deduplicated to latest effective_date per product_id."
+    columns:
+      - name: product_id
+        description: "Primary key — product identifier (deduplicated to latest version)"
+        tests:
+          - not_null
+          - unique
+      - name: effective_date
+        description: "Price/spec effective date"
+      - name: product_name
+        description: "Product display name"
+      - name: category
+        description: "Product category"
+      - name: manufacturer
+        description: "Manufacturer name"
+      - name: model_number
+        description: "Manufacturer model number"
+      - name: specifications
+        description: "Product specifications text"
+      - name: list_price
+        description: "Manufacturer list price"
+      - name: is_discontinued
+        description: "Whether product is discontinued"
+      - name: _loaded_at
+        description: "Platform ingestion timestamp"
+      - name: _source_file_name
+        description: "Source file name"
+      - name: _source_file_row_number
+        description: "Row number in source file"

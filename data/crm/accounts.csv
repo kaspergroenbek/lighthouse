@@ -1,0 +1,14 @@
+_loaded_at,_sync_id,_is_deleted,account_id,account_name,industry,website,phone,billing_address,region,owner_id,created_date,last_modified_date
+2025-01-10 02:00:00,sync_001,false,ACC-001,Lindberg Household,residential,,,Strandvejen 42 2100 København Ø,Hovedstaden,USR-101,2025-01-05,2025-01-05
+2025-01-10 02:00:00,sync_001,false,ACC-002,Svensson Household,residential,,,Vasagatan 15 11120 Stockholm,Stockholm,USR-102,2025-01-05,2025-01-05
+2025-01-10 02:00:00,sync_001,false,ACC-003,Hansen Consulting AS,commercial,https://hansen-consulting.example.no,+4731234567,Bygdøy allé 8 0257 Oslo,Oslo,USR-101,2025-01-05,2025-01-05
+2025-01-10 02:00:00,sync_001,false,ACC-004,Nielsen Household,residential,,,Algade 22 4000 Roskilde,Sjælland,USR-103,2025-01-06,2025-01-06
+2025-01-10 02:00:00,sync_001,false,ACC-005,Johansson Energi AB,commercial,https://johansson-energi.example.se,+46701234567,Kungsgatan 10 41119 Göteborg,Västra Götaland,USR-102,2025-01-06,2025-01-06
+2025-01-10 02:00:00,sync_001,false,ACC-006,Berg Household,residential,,,Storgata 5 0155 Oslo,Oslo,USR-101,2025-01-07,2025-01-07
+2025-01-10 02:00:00,sync_001,false,ACC-007,Petersen Household,residential,,,Vesterbrogade 100 1620 København V,Hovedstaden,USR-103,2025-01-08,2025-01-08
+2025-01-10 02:00:00,sync_001,false,ACC-008,Nyström Household,residential,,,Drottninggatan 55 11121 Stockholm,Stockholm,USR-102,2025-01-10,2025-01-10
+2025-01-20 02:00:00,sync_002,false,ACC-009,Dahl Eiendom AS,commercial,https://dahl-eiendom.example.no,+4741234567,Markveien 12 0554 Oslo,Oslo,USR-101,2025-01-12,2025-01-12
+2025-01-20 02:00:00,sync_002,false,ACC-010,Madsen Household,residential,,,Nørrebrogade 33 2200 København N,Hovedstaden,USR-103,2025-01-15,2025-01-15
+2025-02-01 02:00:00,sync_003,false,ACC-003,Hansen Consulting AS,commercial,https://hansen-consulting.example.no,+4731234567,Karl Johans gate 20 0159 Oslo,Oslo,USR-101,2025-01-05,2025-02-01
+2025-02-01 02:00:00,sync_003,true,ACC-007,Petersen Household,residential,,,Vesterbrogade 100 1620 København V,Hovedstaden,USR-103,2025-01-08,2025-02-01
+2025-03-01 02:00:00,sync_004,false,ACC-005,Johansson Energi AB,commercial,https://johansson-energi.example.se,+46701234567,Kungsgatan 10 41119 Göteborg,Västra Götaland,USR-102,2025-01-06,2025-02-20

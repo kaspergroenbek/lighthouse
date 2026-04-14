@@ -1,0 +1,170 @@
+version: 2
+
+models:
+  - name: customer_360
+    description: "Unified customer profile — one row per customer combining OLTP demographics, CRM interactions, contract, device, invoice, and service ticket summaries."
+    config:
+      contract:
+        enforced: true
+      group: customer
+    access: public
+    latest_version: 1
+    columns:
+      - name: customer_360_sk
+        description: "Surrogate key"
+        data_type: varchar
+        tests: [not_null, unique]
+      - name: customer_id
+        description: "Natural key — OLTP customer identifier"
+        data_type: varchar
+        tests: [not_null, unique]
+      - name: email
+        description: "Customer email (PII)"
+        data_type: varchar
+        meta:
+          classification: PII
+      - name: first_name
+        description: "First name (PII)"
+        data_type: varchar
+        meta:
+          classification: PII
+      - name: last_name
+        description: "Last name (PII)"
+        data_type: varchar
+        meta:
+          classification: PII
+      - name: phone
+        description: "Phone number (PII)"
+        data_type: varchar
+        meta:
+          classification: PII
+      - name: address
+        description: "Street address (PII)"
+        data_type: varchar
+        meta:
+          classification: PII
+      - name: postal_code
+        description: "Postal code"
+        data_type: varchar
+      - name: municipality
+        description: "Municipality"
+        data_type: varchar
+      - name: region
+        description: "Nordic region"
+        data_type: varchar
+      - name: country
+        description: "Country code"
+        data_type: varchar
+      - name: segment
+        description: "Customer segment"
+        data_type: varchar
+      - name: status
+        description: "Customer account status"
+        data_type: varchar
+      - name: match_status
+        description: "Entity matching status (matched, oltp_only, crm_only)"
+        data_type: varchar
+      - name: crm_contact_id
+        description: "CRM contact identifier (NULL if unmatched)"
+        data_type: varchar
+      - name: crm_account_name
+        description: "CRM account name"
+        data_type: varchar
+      - name: crm_title
+        description: "CRM contact title"
+        data_type: varchar
+      - name: crm_department
+        description: "CRM contact department"
+        data_type: varchar
+      - name: total_contracts
+        description: "Total number of contracts"
+        data_type: integer
+      - name: active_contracts
+        description: "Number of active contracts"
+        data_type: integer
+      - name: active_device_count
+        description: "Number of active devices"
+        data_type: integer
+      - name: total_device_count
+        description: "Total number of devices"
+        data_type: integer
+      - name: lifetime_invoice_total
+        description: "Lifetime total invoiced amount"
+        data_type: number
+      - name: total_service_tickets
+        description: "Total number of service tickets"
+        data_type: integer
+      - name: last_interaction_date
+        description: "Most recent interaction date across all channels"
+        data_type: timestamp_ntz
+      - name: created_at
+        description: "Customer creation timestamp"
+        data_type: timestamp_ntz
+      - name: updated_at
+        description: "Last update timestamp"
+        data_type: timestamp_ntz
+
+exposures:
+  - name: customer_segmentation_dashboard
+    description: "Customer segmentation and churn analysis dashboard"
+    type: dashboard
+    owner:
+      name: Customer Domain Team
+    depends_on:
+      - ref('customer_360')
+
+semantic_models:
+  - name: customer_360
+    description: "Customer 360 semantic model for derived metrics"
+    model: ref('customer_360')
+    entities:
+      - name: customer
+        type: primary
+        expr: customer_360_sk
+    measures:
+      - name: active_customers
+        agg: count
+        expr: customer_360_sk
+        description: "Count of customers with active contracts"
+      - name: total_customers
+        agg: count
+        expr: customer_360_sk
+        description: "Total customer count"
+      - name: total_active_devices
+        agg: sum
+        expr: active_device_count
+        description: "Sum of active devices across customers"
+      - name: total_all_devices
+        agg: sum
+        expr: total_device_count
+        description: "Sum of all devices across customers"
+    dimensions:
+      - name: segment
+        type: categorical
+      - name: region
+        type: categorical
+      - name: country
+        type: categorical
+      - name: status
+        type: categorical
+
+metrics:
+  - name: active_customer_count
+    type: simple
+    label: "Active Customer Count"
+    description: "Count of customers with at least one active contract"
+    type_params:
+      measure: active_customers
+    filter:
+      - "{{ Dimension('customer__status') }} = 'active'"
+  - name: device_uptime_rate
+    type: derived
+    label: "Device Uptime Rate (%)"
+    description: "Percentage of devices with active status across all customers"
+    type_params:
+      expr: "total_active_devices * 100.0 / NULLIF(total_all_devices, 0)"
+      metrics:
+        - name: total_active_devices
+          alias: total_active_devices
+        - name: total_all_devices
+          alias: total_all_devices

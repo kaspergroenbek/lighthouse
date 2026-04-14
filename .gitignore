@@ -1,0 +1,13 @@
+# dbt
+dbt/profiles.yml
+dbt/target/
+dbt/dbt_packages/
+dbt/logs/
+
+# Python
+__pycache__/
+*.pyc
+.env
+
+# IDE
+.vscode/

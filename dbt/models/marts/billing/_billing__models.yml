@@ -1,0 +1,309 @@
+version: 2
+
+models:
+  - name: fct_invoices
+    description: "Transaction fact at invoice line item grain. Grain: one row per invoice line item."
+    config:
+      contract:
+        enforced: true
+      group: billing
+    access: public
+    latest_version: 1
+    columns:
+      - name: invoice_line_sk
+        description: "Surrogate key"
+        data_type: varchar
+        tests: [not_null, unique]
+      - name: line_item_id
+        description: "Natural key — line item identifier"
+        data_type: varchar
+        tests: [not_null]
+      - name: invoice_id
+        description: "Invoice identifier"
+        data_type: varchar
+      - name: customer_sk
+        description: "FK to dim_customer"
+        data_type: varchar
+        tests:
+          - relationships:
+              to: ref('dim_customer')
+              field: customer_sk
+          - referential_integrity:
+              to: ref('dim_customer')
+              field: customer_sk
+      - name: household_sk
+        description: "FK to dim_household"
+        data_type: varchar
+        tests:
+          - referential_integrity:
+              to: ref('dim_household')
+              field: household_sk
+      - name: product_sk
+        description: "FK to dim_product"
+        data_type: varchar
+        tests:
+          - referential_integrity:
+              to: ref('dim_product')
+              field: product_sk
+      - name: contract_sk
+        description: "FK to dim_contract"
+        data_type: varchar
+        tests:
+          - referential_integrity:
+              to: ref('dim_contract')
+              field: contract_sk
+      - name: invoice_date_key
+        description: "FK to dim_date"
+        data_type: integer
+        tests:
+          - referential_integrity:
+              to: ref('dim_date')
+              field: date_key
+      - name: line_description
+        description: "Line item description"
+        data_type: varchar
+      - name: quantity
+        description: "Quantity"
+        data_type: number
+      - name: unit_price
+        description: "Unit price"
+        data_type: number
+      - name: amount
+        description: "Line item amount"
+        data_type: number
+      - name: tax_amount
+        description: "Tax amount"
+        data_type: number
+      - name: net_amount
+        description: "Net amount (amount - tax)"
+        data_type: number
+      - name: invoice_status
+        description: "Invoice status"
+        data_type: varchar
+      - name: product_category
+        description: "Product category"
+        data_type: varchar
+      - name: revenue_classification
+        description: "Revenue classification (hardware, service, bundle, other)"
+        data_type: varchar
+
+  - name: fct_payments
+    description: "Transaction fact at payment grain. Grain: one row per payment."
+    config:
+      contract:
+        enforced: true
+      group: billing
+    access: public
+    latest_version: 1
+    columns:
+      - name: payment_sk
+        description: "Surrogate key"
+        data_type: varchar
+        tests: [not_null, unique]
+      - name: payment_id
+        description: "Natural key — payment identifier"
+        data_type: varchar
+        tests: [not_null]
+      - name: invoice_id
+        description: "FK to invoice"
+        data_type: varchar
+      - name: customer_sk
+        description: "FK to dim_customer"
+        data_type: varchar
+        tests:
+          - referential_integrity:
+              to: ref('dim_customer')
+              field: customer_sk
+      - name: household_sk
+        description: "FK to dim_household"
+        data_type: varchar
+        tests:
+          - referential_integrity:
+              to: ref('dim_household')
+              field: household_sk
+      - name: contract_sk
+        description: "FK to dim_contract"
+        data_type: varchar
+        tests:
+          - referential_integrity:
+              to: ref('dim_contract')
+              field: contract_sk
+      - name: payment_date_key
+        description: "FK to dim_date"
+        data_type: integer
+        tests:
+          - referential_integrity:
+              to: ref('dim_date')
+              field: date_key
+      - name: payment_amount
+        description: "Payment amount"
+        data_type: number
+      - name: payment_method
+        description: "Payment method (card, bank_transfer)"
+        data_type: varchar
+      - name: payment_status
+        description: "Payment status"
+        data_type: varchar
+      - name: is_late_payment
+        description: "Whether payment was made after due date"
+        data_type: boolean
+
+  - name: fct_contract_lifecycle
+    description: "Accumulating snapshot at contract grain. Grain: one row per contract."
+    config:
+      contract:
+        enforced: true
+      group: billing
+    access: public
+    latest_version: 1
+    columns:
+      - name: contract_lifecycle_sk
+        description: "Surrogate key"
+        data_type: varchar
+        tests: [not_null, unique]
+      - name: contract_id
+        description: "Natural key — contract identifier"
+        data_type: varchar
+        tests: [not_null]
+      - name: customer_sk
+        description: "FK to dim_customer"
+        data_type: varchar
+      - name: household_sk
+        description: "FK to dim_household"
+        data_type: varchar
+      - name: product_sk
+        description: "FK to dim_product"
+        data_type: varchar
+      - name: contract_sk
+        description: "FK to dim_contract"
+        data_type: varchar
+      - name: start_date_key
+        description: "FK to dim_date (contract start)"
+        data_type: integer
+      - name: end_date_key
+        description: "FK to dim_date (contract end)"
+        data_type: integer
+      - name: contract_type
+        description: "Contract type"
+        data_type: varchar
+      - name: status
+        description: "Current contract status"
+        data_type: varchar
+      - name: created_at
+        description: "Contract creation timestamp"
+        data_type: timestamp_ntz
+      - name: created_at_milestone
+        description: "Creation milestone"
+        data_type: timestamp_ntz
+      - name: activated_at
+        description: "Activation milestone date"
+        data_type: date
+      - name: renewed_at
+        description: "Renewal milestone timestamp"
+        data_type: timestamp_ntz
+      - name: cancelled_at
+        description: "Cancellation milestone timestamp"
+        data_type: timestamp_ntz
+      - name: contract_duration_days
+        description: "Duration in days from start to end/current"
+        data_type: integer
+      - name: monthly_amount
+        description: "Monthly contract amount"
+        data_type: number
+
+semantic_models:
+  - name: fct_invoices
+    defaults:
+      agg_time_dimension: invoice_date_key
+    description: "Invoice line items semantic model"
+    model: ref('fct_invoices')
+    entities:
+      - name: invoice_line
+        type: primary
+        expr: invoice_line_sk
+      - name: customer
+        type: foreign
+        expr: customer_sk
+      - name: household
+        type: foreign
+        expr: household_sk
+      - name: product
+        type: foreign
+        expr: product_sk
+      - name: contract
+        type: foreign
+        expr: contract_sk
+      - name: invoice_date
+        type: foreign
+        expr: invoice_date_key
+    measures:
+      - name: total_amount
+        agg: sum
+        expr: amount
+        description: "Sum of invoice line item amounts"
+      - name: total_quantity
+        agg: sum
+        expr: quantity
+        description: "Sum of quantities"
+      - name: total_tax_amount
+        agg: sum
+        expr: tax_amount
+        description: "Sum of tax amounts"
+      - name: total_net_amount
+        agg: sum
+        expr: net_amount
+        description: "Sum of net amounts"
+      - name: line_item_count
+        agg: count
+        expr: invoice_line_sk
+        description: "Count of invoice line items"
+    dimensions:
+      - name: invoice_date_key
+        type: time
+        type_params:
+          time_granularity: day
+        expr: invoice_date_key
+      - name: revenue_classification
+        type: categorical
+      - name: product_category
+        type: categorical
+      - name: invoice_status
+        type: categorical
+
+metrics:
+  - name: total_revenue
+    type: simple
+    label: "Total Revenue"
+    description: "Total revenue — sum of invoice line item amounts"
+    type_params:
+      measure: total_amount
+  - name: invoice_count
+    type: simple
+    label: "Invoice Line Count"
+    description: "Count of invoice line items"
+    type_params:
+      measure: line_item_count
+
+exposures:
+  - name: revenue_reporting_dashboard
+    description: "Revenue Reporting Dashboard — financial analytics and revenue tracking"
+    type: dashboard
+    owner:
+      name: Billing Domain Team
+    depends_on:
+      - ref('fct_invoices')
+      - ref('fct_payments')
+      - ref('dim_customer')
+      - ref('dim_contract')
+      - ref('dim_product')
+      - ref('dim_date')
+
+  - name: contract_renewal_prediction_model
+    description: "Contract Renewal Prediction Model — ML model predicting contract renewal likelihood"
+    type: ml
+    owner:
+      name: Billing Domain Team
+    depends_on:
+      - ref('fct_contract_lifecycle')
+      - ref('dim_customer')
+      - ref('dim_contract')
