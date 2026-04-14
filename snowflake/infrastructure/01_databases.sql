@@ -15,13 +15,16 @@
 -- SET env = 'DEV';
 
 -- RAW database — landing zone for all ingested source data
-CREATE DATABASE IF NOT EXISTS IDENTIFIER('LIGHTHOUSE_' || $env || '_RAW')
-    COMMENT = 'Lighthouse raw ingestion layer — landing zone for source system data';
+EXECUTE IMMEDIATE
+    'CREATE DATABASE IF NOT EXISTS LIGHTHOUSE_' || $env || '_RAW
+     COMMENT = ''Lighthouse raw ingestion layer — landing zone for source system data''';
 
 -- ANALYTICS database — dbt transformation layers (staging, intermediate, marts, semantic)
-CREATE DATABASE IF NOT EXISTS IDENTIFIER('LIGHTHOUSE_' || $env || '_ANALYTICS')
-    COMMENT = 'Lighthouse analytics layer — dbt-managed staging, intermediate, marts, and semantic models';
+EXECUTE IMMEDIATE
+    'CREATE DATABASE IF NOT EXISTS LIGHTHOUSE_' || $env || '_ANALYTICS
+     COMMENT = ''Lighthouse analytics layer — dbt-managed staging, intermediate, marts, and semantic models''';
 
 -- SERVING database — near-real-time serving via Dynamic Tables
-CREATE DATABASE IF NOT EXISTS IDENTIFIER('LIGHTHOUSE_' || $env || '_SERVING')
-    COMMENT = 'Lighthouse serving layer — Dynamic Tables and real-time data products';
+EXECUTE IMMEDIATE
+    'CREATE DATABASE IF NOT EXISTS LIGHTHOUSE_' || $env || '_SERVING
+     COMMENT = ''Lighthouse serving layer — Dynamic Tables and real-time data products''';

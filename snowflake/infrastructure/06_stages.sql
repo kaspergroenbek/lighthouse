@@ -20,21 +20,21 @@
 -- SET env = 'DEV';
 
 -- OLTP source stage — CDC simulation seed CSVs
-CREATE OR REPLACE STAGE IDENTIFIER('LIGHTHOUSE_' || $env || '_RAW.OLTP.oltp_stage')
-    COMMENT = 'Internal stage for OLTP CDC seed data files';
+EXECUTE IMMEDIATE 'CREATE OR REPLACE STAGE LIGHTHOUSE_' || $env || '_RAW.OLTP.oltp_stage
+    COMMENT = ''Internal stage for OLTP CDC seed data files''';
 
 -- CRM source stage — SaaS connector simulation seed CSVs
-CREATE OR REPLACE STAGE IDENTIFIER('LIGHTHOUSE_' || $env || '_RAW.CRM.crm_stage')
-    COMMENT = 'Internal stage for CRM SaaS connector seed data files';
+EXECUTE IMMEDIATE 'CREATE OR REPLACE STAGE LIGHTHOUSE_' || $env || '_RAW.CRM.crm_stage
+    COMMENT = ''Internal stage for CRM SaaS connector seed data files''';
 
 -- IoT source stage — JSON telemetry event files
-CREATE OR REPLACE STAGE IDENTIFIER('LIGHTHOUSE_' || $env || '_RAW.IOT.iot_stage')
-    COMMENT = 'Internal stage for IoT telemetry JSON event files';
+EXECUTE IMMEDIATE 'CREATE OR REPLACE STAGE LIGHTHOUSE_' || $env || '_RAW.IOT.iot_stage
+    COMMENT = ''Internal stage for IoT telemetry JSON event files''';
 
 -- Partner Feeds source stage — CSV/Parquet partner files
-CREATE OR REPLACE STAGE IDENTIFIER('LIGHTHOUSE_' || $env || '_RAW.PARTNER_FEEDS.partner_stage')
-    COMMENT = 'Internal stage for partner feed CSV and Parquet files';
+EXECUTE IMMEDIATE 'CREATE OR REPLACE STAGE LIGHTHOUSE_' || $env || '_RAW.PARTNER_FEEDS.partner_stage
+    COMMENT = ''Internal stage for partner feed CSV and Parquet files''';
 
 -- Knowledge Base source stage — Markdown/text documents
-CREATE OR REPLACE STAGE IDENTIFIER('LIGHTHOUSE_' || $env || '_RAW.KNOWLEDGE_BASE.kb_stage')
-    COMMENT = 'Internal stage for knowledge base document files';
+EXECUTE IMMEDIATE 'CREATE OR REPLACE STAGE LIGHTHOUSE_' || $env || '_RAW.KNOWLEDGE_BASE.kb_stage
+    COMMENT = ''Internal stage for knowledge base document files''';
