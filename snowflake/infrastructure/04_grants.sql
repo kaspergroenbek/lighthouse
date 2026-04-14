@@ -14,7 +14,8 @@
 --   LIGHTHOUSE_ADMIN       — Account-level admin privileges
 -- =============================================================================
 
-SET env = 'PROD';
+-- Inherit env from deploy.sql, or set manually if running standalone
+-- SET env = 'DEV';
 
 -- ─────────────────────────────────────────────────────────────────────────────
 -- LIGHTHOUSE_READER — read-only access to analytics and serving data products

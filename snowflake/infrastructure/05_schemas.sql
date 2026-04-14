@@ -15,7 +15,8 @@
 -- Idempotency: Uses CREATE SCHEMA IF NOT EXISTS — safe to re-run.
 -- =============================================================================
 
-SET env = 'PROD';
+-- Inherit env from deploy.sql, or set manually if running standalone
+-- SET env = 'DEV';
 
 -- ─────────────────────────────────────────────────────────────────────────────
 -- RAW database schemas — one per source system

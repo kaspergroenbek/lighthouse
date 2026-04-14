@@ -16,7 +16,8 @@
 -- Idempotency: Uses CREATE OR REPLACE STAGE — safe to re-run.
 -- =============================================================================
 
-SET env = 'PROD';
+-- Inherit env from deploy.sql, or set manually if running standalone
+-- SET env = 'DEV';
 
 -- OLTP source stage — CDC simulation seed CSVs
 CREATE OR REPLACE STAGE IDENTIFIER('LIGHTHOUSE_' || $env || '_RAW.OLTP.oltp_stage')

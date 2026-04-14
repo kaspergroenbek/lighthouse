@@ -4,14 +4,15 @@
 -- Purpose:  Provisions the three logical-layer databases for a given environment.
 --           Databases follow the naming convention LIGHTHOUSE_{ENV}_{LAYER}.
 --
--- Usage:    SET env = 'PROD';  (or DEV, STAGING)
+-- Usage:    Run via deploy.sql which sets the env variable, or set it manually:
+--           SET env = 'DEV';  (or STAGING, PROD)
 --           Then execute this script.
 --
 -- Idempotency: Uses CREATE DATABASE IF NOT EXISTS — safe to re-run.
 -- =============================================================================
 
--- Set the target environment (override before execution for DEV/STAGING)
-SET env = 'PROD';
+-- Inherit env from deploy.sql, or set manually if running standalone
+-- SET env = 'DEV';
 
 -- RAW database — landing zone for all ingested source data
 CREATE DATABASE IF NOT EXISTS IDENTIFIER('LIGHTHOUSE_' || $env || '_RAW')

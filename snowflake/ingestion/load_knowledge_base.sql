@@ -21,7 +21,7 @@
 -- Idempotency: Uses CREATE OR REPLACE TABLE and DELETE+INSERT — safe to re-run.
 -- =============================================================================
 
-SET env = 'PROD';
+-- SET env = 'DEV';  -- Uncomment if running standalone
 
 USE WAREHOUSE INGESTION_WH;
 USE DATABASE IDENTIFIER('LIGHTHOUSE_' || $env || '_RAW');

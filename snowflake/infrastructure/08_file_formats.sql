@@ -15,7 +15,8 @@
 -- Idempotency: Uses CREATE OR REPLACE FILE FORMAT — safe to re-run.
 -- =============================================================================
 
-SET env = 'PROD';
+-- Inherit env from deploy.sql, or set manually if running standalone
+-- SET env = 'DEV';
 
 -- ─────────────────────────────────────────────────────────────────────────────
 -- OLTP schema — CSV format for CDC seed files

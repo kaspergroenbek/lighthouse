@@ -19,7 +19,7 @@
 -- Idempotency: Uses CREATE OR REPLACE TABLE — safe to re-run.
 -- =============================================================================
 
-SET env = 'PROD';
+-- SET env = 'DEV';  -- Uncomment if running standalone
 
 -- Use the ingestion warehouse for loading operations
 USE WAREHOUSE INGESTION_WH;

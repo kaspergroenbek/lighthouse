@@ -5,12 +5,12 @@
 --           to provision a complete Lighthouse environment.
 --
 -- Usage:
---   Option 1 — SnowSQL CLI:
---     snowsql -f snowflake/infrastructure/deploy.sql -D env=PROD
+--   Snowflake worksheet (recommended):
+--     1. Change the env variable below to your target (DEV, STAGING, or PROD)
+--     2. Select all and run — sub-scripts inherit the env variable
 --
---   Option 2 — Snowflake worksheet:
---     1. Set the environment variable below (PROD, STAGING, or DEV)
---     2. Execute this script — it will call each sub-script in order
+--   SnowSQL CLI (note: !source requires SnowSQL, not standard SQL):
+--     snowsql -c lighthouse -f snowflake/infrastructure/deploy.sql
 --
 -- Execution order (dependency-driven):
 --   01_databases.sql    — Databases must exist before schemas, stages, formats
@@ -29,8 +29,8 @@
 --              Valid values: DEV, STAGING, PROD
 -- =============================================================================
 
--- Set the target environment
-SET env = 'PROD';
+-- Set the target environment (change this to STAGING or PROD as needed)
+SET env = 'DEV';
 
 -- ─────────────────────────────────────────────────────────────────────────────
 -- Step 1: Create databases
