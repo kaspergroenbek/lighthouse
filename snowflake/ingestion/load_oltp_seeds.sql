@@ -19,11 +19,8 @@
 -- Idempotency: Uses CREATE OR REPLACE TABLE — safe to re-run.
 -- =============================================================================
 
--- SET env = 'DEV';  -- Uncomment if running standalone
-
--- Use the ingestion warehouse for loading operations
 USE WAREHOUSE INGESTION_WH;
-USE DATABASE IDENTIFIER('LIGHTHOUSE_' || $env || '_RAW');
+USE DATABASE LIGHTHOUSE_DEV_RAW;
 USE SCHEMA OLTP;
 
 -- ─────────────────────────────────────────────────────────────────────────────

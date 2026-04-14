@@ -18,10 +18,8 @@
 -- Idempotency: Uses CREATE OR REPLACE — safe to re-run.
 -- =============================================================================
 
--- SET env = 'DEV';  -- Uncomment if running standalone
-
 USE WAREHOUSE INGESTION_WH;
-USE DATABASE IDENTIFIER('LIGHTHOUSE_' || $env || '_RAW');
+USE DATABASE LIGHTHOUSE_DEV_RAW;
 USE SCHEMA KNOWLEDGE_BASE;
 
 -- ─────────────────────────────────────────────────────────────────────────────
