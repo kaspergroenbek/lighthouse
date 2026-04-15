@@ -104,11 +104,17 @@ If you want the fastest safe start, you can temporarily grant the service user `
 
 Use the orchestration entrypoint instead of running each loader manually.
 
-Primary entrypoint:
+Recommended worksheet command:
 
-- `snowflake/orchestration/load_raw_prod.sql`
+```sql
+EXECUTE IMMEDIATE FROM @<repo_clone>/branches/<branch>/snowflake/orchestration/load_raw.sql
+USING (
+  env => 'PROD',
+  repo_root => '@<repo_clone>/branches/<branch>'
+);
+```
 
-This entrypoint executes:
+This orchestrator executes:
 
 - `snowflake/ingestion_web/load_oltp_seeds.sql`
 - `snowflake/ingestion_web/load_crm_seeds.sql`
@@ -117,11 +123,9 @@ This entrypoint executes:
 - `snowflake/ingestion_web/load_knowledge_base.sql`
 - `snowflake/ingestion_web/chunk_documents.sql`
 
-If you want the generic version, use:
+Convenience wrapper available:
 
-- `snowflake/orchestration/load_raw.sql`
-
-and pass `env => 'PROD'`.
+- `snowflake/orchestration/load_raw_prod.sql`
 
 ### Step 4: Sanity-check raw data
 
@@ -217,9 +221,15 @@ If the run fails, check:
 
 After the dbt run succeeds, go back to Snowsight and run:
 
-- `snowflake/orchestration/post_dbt_prod.sql`
+```sql
+EXECUTE IMMEDIATE FROM @<repo_clone>/branches/<branch>/snowflake/orchestration/post_dbt.sql
+USING (
+  env => 'PROD',
+  repo_root => '@<repo_clone>/branches/<branch>'
+);
+```
 
-This entrypoint executes the semantic, cortex, governance, serving, and monitoring SQL in the correct order.
+This orchestrator executes the semantic, cortex, governance, serving, and monitoring SQL in the correct order.
 
 ## 8. Streamlit Setup
 
@@ -257,8 +267,8 @@ When the repo changes in GitHub:
 
 Use these entry files as your main Snowflake runtime entrypoints:
 
-- `snowflake/orchestration/load_raw_prod.sql`
-- `snowflake/orchestration/post_dbt_prod.sql`
+- `snowflake/orchestration/load_raw.sql`
+- `snowflake/orchestration/post_dbt.sql`
 
 ## 11. Suggested Next Improvement
 

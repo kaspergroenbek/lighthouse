@@ -1,13 +1,23 @@
 -- =============================================================================
 -- Orchestration: Post-dbt Snowflake Assets
--- Run after dbt Cloud build succeeds.
+-- Run with EXECUTE IMMEDIATE FROM and pass:
+--   env => 'DEV' | 'STAGING' | 'PROD'
+--   repo_root => '@repo_clone/branches/<branch>'
 -- =============================================================================
 
-EXECUTE IMMEDIATE FROM '../semantic/contract_revenue_semantic.sql' USING (env => '{{ env }}');
-EXECUTE IMMEDIATE FROM '../cortex/cortex_search_service.sql' USING (env => '{{ env }}');
-EXECUTE IMMEDIATE FROM '../governance/tags.sql' USING (env => '{{ env }}');
-EXECUTE IMMEDIATE FROM '../governance/masking_policies.sql' USING (env => '{{ env }}');
-EXECUTE IMMEDIATE FROM '../governance/row_access_policies.sql' USING (env => '{{ env }}');
-EXECUTE IMMEDIATE FROM '../governance/apply_policies.sql' USING (env => '{{ env }}');
-EXECUTE IMMEDIATE FROM '../serving/device_latest_status.sql' USING (env => '{{ env }}');
-EXECUTE IMMEDIATE FROM '../monitoring/test_alert_task.sql' USING (env => '{{ env }}');
+EXECUTE IMMEDIATE FROM {{ repo_root }}/snowflake/semantic/contract_revenue_semantic.sql
+  USING (env => '{{ env }}');
+EXECUTE IMMEDIATE FROM {{ repo_root }}/snowflake/cortex/cortex_search_service.sql
+  USING (env => '{{ env }}');
+EXECUTE IMMEDIATE FROM {{ repo_root }}/snowflake/governance/tags.sql
+  USING (env => '{{ env }}');
+EXECUTE IMMEDIATE FROM {{ repo_root }}/snowflake/governance/masking_policies.sql
+  USING (env => '{{ env }}');
+EXECUTE IMMEDIATE FROM {{ repo_root }}/snowflake/governance/row_access_policies.sql
+  USING (env => '{{ env }}');
+EXECUTE IMMEDIATE FROM {{ repo_root }}/snowflake/governance/apply_policies.sql
+  USING (env => '{{ env }}');
+EXECUTE IMMEDIATE FROM {{ repo_root }}/snowflake/serving/device_latest_status.sql
+  USING (env => '{{ env }}');
+EXECUTE IMMEDIATE FROM {{ repo_root }}/snowflake/monitoring/test_alert_task.sql
+  USING (env => '{{ env }}');
