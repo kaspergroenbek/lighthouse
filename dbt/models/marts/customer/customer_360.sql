@@ -33,14 +33,13 @@ invoices AS (
 
 tickets AS (
     SELECT
-        u2.customer_id,
-        COUNT(*) AS total_service_tickets,
+        b.customer_id,
+        COUNT(DISTINCT t.ticket_id) AS total_service_tickets,
         MAX(t.opened_at) AS last_ticket_date
-    FROM {{ ref('int_service__ticket_enriched') }} t
-    LEFT JOIN {{ ref('int_customer__unified_profile') }} u2
-        ON t.contact_id = u2.crm_contact_id
-    WHERE u2.customer_id IS NOT NULL
-    GROUP BY u2.customer_id
+    FROM {{ ref('bridge_service_ticket_customer') }} b
+    INNER JOIN {{ ref('fct_service_ticket_lifecycle') }} t
+        ON b.ticket_id = t.ticket_id
+    GROUP BY b.customer_id
 ),
 
 final AS (

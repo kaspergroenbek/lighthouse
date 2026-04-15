@@ -1,6 +1,37 @@
 version: 2
 
 models:
+  - name: bridge_service_ticket_customer
+    description: "Kimball bridge table between service tickets and customers. Grain: one row per service ticket and customer pair."
+    config:
+      contract:
+        enforced: true
+      group: service
+      access: public
+    columns:
+      - name: service_ticket_customer_sk
+        description: "Surrogate key for the ticket-customer bridge row"
+        data_type: varchar
+        tests: [not_null, unique]
+      - name: ticket_id
+        description: "Natural key for the service ticket"
+        data_type: varchar
+        tests: [not_null]
+      - name: customer_sk
+        description: "FK to dim_customer"
+        data_type: varchar
+        tests:
+          - referential_integrity:
+              arguments:
+                to: ref('dim_customer')
+                field: customer_sk
+      - name: customer_id
+        description: "Natural customer identifier"
+        data_type: integer
+      - name: allocation_pct
+        description: "Allocation percentage across customer relationships for the ticket"
+        data_type: float
+
   - name: fct_service_ticket_lifecycle
     description: "Accumulating snapshot at service ticket grain. Grain: one row per ticket."
     config:
@@ -14,17 +45,9 @@ models:
         data_type: varchar
         tests: [not_null, unique]
       - name: ticket_id
-        description: "Natural key — ticket/case identifier"
+        description: "Natural key - ticket/case identifier"
         data_type: varchar
         tests: [not_null]
-      - name: customer_sk
-        description: "FK to dim_customer"
-        data_type: varchar
-        tests:
-          - referential_integrity:
-              arguments:
-                to: ref('dim_customer')
-                field: customer_sk
       - name: opened_date_key
         description: "FK to dim_date (opened)"
         data_type: integer
