@@ -7,7 +7,7 @@ models:
       contract:
         enforced: true
       group: customer
-    access: public
+      access: public
     columns:
       - name: customer_360_sk
         description: "Surrogate key"
@@ -15,33 +15,38 @@ models:
         tests: [not_null, unique]
       - name: customer_id
         description: "Natural key — OLTP customer identifier"
-        data_type: varchar
+        data_type: integer
         tests: [not_null, unique]
       - name: email
         description: "Customer email (PII)"
         data_type: varchar
-        meta:
-          classification: PII
+        config:
+          meta:
+            classification: PII
       - name: first_name
         description: "First name (PII)"
         data_type: varchar
-        meta:
-          classification: PII
+        config:
+          meta:
+            classification: PII
       - name: last_name
         description: "Last name (PII)"
         data_type: varchar
-        meta:
-          classification: PII
+        config:
+          meta:
+            classification: PII
       - name: phone
         description: "Phone number (PII)"
         data_type: varchar
-        meta:
-          classification: PII
+        config:
+          meta:
+            classification: PII
       - name: address
         description: "Street address (PII)"
         data_type: varchar
-        meta:
-          classification: PII
+        config:
+          meta:
+            classification: PII
       - name: postal_code
         description: "Postal code"
         data_type: varchar
@@ -102,80 +107,3 @@ models:
       - name: updated_at
         description: "Last update timestamp"
         data_type: timestamp_ntz
-
-exposures:
-  - name: customer_segmentation_dashboard
-    description: "Customer segmentation and churn analysis dashboard"
-    type: dashboard
-    owner:
-      name: Customer Domain Team
-    depends_on:
-      - ref('customer_360')
-
-semantic_models:
-  - name: customer_360
-    description: "Customer 360 semantic model for derived metrics"
-    model: ref('customer_360')
-    entities:
-      - name: customer
-        type: primary
-        expr: customer_360_sk
-    measures:
-      - name: active_customers
-        agg: count
-        expr: customer_360_sk
-        description: "Count of customers with active contracts"
-      - name: total_customers
-        agg: count
-        expr: customer_360_sk
-        description: "Total customer count"
-      - name: total_active_devices
-        agg: sum
-        expr: active_device_count
-        description: "Sum of active devices across customers"
-      - name: total_all_devices
-        agg: sum
-        expr: total_device_count
-        description: "Sum of all devices across customers"
-    dimensions:
-      - name: segment
-        type: categorical
-      - name: region
-        type: categorical
-      - name: country
-        type: categorical
-      - name: status
-        type: categorical
-
-metrics:
-  - name: active_customer_count
-    type: simple
-    label: "Active Customer Count"
-    description: "Count of customers with at least one active contract"
-    type_params:
-      measure: active_customers
-    filter:
-      - "{{ Dimension('customer__status') }} = 'active'"
-  - name: total_active_devices_metric
-    type: simple
-    label: "Total Active Devices"
-    description: "Sum of active devices across customers"
-    type_params:
-      measure: total_active_devices
-  - name: total_all_devices_metric
-    type: simple
-    label: "Total All Devices"
-    description: "Sum of all devices across customers"
-    type_params:
-      measure: total_all_devices
-  - name: device_uptime_rate
-    type: derived
-    label: "Device Uptime Rate (%)"
-    description: "Percentage of devices with active status across all customers"
-    type_params:
-      expr: "total_active_devices_metric * 100.0 / NULLIF(total_all_devices_metric, 0)"
-      metrics:
-        - name: total_active_devices_metric
-          alias: total_active_devices_metric
-        - name: total_all_devices_metric
-          alias: total_all_devices_metric

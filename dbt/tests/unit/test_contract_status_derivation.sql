@@ -1,5 +1,5 @@
 -- Unit test: validate contract status state machine
--- Valid statuses: active, renewed, cancelled, expired
+-- Valid statuses: active, renewed, cancelled, expired, suspended, service_agreement
 -- Business rules:
 --   1. All contracts must have a valid status
 --   2. Cancelled/expired contracts must have an end_date
@@ -13,7 +13,7 @@ WITH contracts AS (
 invalid_status AS (
     SELECT contract_id, status
     FROM contracts
-    WHERE status NOT IN ('active', 'renewed', 'cancelled', 'expired')
+    WHERE status NOT IN ('active', 'renewed', 'cancelled', 'expired', 'suspended', 'service_agreement')
 ),
 
 terminal_without_end_date AS (

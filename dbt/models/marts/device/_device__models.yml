@@ -7,7 +7,7 @@ models:
       contract:
         enforced: true
       group: device
-    access: public
+      access: public
     columns:
       - name: energy_usage_daily_sk
         description: "Surrogate key"
@@ -18,32 +18,37 @@ models:
         data_type: varchar
         tests:
           - relationships:
-              to: ref('dim_device')
-              field: device_sk
+              arguments:
+                to: ref('dim_device')
+                field: device_sk
           - referential_integrity:
-              to: ref('dim_device')
-              field: device_sk
+              arguments:
+                to: ref('dim_device')
+                field: device_sk
       - name: household_sk
         description: "FK to dim_household"
         data_type: varchar
         tests:
           - referential_integrity:
-              to: ref('dim_household')
-              field: household_sk
+              arguments:
+                to: ref('dim_household')
+                field: household_sk
       - name: customer_sk
         description: "FK to dim_customer"
         data_type: varchar
         tests:
           - referential_integrity:
-              to: ref('dim_customer')
-              field: customer_sk
+              arguments:
+                to: ref('dim_customer')
+                field: customer_sk
       - name: date_key
         description: "FK to dim_date"
         data_type: integer
         tests:
           - referential_integrity:
-              to: ref('dim_date')
-              field: date_key
+              arguments:
+                to: ref('dim_date')
+                field: date_key
       - name: device_id
         description: "Natural device identifier"
         data_type: varchar
@@ -69,7 +74,7 @@ models:
       contract:
         enforced: true
       group: device
-    access: public
+      access: public
     columns:
       - name: telemetry_sk
         description: "Surrogate key"
@@ -80,29 +85,33 @@ models:
         data_type: varchar
         tests:
           - referential_integrity:
-              to: ref('dim_device')
-              field: device_sk
+              arguments:
+                to: ref('dim_device')
+                field: device_sk
       - name: household_sk
         description: "FK to dim_household"
         data_type: varchar
         tests:
           - referential_integrity:
-              to: ref('dim_household')
-              field: household_sk
+              arguments:
+                to: ref('dim_household')
+                field: household_sk
       - name: date_key
         description: "FK to dim_date"
         data_type: integer
         tests:
           - referential_integrity:
-              to: ref('dim_date')
-              field: date_key
+              arguments:
+                to: ref('dim_date')
+                field: date_key
       - name: time_key
         description: "FK to dim_time"
         data_type: integer
         tests:
           - referential_integrity:
-              to: ref('dim_time')
-              field: time_key
+              arguments:
+                to: ref('dim_time')
+                field: time_key
       - name: device_id
         description: "Natural device identifier"
         data_type: varchar
@@ -114,72 +123,8 @@ models:
         data_type: varchar
         tests:
           - accepted_values:
-              values: ['energy_reading', 'temperature_reading', 'device_status', 'alert_event']
+              arguments:
+                values: ['energy_reading', 'temperature_reading', 'device_status', 'alert_event']
       - name: reading_value
         description: "Numeric reading value (type-dependent)"
         data_type: number
-
-semantic_models:
-  - name: fct_energy_usage_daily
-    defaults:
-      agg_time_dimension: date_key
-    description: "Daily energy usage per device semantic model"
-    model: ref('fct_energy_usage_daily')
-    entities:
-      - name: energy_usage
-        type: primary
-        expr: energy_usage_daily_sk
-      - name: device
-        type: foreign
-        expr: device_sk
-      - name: household
-        type: foreign
-        expr: household_sk
-      - name: customer
-        type: foreign
-        expr: customer_sk
-      - name: usage_date
-        type: foreign
-        expr: date_key
-    measures:
-      - name: total_kwh
-        agg: sum
-        expr: total_kwh
-        description: "Total kilowatt-hours"
-      - name: peak_kwh
-        agg: max
-        expr: peak_kwh
-        description: "Peak kilowatt-hour reading"
-      - name: avg_temperature
-        agg: average
-        expr: avg_temperature
-        description: "Average temperature"
-      - name: total_reading_count
-        agg: sum
-        expr: reading_count
-        description: "Total number of readings"
-    dimensions:
-      - name: date_key
-        type: time
-        type_params:
-          time_granularity: day
-        expr: date_key
-
-metrics:
-  - name: average_daily_energy_consumption
-    type: simple
-    label: "Average Daily Energy Consumption"
-    description: "Average daily kWh per device"
-    type_params:
-      measure: total_kwh
-
-exposures:
-  - name: device_health_anomaly_detection
-    description: "Device Health Anomaly Detection Model — identifies devices with degrading performance patterns"
-    type: ml
-    owner:
-      name: Device Domain Team
-    depends_on:
-      - ref('fct_device_telemetry')
-      - ref('dim_device')
-      - ref('dim_household')

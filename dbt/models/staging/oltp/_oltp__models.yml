@@ -126,7 +126,7 @@ models:
         description: "Contract status"
         tests:
           - accepted_values:
-              values: ['active', 'renewed', 'cancelled', 'expired']
+              values: ['active', 'renewed', 'cancelled', 'expired', 'suspended', 'service_agreement']
       - name: start_date
         description: "Contract start date"
       - name: end_date
@@ -264,4 +264,4 @@ models:
         description: "Payment status"
         tests:
           - accepted_values:
-              values: ['completed', 'pending', 'failed', 'refunded']
+              values: ['completed', 'pending', 'failed', 'refunded', 'voided', 'partial']

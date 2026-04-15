@@ -7,7 +7,7 @@ models:
       contract:
         enforced: true
       group: customer
-    access: public
+      access: public
     columns:
       - name: customer_sk
         description: "Surrogate key (hash of customer_id + valid_from)"
@@ -16,12 +16,14 @@ models:
           - not_null
           - unique
           - surrogate_key_collision:
-              natural_key_columns: ['customer_id', 'valid_from']
+              arguments:
+                natural_key_columns: ['customer_id', 'valid_from']
           - scd2_no_overlap:
-              natural_key: customer_id
+              arguments:
+                natural_key: customer_id
       - name: customer_id
         description: "Natural key — OLTP customer identifier"
-        data_type: varchar
+        data_type: integer
         tests: [not_null]
       - name: email
         description: "Customer email address"
@@ -31,9 +33,6 @@ models:
         data_type: varchar
       - name: last_name
         description: "Customer last name"
-        data_type: varchar
-      - name: full_name
-        description: "Full name (first + last)"
         data_type: varchar
       - name: phone
         description: "Customer phone number"
@@ -59,12 +58,6 @@ models:
       - name: status
         description: "Customer account status"
         data_type: varchar
-      - name: created_at
-        description: "Customer creation timestamp"
-        data_type: timestamp_ntz
-      - name: updated_at
-        description: "Last update timestamp"
-        data_type: timestamp_ntz
       - name: valid_from
         description: "SCD2 version start timestamp"
         data_type: timestamp_ntz
@@ -83,7 +76,7 @@ models:
       contract:
         enforced: true
       group: customer
-    access: public
+      access: public
     columns:
       - name: household_sk
         description: "Surrogate key"
@@ -92,14 +85,15 @@ models:
           - not_null
           - unique
           - surrogate_key_collision:
-              natural_key_columns: ['household_id']
+              arguments:
+                natural_key_columns: ['household_id']
       - name: household_id
         description: "Natural key — OLTP household identifier"
-        data_type: varchar
+        data_type: integer
         tests: [not_null, unique]
       - name: customer_id
         description: "FK to owning customer"
-        data_type: varchar
+        data_type: integer
         tests: [not_null]
       - name: address
         description: "Household street address"
@@ -129,7 +123,7 @@ models:
       contract:
         enforced: true
       group: device
-    access: public
+      access: public
     columns:
       - name: device_sk
         description: "Surrogate key"
@@ -138,17 +132,18 @@ models:
           - not_null
           - unique
           - surrogate_key_collision:
-              natural_key_columns: ['device_id']
+              arguments:
+                natural_key_columns: ['device_id']
       - name: device_id
         description: "Natural key — OLTP device identifier"
-        data_type: varchar
+        data_type: integer
         tests: [not_null, unique]
       - name: device_serial
         description: "Device serial number"
         data_type: varchar
       - name: household_id
         description: "FK to household"
-        data_type: varchar
+        data_type: integer
       - name: device_type
         description: "Device type (smart_thermostat, energy_meter, etc.)"
         data_type: varchar
@@ -169,7 +164,8 @@ models:
         data_type: varchar
         tests:
           - accepted_values:
-              values: ['provisioned', 'active', 'degraded', 'inactive', 'decommissioned']
+              arguments:
+                values: ['provisioned', 'active', 'degraded', 'inactive', 'decommissioned']
       - name: created_at
         description: "Creation timestamp"
         data_type: timestamp_ntz
@@ -183,7 +179,7 @@ models:
       contract:
         enforced: true
       group: billing
-    access: public
+      access: public
     columns:
       - name: product_sk
         description: "Surrogate key"
@@ -192,10 +188,11 @@ models:
           - not_null
           - unique
           - surrogate_key_collision:
-              natural_key_columns: ['product_id']
+              arguments:
+                natural_key_columns: ['product_id']
       - name: product_id
         description: "Natural key — OLTP product identifier"
-        data_type: varchar
+        data_type: integer
         tests: [not_null, unique]
       - name: product_name
         description: "Product display name"
@@ -225,7 +222,7 @@ models:
       contract:
         enforced: true
       group: billing
-    access: public
+      access: public
     columns:
       - name: contract_sk
         description: "Surrogate key (hash of contract_id + valid_from)"
@@ -234,34 +231,37 @@ models:
           - not_null
           - unique
           - surrogate_key_collision:
-              natural_key_columns: ['contract_id', 'valid_from']
+              arguments:
+                natural_key_columns: ['contract_id', 'valid_from']
           - scd2_no_overlap:
-              natural_key: contract_id
+              arguments:
+                natural_key: contract_id
       - name: contract_id
         description: "Natural key — OLTP contract identifier"
-        data_type: varchar
+        data_type: integer
         tests: [not_null]
       - name: customer_id
         description: "FK to customer"
-        data_type: varchar
+        data_type: integer
       - name: household_id
         description: "FK to household"
-        data_type: varchar
+        data_type: integer
       - name: product_id
         description: "FK to product"
-        data_type: varchar
+        data_type: integer
       - name: tariff_plan_id
         description: "FK to tariff plan"
-        data_type: varchar
+        data_type: integer
       - name: contract_type
         description: "Contract type (residential_energy, commercial_energy)"
         data_type: varchar
       - name: status
-        description: "Contract status (active, renewed, cancelled, expired)"
+        description: "Contract status (active, renewed, cancelled, expired, suspended, service_agreement)"
         data_type: varchar
         tests:
           - accepted_values:
-              values: ['active', 'renewed', 'cancelled', 'expired']
+              arguments:
+                values: ['active', 'renewed', 'cancelled', 'expired', 'suspended', 'service_agreement']
       - name: start_date
         description: "Contract start date"
         data_type: date
@@ -294,7 +294,7 @@ models:
     config:
       contract:
         enforced: true
-    access: public
+      access: public
     columns:
       - name: date_key
         description: "Integer date key (YYYYMMDD)"
@@ -343,7 +343,7 @@ models:
     config:
       contract:
         enforced: true
-    access: public
+      access: public
     columns:
       - name: time_key
         description: "Integer time key (minute of day, 0-1439)"
@@ -367,7 +367,7 @@ models:
     config:
       contract:
         enforced: true
-    access: public
+      access: public
     columns:
       - name: geography_sk
         description: "Surrogate key"
@@ -376,7 +376,8 @@ models:
           - not_null
           - unique
           - surrogate_key_collision:
-              natural_key_columns: ['postal_code', 'municipality', 'country']
+              arguments:
+                natural_key_columns: ['postal_code', 'municipality', 'country']
       - name: postal_code
         description: "Postal code"
         data_type: varchar
@@ -397,7 +398,7 @@ models:
       contract:
         enforced: true
       group: device
-    access: public
+      access: public
     columns:
       - name: household_sk
         description: "FK to dim_household"
@@ -405,80 +406,27 @@ models:
         tests:
           - not_null
           - relationships:
-              to: ref('dim_household')
-              field: household_sk
+              arguments:
+                to: ref('dim_household')
+                field: household_sk
       - name: device_sk
         description: "FK to dim_device"
         data_type: varchar
         tests:
           - not_null
           - relationships:
-              to: ref('dim_device')
-              field: device_sk
+              arguments:
+                to: ref('dim_device')
+                field: device_sk
       - name: device_id
         description: "Natural device identifier"
-        data_type: varchar
+        data_type: integer
       - name: household_id
         description: "Natural household identifier"
-        data_type: varchar
+        data_type: integer
       - name: effective_from
         description: "Assignment start date"
         data_type: date
       - name: effective_to
         description: "Assignment end date (NULL if still active)"
         data_type: timestamp_ntz
-
-semantic_models:
-  - name: dim_customer
-    description: "Customer dimension for slicing metrics"
-    model: ref('dim_customer')
-    entities:
-      - name: customer
-        type: primary
-        expr: customer_sk
-    dimensions:
-      - name: segment
-        type: categorical
-        description: "Customer segment classification"
-      - name: region
-        type: categorical
-        description: "Nordic region"
-      - name: country
-        type: categorical
-        description: "Country code"
-      - name: status
-        type: categorical
-        description: "Customer account status"
-      - name: is_current
-        type: categorical
-        description: "Whether this is the current SCD2 version"
-
-  - name: dim_date
-    description: "Date dimension for time-based slicing"
-    model: ref('dim_date')
-    entities:
-      - name: date
-        type: primary
-        expr: date_key
-    dimensions:
-      - name: full_date
-        type: time
-        type_params:
-          time_granularity: day
-        expr: full_date
-      - name: day_of_week
-        type: categorical
-      - name: month_name
-        type: categorical
-      - name: quarter
-        type: categorical
-      - name: year
-        type: categorical
-      - name: is_weekend
-        type: categorical
-      - name: is_danish_public_holiday
-        type: categorical
-      - name: fiscal_year
-        type: categorical
-      - name: fiscal_quarter
-        type: categorical

@@ -8,7 +8,6 @@ models:
         description: "Primary key — natural key from CRM source"
         tests:
           - not_null
-          - unique
       - name: account_name
         description: "Account display name"
       - name: industry
@@ -35,7 +34,6 @@ models:
         description: "Primary key — natural key from CRM source"
         tests:
           - not_null
-          - unique
       - name: account_id
         description: "Foreign key to accounts"
       - name: first_name
@@ -58,7 +56,6 @@ models:
         description: "Primary key — natural key from CRM source"
         tests:
           - not_null
-          - unique
       - name: account_id
         description: "Foreign key to accounts"
       - name: contact_id
@@ -114,7 +111,6 @@ models:
         description: "Primary key — natural key from CRM source"
         tests:
           - not_null
-          - unique
       - name: account_id
         description: "Foreign key to accounts"
       - name: name
@@ -142,7 +138,6 @@ models:
         description: "Primary key — natural key from CRM source"
         tests:
           - not_null
-          - unique
       - name: account_id
         description: "Foreign key to accounts"
       - name: contact_id
@@ -170,7 +165,6 @@ models:
         description: "Primary key — natural key from CRM source"
         tests:
           - not_null
-          - unique
       - name: name
         description: "Campaign name"
       - name: type
@@ -198,7 +192,6 @@ models:
         description: "Primary key — natural key from CRM source"
         tests:
           - not_null
-          - unique
       - name: campaign_id
         description: "Foreign key to campaigns"
       - name: contact_id

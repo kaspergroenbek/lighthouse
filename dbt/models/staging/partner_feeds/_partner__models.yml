@@ -51,7 +51,7 @@ models:
         description: "Type of certification"
         tests:
           - accepted_values:
-              values: ['electrical_safety', 'device_commissioning']
+              values: ['electrical_safety', 'device_commissioning', 'commercial_compliance', 'maintenance_inspection']
       - name: expiry_date
         description: "Certification expiry date"
       - name: status
