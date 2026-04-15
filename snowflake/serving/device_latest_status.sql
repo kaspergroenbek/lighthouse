@@ -3,7 +3,7 @@
 -- Near-real-time view of the latest telemetry event per device
 -- =============================================================================
 
-SET LIGHTHOUSE_ENV = 'PROD';
+SET LIGHTHOUSE_ENV = '{{ env }}';
 SET LIGHTHOUSE_RAW_DB = 'LIGHTHOUSE_' || $LIGHTHOUSE_ENV || '_RAW';
 SET LIGHTHOUSE_SERVING_DB = 'LIGHTHOUSE_' || $LIGHTHOUSE_ENV || '_SERVING';
 
@@ -42,3 +42,4 @@ SELECT
     END AS device_connectivity_status
 FROM ranked_events
 WHERE rn = 1';
+

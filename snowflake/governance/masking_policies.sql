@@ -2,7 +2,7 @@
 -- Governance: Dynamic Data Masking Policies
 -- =============================================================================
 
-SET LIGHTHOUSE_ENV = 'PROD';
+SET LIGHTHOUSE_ENV = '{{ env }}';
 SET LIGHTHOUSE_ANALYTICS_DB = 'LIGHTHOUSE_' || $LIGHTHOUSE_ENV || '_ANALYTICS';
 
 EXECUTE IMMEDIATE 'USE DATABASE ' || $LIGHTHOUSE_ANALYTICS_DB;
@@ -35,3 +35,4 @@ CREATE OR REPLACE MASKING POLICY pii_timestamp_mask
         WHEN CURRENT_ROLE() IN ('LIGHTHOUSE_ADMIN', 'LIGHTHOUSE_ENGINEER') THEN val
         ELSE NULL
     END;
+

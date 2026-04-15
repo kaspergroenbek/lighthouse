@@ -3,7 +3,7 @@
 -- Region-based access restriction on fct_invoices
 -- =============================================================================
 
-SET LIGHTHOUSE_ENV = 'PROD';
+SET LIGHTHOUSE_ENV = '{{ env }}';
 SET LIGHTHOUSE_ANALYTICS_DB = 'LIGHTHOUSE_' || $LIGHTHOUSE_ENV || '_ANALYTICS';
 
 EXECUTE IMMEDIATE 'USE DATABASE ' || $LIGHTHOUSE_ANALYTICS_DB;
@@ -16,3 +16,4 @@ CREATE OR REPLACE ROW ACCESS POLICY region_row_access
         WHEN region_val = CURRENT_SESSION_CONTEXT('REGION') THEN TRUE
         ELSE FALSE
     END;
+

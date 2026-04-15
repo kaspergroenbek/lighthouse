@@ -100,18 +100,28 @@ At minimum, the dbt Cloud role needs:
 
 If you want the fastest safe start, you can temporarily grant the service user `LIGHTHOUSE_ENGINEER` and tighten later.
 
-### Step 3: Load raw data in Snowsight
+### Step 3: Load raw data with the orchestrator
 
-Open each file below in Snowsight, set `LIGHTHOUSE_ENV = 'PROD'`, and run it:
+Use the orchestration entrypoint instead of running each loader manually.
 
-1. `snowflake/ingestion_web/load_oltp_seeds.sql`
-2. `snowflake/ingestion_web/load_crm_seeds.sql`
-3. `snowflake/ingestion_web/load_iot_seeds.sql`
-4. `snowflake/ingestion_web/load_partner_feeds.sql`
-5. `snowflake/ingestion_web/load_knowledge_base.sql`
-6. `snowflake/ingestion_web/chunk_documents.sql`
+Primary entrypoint:
 
-These files are now Snowsight-compatible and derive the raw database from `LIGHTHOUSE_ENV`.
+- `snowflake/orchestration/load_raw_prod.sql`
+
+This entrypoint executes:
+
+- `snowflake/ingestion_web/load_oltp_seeds.sql`
+- `snowflake/ingestion_web/load_crm_seeds.sql`
+- `snowflake/ingestion_web/load_iot_seeds.sql`
+- `snowflake/ingestion_web/load_partner_feeds.sql`
+- `snowflake/ingestion_web/load_knowledge_base.sql`
+- `snowflake/ingestion_web/chunk_documents.sql`
+
+If you want the generic version, use:
+
+- `snowflake/orchestration/load_raw.sql`
+
+and pass `env => 'PROD'`.
 
 ### Step 4: Sanity-check raw data
 
@@ -205,24 +215,11 @@ If the run fails, check:
 
 ## 7. Post-dbt Snowflake Setup
 
-After the dbt run succeeds, go back to Snowsight and run these files with `LIGHTHOUSE_ENV = 'PROD'`:
+After the dbt run succeeds, go back to Snowsight and run:
 
-1. `snowflake/semantic/contract_revenue_semantic.sql`
-2. `snowflake/cortex/cortex_search_service.sql`
-3. `snowflake/governance/tags.sql`
-4. `snowflake/governance/masking_policies.sql`
-5. `snowflake/governance/row_access_policies.sql`
-6. `snowflake/governance/apply_policies.sql`
-7. `snowflake/serving/device_latest_status.sql`
-8. `snowflake/monitoring/test_alert_task.sql`
+- `snowflake/orchestration/post_dbt_prod.sql`
 
-Recommended order:
-
-- semantic
-- cortex
-- governance
-- serving
-- monitoring
+This entrypoint executes the semantic, cortex, governance, serving, and monitoring SQL in the correct order.
 
 ## 8. Streamlit Setup
 
@@ -246,9 +243,24 @@ Use this workflow day to day:
 - edit dbt models in GitHub and dbt Cloud IDE
 - run dbt in dbt Cloud
 - manage Snowflake-native assets in Snowsight
+- refresh the Git-backed Snowflake workspace before executing orchestration files
 - use GitHub as source of truth for both
 
-## 10. Suggested Next Improvement
+## 10. Updating the Repo in Snowflake
+
+When the repo changes in GitHub:
+
+1. Open your Snowsight workspace connected to the repo.
+2. Fetch or pull the latest changes from the remote branch.
+3. Confirm the updated files are visible in the workspace.
+4. Run the orchestration entrypoints from the refreshed repo state.
+
+Use these entry files as your main Snowflake runtime entrypoints:
+
+- `snowflake/orchestration/load_raw_prod.sql`
+- `snowflake/orchestration/post_dbt_prod.sql`
+
+## 11. Suggested Next Improvement
 
 After the first hosted setup is working:
 

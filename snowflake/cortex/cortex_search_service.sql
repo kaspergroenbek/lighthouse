@@ -3,7 +3,7 @@
 -- Enables semantic search over chunked knowledge base documents
 -- =============================================================================
 
-SET LIGHTHOUSE_ENV = 'PROD';
+SET LIGHTHOUSE_ENV = '{{ env }}';
 SET LIGHTHOUSE_ANALYTICS_DB = 'LIGHTHOUSE_' || $LIGHTHOUSE_ENV || '_ANALYTICS';
 
 EXECUTE IMMEDIATE 'USE DATABASE ' || $LIGHTHOUSE_ANALYTICS_DB;
@@ -25,3 +25,4 @@ CREATE OR REPLACE CORTEX SEARCH SERVICE knowledge_search_service
         source_file_name
     FROM knowledge_chunks
   );
+

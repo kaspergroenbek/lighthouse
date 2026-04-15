@@ -21,7 +21,7 @@
 -- Idempotency: Uses CREATE OR REPLACE — safe to re-run.
 -- =============================================================================
 
-SET LIGHTHOUSE_ENV = 'DEV';
+SET LIGHTHOUSE_ENV = '{{ env }}';
 SET LIGHTHOUSE_RAW_DB = 'LIGHTHOUSE_' || $LIGHTHOUSE_ENV || '_RAW';
 
 USE WAREHOUSE INGESTION_WH;
@@ -129,4 +129,5 @@ $$;
 -- ─────────────────────────────────────────────────────────────────────────────
 
 CALL chunk_document_text();
+
 

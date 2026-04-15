@@ -16,7 +16,7 @@
 -- Idempotency: Uses CREATE OR REPLACE TABLE — safe to re-run.
 -- =============================================================================
 
-SET LIGHTHOUSE_ENV = 'DEV';
+SET LIGHTHOUSE_ENV = '{{ env }}';
 SET LIGHTHOUSE_RAW_DB = 'LIGHTHOUSE_' || $LIGHTHOUSE_ENV || '_RAW';
 
 USE WAREHOUSE INGESTION_WH;
@@ -467,5 +467,6 @@ VALUES
     ('UPDATE', '2025-03-06 10:00:00', 'batch_016', 11011, 9007, 1007, '2025-03-05', 200.00, 'card', 'refunded', '2025-03-05 15:00:00', '2025-03-06 10:00:00'),
     ('UPDATE', '2025-03-10 10:00:00', 'batch_017', 11011, 9007, 1007, '2025-03-05', 200.00, 'card', 'voided', '2025-03-05 15:00:00', '2025-03-10 10:00:00'),
     ('DELETE', '2025-03-10 10:05:00', 'batch_017', 11011, 9007, 1007, '2025-03-05', 200.00, 'card', 'voided', '2025-03-05 15:00:00', '2025-03-10 10:05:00');
+
 
 

@@ -16,7 +16,7 @@
 -- Idempotency: Uses CREATE OR REPLACE TABLE — safe to re-run.
 -- =============================================================================
 
-SET LIGHTHOUSE_ENV = 'DEV';
+SET LIGHTHOUSE_ENV = '{{ env }}';
 SET LIGHTHOUSE_RAW_DB = 'LIGHTHOUSE_' || $LIGHTHOUSE_ENV || '_RAW';
 
 USE WAREHOUSE INGESTION_WH;
@@ -698,5 +698,6 @@ Support channels:
 - Phone: +45 70 20 30 40 (Mon-Fri 08:00-18:00 CET)
 - Email: support@nordhjem.example.com
 - In-app chat: NordHjem Home app > Help > Chat with Support');
+
 
 

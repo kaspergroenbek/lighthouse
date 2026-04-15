@@ -3,7 +3,7 @@
 -- Idempotent - safe to re-run (SET TAG and SET MASKING POLICY overwrite)
 -- =============================================================================
 
-SET LIGHTHOUSE_ENV = 'PROD';
+SET LIGHTHOUSE_ENV = '{{ env }}';
 SET LIGHTHOUSE_ANALYTICS_DB = 'LIGHTHOUSE_' || $LIGHTHOUSE_ENV || '_ANALYTICS';
 
 EXECUTE IMMEDIATE 'USE DATABASE ' || $LIGHTHOUSE_ANALYTICS_DB;
@@ -63,3 +63,4 @@ ALTER TABLE IF EXISTS MARTS.dim_customer
 -- ALTER TABLE IF EXISTS MARTS.fct_invoices
 --     ADD ROW ACCESS POLICY GOVERNANCE.region_row_access
 --     ON (region);
+
