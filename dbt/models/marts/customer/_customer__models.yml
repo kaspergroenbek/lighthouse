@@ -2,19 +2,23 @@ version: 2
 
 models:
   - name: customer_360
-    description: "Unified customer profile — one row per customer combining OLTP demographics, CRM interactions, contract, device, invoice, and service ticket summaries."
+    description: "Unified customer profile at one row per customer, combining OLTP demographics, CRM context, contract summaries, device summaries, billing summaries, and service-ticket summaries derived through the service ticket bridge."
     config:
       contract:
         enforced: true
       group: customer
       access: public
+      meta:
+        owner: lighthouse.customer
+        grain: one row per customer
+        product_tier: curated_business_mart
     columns:
       - name: customer_360_sk
         description: "Surrogate key"
         data_type: varchar
         tests: [not_null, unique]
       - name: customer_id
-        description: "Natural key — OLTP customer identifier"
+        description: "Natural key - OLTP customer identifier"
         data_type: integer
         tests: [not_null, unique]
       - name: email
@@ -66,7 +70,7 @@ models:
         description: "Customer account status"
         data_type: varchar
       - name: match_status
-        description: "Entity matching status (matched, oltp_only, crm_only)"
+        description: "Entity matching status"
         data_type: varchar
       - name: crm_contact_id
         description: "CRM contact identifier (NULL if unmatched)"
@@ -96,10 +100,10 @@ models:
         description: "Lifetime total invoiced amount"
         data_type: number
       - name: total_service_tickets
-        description: "Total number of service tickets"
+        description: "Total number of distinct service tickets attributed through the ticket-customer bridge"
         data_type: integer
       - name: last_interaction_date
-        description: "Most recent interaction date across all channels"
+        description: "Most recent interaction date across billing, service, and customer updates"
         data_type: timestamp_ntz
       - name: created_at
         description: "Customer creation timestamp"

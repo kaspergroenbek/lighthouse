@@ -32,19 +32,75 @@ all_events AS (
 ),
 
 devices AS (
-    SELECT device_sk, device_id, household_id FROM {{ ref('dim_device') }}
+    SELECT
+        device_sk,
+        device_id,
+        household_id
+    FROM (
+        SELECT
+            device_sk,
+            device_id,
+            household_id,
+            ROW_NUMBER() OVER (
+                PARTITION BY device_id
+                ORDER BY device_sk
+            ) AS device_rank
+        FROM {{ ref('dim_device') }}
+    )
+    WHERE device_rank = 1
 ),
 
 dim_household AS (
-    SELECT household_sk, household_id FROM {{ ref('dim_household') }}
+    SELECT
+        household_sk,
+        household_id
+    FROM (
+        SELECT
+            household_sk,
+            household_id,
+            ROW_NUMBER() OVER (
+                PARTITION BY household_id
+                ORDER BY household_sk
+            ) AS household_rank
+        FROM {{ ref('dim_household') }}
+    )
+    WHERE household_rank = 1
 ),
 
 dim_date AS (
-    SELECT date_key, full_date FROM {{ ref('dim_date') }}
+    SELECT
+        date_key,
+        full_date
+    FROM (
+        SELECT
+            date_key,
+            full_date,
+            ROW_NUMBER() OVER (
+                PARTITION BY full_date
+                ORDER BY date_key
+            ) AS date_rank
+        FROM {{ ref('dim_date') }}
+    )
+    WHERE date_rank = 1
 ),
 
 dim_time AS (
-    SELECT time_key, hour, minute FROM {{ ref('dim_time') }}
+    SELECT
+        time_key,
+        hour,
+        minute
+    FROM (
+        SELECT
+            time_key,
+            hour,
+            minute,
+            ROW_NUMBER() OVER (
+                PARTITION BY time_key
+                ORDER BY time_key
+            ) AS time_rank
+        FROM {{ ref('dim_time') }}
+    )
+    WHERE time_rank = 1
 ),
 
 final AS (

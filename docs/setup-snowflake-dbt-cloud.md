@@ -1,135 +1,72 @@
 # Snowflake + dbt Cloud Setup Guide
 
-This guide is the primary operating model for Version 1 of Lighthouse:
+This guide is the primary operating model for Version 1 of Lighthouse.
 
-- Snowflake hosts infrastructure, raw data, governance, semantic objects, Cortex Search, Dynamic Tables, and Streamlit
-- dbt Cloud runs the dbt project in `dbt/`
-- GitHub remains the source of truth
+## Responsibility Split
 
-## 1. Target Model
-
-Use this responsibility split:
-
-- Snowsight:
-  - run `snowflake/infrastructure/deploy.sql`
-  - run `snowflake/ingestion_web/*.sql`
-  - run post-dbt SQL in `snowflake/semantic`, `snowflake/cortex`, `snowflake/governance`, `snowflake/serving`, and `snowflake/monitoring`
-  - create the Streamlit app
+- Snowflake and Snowsight:
+  - infrastructure deployment
+  - raw data loading
+  - semantic objects
+  - Cortex Search
+  - governance objects
+  - serving objects
+  - Streamlit app hosting
 - dbt Cloud:
-  - connect the GitHub repo
-  - install packages
-  - run `dbt seed`
-  - run `dbt snapshot`
-  - run `dbt build`
+  - package installation
+  - seeds
+  - models
+  - snapshots
+  - tests
+  - docs and catalog artifacts
+- GitHub:
+  - source of truth for the repo
 
-## 2. Environment Convention
+## Environment Convention
 
-All environment-specific Snowflake-native scripts now follow a simple pattern:
+The hosted setup currently assumes `PROD` as the primary deployed environment.
 
-- set `LIGHTHOUSE_ENV` at the top of the SQL file
-- derive database names from that value
+Use these values in dbt Cloud:
+- `DBT_LIGHTHOUSE_ENV=PROD`
+- `DBT_LIGHTHOUSE_RAW_DB=LIGHTHOUSE_PROD_RAW`
 
-Recommended values:
+## Snowflake Setup
 
-- `DEV`
-- `STAGING`
-- `PROD`
+### 1. Deploy infrastructure
 
-For the first full hosted setup, start with `PROD` to match the primary demo surface.
-
-## 3. Prerequisites
-
-Before starting, make sure you have:
-
-- a Snowflake account with permission to create warehouses, databases, roles, and users
-- a dbt Cloud account
-- the repo pushed to GitHub
-- access to connect dbt Cloud to that GitHub repository
-
-## 4. Snowflake Setup
-
-### Step 1: Create core platform objects
-
-In Snowsight:
-
-1. Open a SQL worksheet.
-2. Open `snowflake/infrastructure/deploy.sql`.
-3. Change:
-
-```sql
-env VARCHAR DEFAULT 'DEV';
-```
-
-to:
+Run `snowflake/infrastructure/deploy.sql` in Snowsight with:
 
 ```sql
 env VARCHAR DEFAULT 'PROD';
 ```
 
-4. Run the script.
+### 2. Create the Snowflake Git repository clone
 
-This creates:
+Use a Snowflake `GIT REPOSITORY` object so orchestration files can be executed with `EXECUTE IMMEDIATE FROM`.
 
-- `LIGHTHOUSE_PROD_RAW`
-- `LIGHTHOUSE_PROD_ANALYTICS`
-- `LIGHTHOUSE_PROD_SERVING`
-- warehouses
-- roles
-- schemas
-- stages
-- file formats
+### 3. Run bootstrap orchestrator
 
-### Step 2: Create a dbt Cloud user
-
-Create a dedicated dbt Cloud user in Snowflake.
-
-Recommended:
-
-- user: `DBT_CLOUD_LIGHTHOUSE`
-- warehouse: `TRANSFORM_WH`
-- default role: `LIGHTHOUSE_TRANSFORMER`
-
-For deployment credentials, prefer key pair auth.
-
-At minimum, the dbt Cloud role needs:
-
-- usage on `TRANSFORM_WH`
-- usage on `LIGHTHOUSE_PROD_ANALYTICS`
-- create/select/insert/update/delete where dbt needs to build objects
-- usage/select on `LIGHTHOUSE_PROD_RAW`
-
-If you want the fastest safe start, you can temporarily grant the service user `LIGHTHOUSE_ENGINEER` and tighten later.
-
-### Step 3: Load raw data with the orchestrator
-
-Use the orchestration entrypoint instead of running each loader manually.
-
-Recommended worksheet command:
+Recommended entrypoint:
 
 ```sql
-EXECUTE IMMEDIATE FROM @<repo_clone>/branches/<branch>/snowflake/orchestration/load_raw.sql
+EXECUTE IMMEDIATE FROM @<repo_clone>/branches/<branch>/snowflake/orchestration/bootstrap_orchestrator.sql
 USING (
   env => 'PROD',
   repo_root => '@<repo_clone>/branches/<branch>'
 );
 ```
 
-This orchestrator executes:
+This bootstrap flow loads:
+- OLTP raw data
+- CRM raw data
+- IoT raw data
+- partner feeds
+- knowledge base content
+- knowledge chunks
 
-- `snowflake/ingestion_web/load_oltp_seeds.sql`
-- `snowflake/ingestion_web/load_crm_seeds.sql`
-- `snowflake/ingestion_web/load_iot_seeds.sql`
-- `snowflake/ingestion_web/load_partner_feeds.sql`
-- `snowflake/ingestion_web/load_knowledge_base.sql`
-- `snowflake/ingestion_web/chunk_documents.sql`
+### 4. Validate raw layer
 
-Preferred entrypoint:
-
-- `snowflake/orchestration/bootstrap_orchestrator.sql`
-
-### Step 4: Sanity-check raw data
-
-Run a few checks in Snowsight:
+Run checks such as:
 
 ```sql
 SELECT COUNT(*) FROM LIGHTHOUSE_PROD_RAW.OLTP.customers;
@@ -138,142 +75,133 @@ SELECT COUNT(*) FROM LIGHTHOUSE_PROD_RAW.IOT.telemetry_events;
 SELECT COUNT(*) FROM LIGHTHOUSE_PROD_RAW.KNOWLEDGE_BASE.document_chunks;
 ```
 
-## 5. dbt Cloud Setup
+## dbt Cloud Setup
 
-### Step 1: Connect GitHub
+### 1. Create the project
 
-In dbt Cloud:
+- connect the GitHub repo
+- set project subdirectory to `dbt`
 
-1. Create a new project.
-2. Choose your Git provider.
-3. Connect the Lighthouse repository.
-4. Set the project subdirectory to:
+### 2. Configure the Snowflake connection
 
-```text
-dbt
-```
-
-### Step 2: Configure the warehouse connection
-
-Create a Snowflake connection using:
-
-- account: your Snowflake account identifier
-- user: `DBT_CLOUD_LIGHTHOUSE`
+Recommended values:
 - warehouse: `TRANSFORM_WH`
-- role: `LIGHTHOUSE_TRANSFORMER` or `LIGHTHOUSE_ENGINEER`
 - database: `LIGHTHOUSE_PROD_ANALYTICS`
 - schema: `MARTS`
+- role: `LIGHTHOUSE_TRANSFORMER` or `LIGHTHOUSE_ENGINEER`
 
-Use:
+### 3. Configure environments
 
-- password auth for quick initial development if needed
-- key pair auth for deployment environments
+Use the existing Development environment plus a Production deployment environment.
 
-### Step 3: Create environments
+For the initial hosted setup, both can point at `LIGHTHOUSE_PROD_ANALYTICS`, but the deployment environment should be the one used for the production build job.
 
-Create two environments:
+### 4. Set environment variables
 
-1. Development
-2. Production
+Use dbt Cloud-compatible names:
+- `DBT_LIGHTHOUSE_ENV`
+- `DBT_LIGHTHOUSE_RAW_DB`
 
-Recommended initial values for both:
+Recommended values:
+- Development: `PROD`, `LIGHTHOUSE_PROD_RAW`
+- Production: `PROD`, `LIGHTHOUSE_PROD_RAW`
 
-- database: `LIGHTHOUSE_PROD_ANALYTICS`
-- warehouse: `TRANSFORM_WH`
-- role: `LIGHTHOUSE_ENGINEER` for dev, `LIGHTHOUSE_TRANSFORMER` for prod if available
+## Recommended dbt Cloud Jobs
 
-### Step 4: Add dbt Cloud environment variables
-
-Set these in dbt Cloud:
-
-- `LIGHTHOUSE_ENV=PROD`
-- `LIGHTHOUSE_RAW_DB=LIGHTHOUSE_PROD_RAW`
-
-You can add others later, but these are the important ones for this repo.
-
-## 6. First dbt Cloud Run
-
-Create a production job with these commands:
+### Production Build
 
 ```bash
 dbt deps
 dbt seed
-dbt snapshot
 dbt build
 ```
 
-Then run the job manually once.
+### Production Build + Docs
 
-Expected outcome:
+```bash
+dbt deps
+dbt seed
+dbt build
+dbt docs generate
+```
 
-- seeds loaded into `SEEDS`
-- snapshots built in `SNAPSHOTS`
-- models built in `STAGING`, `INTERMEDIATE`, and `MARTS`
-- tests executed
+Use the docs job to populate the dbt Cloud catalog and documentation site.
 
-If the run fails, check:
+## Important Run-Order Note
 
-- raw data exists in `LIGHTHOUSE_PROD_RAW`
-- `LIGHTHOUSE_RAW_DB` is set correctly in dbt Cloud
-- the dbt Cloud role can read raw and write analytics
+Do not use `dbt snapshot` as a standalone step before `dbt build` in this project.
 
-## 7. Post-dbt Snowflake Setup
+The snapshots depend on staging models, so the safe hosted run order is:
 
-After the dbt run succeeds, go back to Snowsight and run:
+```bash
+dbt deps
+dbt seed
+dbt build
+```
+
+and optionally:
+
+```bash
+dbt docs generate
+```
+
+## Post-dbt Snowflake Setup
+
+After the dbt production run succeeds, run:
 
 ```sql
-EXECUTE IMMEDIATE FROM @<repo_clone>/branches/<branch>/snowflake/orchestration/post_dbt.sql
+EXECUTE IMMEDIATE FROM @<repo_clone>/branches/<branch>/snowflake/orchestration/post_dbt_orchestrator.sql
 USING (
   env => 'PROD',
   repo_root => '@<repo_clone>/branches/<branch>'
 );
 ```
 
-This orchestrator executes the semantic, cortex, governance, serving, and monitoring SQL in the correct order.
+This creates:
+- semantic assets
+- Cortex Search assets
+- governance objects
+- serving objects
+- monitoring objects
 
-## 8. Streamlit Setup
+## Streamlit Setup
 
 In Snowsight:
+1. create a Streamlit app in `LIGHTHOUSE_PROD_SERVING`
+2. use warehouse `SERVING_WH`
+3. load `streamlit/app.py`
+4. run the app
 
-1. Go to `Projects` -> `Streamlit`.
-2. Create a new app in `LIGHTHOUSE_PROD_SERVING`.
-3. Use warehouse `SERVING_WH`.
-4. Paste in `streamlit/app.py`.
-5. Save and run the app.
+## What Belongs Where
 
-The app now derives the analytics database from the current serving database, so:
+Snowflake side:
+- `snowflake/infrastructure/`
+- `snowflake/ingestion_web/`
+- `snowflake/orchestration/`
+- `snowflake/governance/`
+- `snowflake/semantic/`
+- `snowflake/cortex/`
+- `snowflake/serving/`
+- `streamlit/`
 
-- `LIGHTHOUSE_PROD_SERVING` maps to `LIGHTHOUSE_PROD_ANALYTICS`
-- `LIGHTHOUSE_DEV_SERVING` maps to `LIGHTHOUSE_DEV_ANALYTICS`
+ dbt Cloud side:
+- `dbt/models/`
+- `dbt/snapshots/`
+- `dbt/seeds/`
+- `dbt/tests/`
+- `dbt/macros/`
 
-## 9. Daily Operating Model
+## Catalog Expectations
 
-Use this workflow day to day:
+In dbt Cloud, the catalog will show:
+- Lighthouse business models
+- internal package models such as Elementary observability artifacts
 
-- edit dbt models in GitHub and dbt Cloud IDE
-- run dbt in dbt Cloud
-- manage Snowflake-native assets in Snowsight
-- refresh the Git-backed Snowflake workspace before executing orchestration files
-- use GitHub as source of truth for both
+It is normal for internal package models to show weaker health metadata than curated business marts.
 
-## 10. Updating the Repo in Snowflake
+## Recommended Follow-up
 
-When the repo changes in GitHub:
-
-1. Open your Snowsight workspace connected to the repo.
-2. Fetch or pull the latest changes from the remote branch.
-3. Confirm the updated files are visible in the workspace.
-4. Run the orchestration entrypoints from the refreshed repo state.
-
-Use these entry files as your main Snowflake runtime entrypoints:
-
-- `snowflake/orchestration/load_raw.sql`
-- `snowflake/orchestration/post_dbt.sql`
-
-## 11. Suggested Next Improvement
-
-After the first hosted setup is working:
-
-1. create a true `DEV` environment in Snowflake and dbt Cloud
-2. mirror the same setup with `LIGHTHOUSE_ENV=DEV`
-3. update docs and demos to treat `PROD` as published demo and `DEV` as build sandbox
+After the first hosted setup is stable:
+1. create a true `DEV` Snowflake environment
+2. split Development and Production in dbt Cloud cleanly
+3. continue improving metadata and docs for curated marts only

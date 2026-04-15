@@ -1,6 +1,24 @@
-# 🏠 Lighthouse — AI-Ready Data Product Platform
+# Lighthouse - AI-Ready Data Product Platform
 
-A portfolio-grade data platform built on **Snowflake** and **dbt** for NordHjem Energy, a fictional Nordic connected-home and energy services company.
+Lighthouse is a portfolio-grade data platform for NordHjem Energy, a fictional Nordic connected-home and energy services company.
+
+Version 1 of the project is designed to run with:
+- Snowflake for infrastructure, ingestion, governance, serving, and app hosting
+- dbt Cloud for transformation, testing, and documentation
+- GitHub as the source of truth
+
+## Primary Operating Model
+
+The primary workflow is:
+1. GitHub stores the codebase
+2. Snowflake hosts raw, analytics, serving, semantic, governance, and Streamlit assets
+3. dbt Cloud runs the dbt project in `dbt/`
+
+The recommended setup path is documented in:
+- `docs/setup-snowflake-dbt-cloud.md`
+
+The warehouse design in Kimball terms is documented in:
+- `docs/kimball-architecture.md`
 
 ## Architecture
 
@@ -13,105 +31,96 @@ graph TB
         PARTNER[Partner Feeds]
         KB[Knowledge Base]
     end
-    subgraph "Snowflake + dbt"
+    subgraph "Snowflake + dbt Cloud"
         RAW[RAW Layer]
         STG[Staging]
         INT[Intermediate]
-        MARTS[Marts — Star Schema]
-        SEM[Semantic Layer]
+        MARTS[Marts - Kimball Star Schema]
+        SEM[Semantic and Serving]
     end
-    subgraph Serving
+    subgraph Consumption
         CORTEX_A[Cortex Analyst]
         CORTEX_S[Cortex Search]
         DT[Dynamic Tables]
         APP[Streamlit App]
+        DOCS[dbt Docs Catalog]
     end
     Sources --> RAW --> STG --> INT --> MARTS --> SEM
-    MARTS --> CORTEX_A & CORTEX_S & DT & APP
+    MARTS --> CORTEX_A & CORTEX_S & DT & APP & DOCS
 ```
 
 ## Key Capabilities
 
-- **5 ingestion patterns** — CDC, SaaS, batch, streaming, unstructured (simulated with synthetic data)
-- **3-layer dbt ELT** — staging → intermediate → marts (Kimball star schema)
-- **6 data products** — Customer 360, Contract & Revenue, Device & Usage, Service Ops, Reference, AI-Ready Knowledge
-- **Dual semantic layer** — dbt MetricFlow + Snowflake Semantic Views for Cortex Analyst
-- **Governance** — classification tags, dynamic masking, row-level security
-- **CI/CD** — GitHub Actions for PR validation and production deployment
-
-## Prerequisites
-
-- Snowflake Enterprise Edition account (trial works)
-- Python 3.11+
-- dbt-snowflake (`pip install dbt-snowflake`)
+- 5 ingestion patterns: CDC, SaaS, batch, streaming, unstructured
+- 3-layer dbt ELT: staging -> intermediate -> marts
+- Kimball dimensional marts with conformed dimensions, facts, and bridges
+- Customer 360, billing, device, service, and knowledge data products
+- Snowflake-native semantic, governance, serving, and app layers
+- dbt tests, contracts, snapshots, unit tests, and docs catalog
 
 ## Quick Start
 
+For the hosted setup, use this flow:
+
+1. Run Snowflake infrastructure deployment in Snowsight
+2. Run the raw-load orchestrator in Snowflake
+3. Configure dbt Cloud against the `dbt/` subdirectory
+4. Run:
+
 ```bash
-# 1. Deploy Snowflake infrastructure
-snowsql -f snowflake/infrastructure/deploy.sql -D env=DEV
-
-# 2. Load seed data
-snowsql -f snowflake/ingestion/load_oltp_seeds.sql
-snowsql -f snowflake/ingestion/load_crm_seeds.sql
-snowsql -f snowflake/ingestion/load_iot_seeds.sql
-snowsql -f snowflake/ingestion/load_partner_feeds.sql
-snowsql -f snowflake/ingestion/load_knowledge_base.sql
-snowsql -f snowflake/ingestion/chunk_documents.sql
-
-# 3. Configure dbt
-cp dbt/profiles.yml.example ~/.dbt/profiles.yml
-# Edit with your Snowflake credentials
-
-# 4. Run dbt
-cd dbt
 dbt deps
 dbt seed
-dbt snapshot
 dbt build
-dbt test
+dbt docs generate
 ```
 
+5. Run the Snowflake post-dbt orchestrator
+6. Create the Streamlit app in Snowflake
+
+Do not use the old CLI-first run order as the default hosted path.
 
 ## Repository Structure
 
-```
+```text
 lighthouse/
-├── dbt/                    # dbt transformation project
-│   ├── models/
-│   │   ├── staging/        # Source-conforming standardization
-│   │   ├── intermediate/   # Business logic and harmonization
-│   │   └── marts/          # Kimball star schema (dims + facts)
-│   ├── snapshots/          # SCD Type 2 snapshots
-│   ├── seeds/              # Static reference data
-│   ├── macros/             # Custom macros and generic tests
-│   └── tests/              # Unit and generic tests
-├── snowflake/
-│   ├── infrastructure/     # Idempotent setup scripts
-│   ├── ingestion/          # Seed data loading scripts
-│   ├── governance/         # Tags, masking, row access policies
-│   ├── semantic/           # Cortex Analyst semantic views
-│   ├── cortex/             # Cortex Search service
-│   ├── serving/            # Dynamic Tables
-│   └── monitoring/         # Cost and performance monitoring
-├── streamlit/              # Streamlit in Snowflake app
-├── data/                   # Synthetic seed data
-├── docs/                   # ADRs, architecture docs
-└── .github/workflows/      # CI/CD pipelines
+|-- dbt/                    # dbt transformation project
+|   |-- models/
+|   |   |-- staging/        # source-conforming cleanup and deduplication
+|   |   |-- intermediate/   # integration and harmonization logic
+|   |   `-- marts/          # Kimball dimensions, facts, bridges, data products
+|   |-- snapshots/          # SCD Type 2 snapshots
+|   |-- seeds/              # static reference data
+|   |-- macros/             # custom macros and generic tests
+|   `-- tests/              # generic and unit tests
+|-- snowflake/
+|   |-- infrastructure/     # idempotent setup scripts
+|   |-- ingestion/          # local CLI-oriented loaders
+|   |-- ingestion_web/      # Snowsight-friendly loaders
+|   |-- orchestration/      # bootstrap and post-dbt entrypoints
+|   |-- governance/         # tags, masking, row access policies
+|   |-- semantic/           # semantic objects
+|   |-- cortex/             # Cortex Search service
+|   |-- serving/            # Dynamic Tables and serving SQL
+|   `-- monitoring/         # cost and monitoring SQL
+|-- streamlit/              # Streamlit in Snowflake app
+|-- data/                   # synthetic source data
+|-- docs/                   # setup, architecture, ADRs, modeling docs
+`-- .github/workflows/      # CI/CD pipelines
 ```
 
-## Performance Considerations
+## Important Notes
 
-- **Clustering keys** on `date_key` for high-volume fact tables
-- **Warehouse sizing** per workload: X-Small for ingestion, Small for transforms, Medium for AI
-- **Auto-suspend** configured per warehouse (60-120s) to minimize idle costs
-- **Resource monitors** with credit quota alerts at 75%, 90%, and auto-suspend at 100%
-- **Incremental materialization** for high-volume staging models (IoT, CDC)
+- `snowflake/ingestion/` remains useful as a local fallback path, but it is not the primary hosted workflow.
+- `snowflake/orchestration/bootstrap_orchestrator.sql` is the preferred Snowflake-side bootstrap entrypoint.
+- `snowflake/orchestration/post_dbt_orchestrator.sql` is the preferred Snowflake-side post-dbt entrypoint.
+- The service area now follows a Kimball pattern with a ticket-grain fact and a ticket-to-customer bridge.
 
 ## Documentation
 
-- [Ingestion Architecture](docs/ingestion-architecture.md)
-- [Semantic Layer Mapping](docs/semantic-layer-mapping.md)
-- [Governance Mapping](docs/governance-mapping.md)
-- [Data Mesh Evolution](docs/data-mesh-evolution.md)
-- [ADRs](docs/adr/)
+- `docs/setup-snowflake-dbt-cloud.md`
+- `docs/kimball-architecture.md`
+- `docs/ingestion-architecture.md`
+- `docs/semantic-layer-mapping.md`
+- `docs/governance-mapping.md`
+- `docs/data-product-catalog.md`
+- `docs/adr/`
