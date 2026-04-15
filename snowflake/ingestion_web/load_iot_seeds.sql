@@ -11,8 +11,11 @@
 -- Idempotency: Uses CREATE OR REPLACE TABLE — safe to re-run.
 -- =============================================================================
 
+SET LIGHTHOUSE_ENV = 'DEV';
+SET LIGHTHOUSE_RAW_DB = 'LIGHTHOUSE_' || $LIGHTHOUSE_ENV || '_RAW';
+
 USE WAREHOUSE INGESTION_WH;
-USE DATABASE LIGHTHOUSE_DEV_RAW;
+EXECUTE IMMEDIATE 'USE DATABASE ' || $LIGHTHOUSE_RAW_DB;
 USE SCHEMA IOT;
 
 -- ─────────────────────────────────────────────────────────────────────────────
@@ -182,3 +185,5 @@ UNION ALL SELECT PARSE_JSON('{"device_id": "4003", "event_type": "alert_event", 
 UNION ALL SELECT PARSE_JSON('{"device_id": "4004", "event_type": "alert_event", "event_timestamp": "2025-02-10T09:10:00Z", "payload": {"alert_type": "firmware_update_applied", "severity": "info", "message": "Firmware updated from 1.4.2 to 1.5.0", "threshold_value": 0, "actual_value": 1}}'), '4004', 'alert_event', '2025-02-10T09:10:00Z'
 UNION ALL SELECT PARSE_JSON('{"device_id": "4008", "event_type": "alert_event", "event_timestamp": "2025-03-01T08:05:00Z", "payload": {"alert_type": "firmware_update_applied", "severity": "info", "message": "Firmware updated from 1.5.0 to 1.5.1", "threshold_value": 0, "actual_value": 1}}'), '4008', 'alert_event', '2025-03-01T08:05:00Z'
 UNION ALL SELECT PARSE_JSON('{"device_id": "4006", "event_type": "alert_event", "event_timestamp": "2025-02-01T06:55:00Z", "payload": {"alert_type": "temperature_deviation", "severity": "info", "message": "Room temperature 2.2C below target at startup", "threshold_value": 1.5, "actual_value": 2.2}}'), '4006', 'alert_event', '2025-02-01T06:55:00Z';
+
+

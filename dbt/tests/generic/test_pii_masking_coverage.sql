@@ -13,7 +13,7 @@ WITH pii_tagged_columns AS (
         tr.object_name   AS table_name,
         tr.column_name
     FROM TABLE(INFORMATION_SCHEMA.TAG_REFERENCES_ALL_COLUMNS(
-        'LIGHTHOUSE_PROD_ANALYTICS.MARTS',
+        '{{ target.database }}.MARTS',
         'SCHEMA'
     )) tr
     WHERE tr.tag_name = 'CLASSIFICATION'
@@ -28,7 +28,7 @@ masked_columns AS (
         ref_column_name    AS column_name
     FROM TABLE(INFORMATION_SCHEMA.POLICY_REFERENCES(
         ref_entity_domain => 'SCHEMA',
-        ref_entity_name   => 'LIGHTHOUSE_PROD_ANALYTICS.MARTS'
+        ref_entity_name   => '{{ target.database }}.MARTS'
     ))
     WHERE policy_kind = 'MASKING_POLICY'
       AND ref_column_name IS NOT NULL

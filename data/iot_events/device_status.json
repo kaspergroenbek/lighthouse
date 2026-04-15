@@ -1,35 +1,3052 @@
 [
-  {"device_id": "4001", "event_type": "device_status", "event_timestamp": "2025-02-01T06:00:00Z", "payload": {"status": "online", "battery_level": null, "signal_strength": -45}},
-  {"device_id": "4002", "event_type": "device_status", "event_timestamp": "2025-02-01T06:00:00Z", "payload": {"status": "online", "battery_level": null, "signal_strength": -52}},
-  {"device_id": "4003", "event_type": "device_status", "event_timestamp": "2025-02-01T06:00:00Z", "payload": {"status": "online", "battery_level": null, "signal_strength": -38}},
-  {"device_id": "4004", "event_type": "device_status", "event_timestamp": "2025-02-01T06:00:00Z", "payload": {"status": "online", "battery_level": null, "signal_strength": -41}},
-  {"device_id": "4005", "event_type": "device_status", "event_timestamp": "2025-02-01T06:00:00Z", "payload": {"status": "online", "battery_level": 92, "signal_strength": -55}},
-  {"device_id": "4006", "event_type": "device_status", "event_timestamp": "2025-02-01T06:00:00Z", "payload": {"status": "online", "battery_level": null, "signal_strength": -48}},
-  {"device_id": "4007", "event_type": "device_status", "event_timestamp": "2025-02-01T06:00:00Z", "payload": {"status": "online", "battery_level": null, "signal_strength": -50}},
-  {"device_id": "4008", "event_type": "device_status", "event_timestamp": "2025-02-01T06:00:00Z", "payload": {"status": "online", "battery_level": null, "signal_strength": -62}},
-  {"device_id": "4009", "event_type": "device_status", "event_timestamp": "2025-02-01T06:00:00Z", "payload": {"status": "online", "battery_level": null, "signal_strength": -44}},
-  {"device_id": "4010", "event_type": "device_status", "event_timestamp": "2025-02-01T06:00:00Z", "payload": {"status": "online", "battery_level": null, "signal_strength": -39}},
-  {"device_id": "4011", "event_type": "device_status", "event_timestamp": "2025-02-01T06:00:00Z", "payload": {"status": "online", "battery_level": null, "signal_strength": -47}},
-  {"device_id": "4012", "event_type": "device_status", "event_timestamp": "2025-02-01T06:00:00Z", "payload": {"status": "online", "battery_level": null, "signal_strength": -53}},
-  {"device_id": "4013", "event_type": "device_status", "event_timestamp": "2025-02-01T06:00:00Z", "payload": {"status": "online", "battery_level": null, "signal_strength": -46}},
-  {"device_id": "4014", "event_type": "device_status", "event_timestamp": "2025-02-01T06:00:00Z", "payload": {"status": "online", "battery_level": null, "signal_strength": -42}},
-  {"device_id": "4015", "event_type": "device_status", "event_timestamp": "2025-02-01T06:00:00Z", "payload": {"status": "online", "battery_level": null, "signal_strength": -49}},
-  {"device_id": "4008", "event_type": "device_status", "event_timestamp": "2025-02-15T14:30:00Z", "payload": {"status": "degraded", "battery_level": null, "signal_strength": -78}},
-  {"device_id": "4008", "event_type": "device_status", "event_timestamp": "2025-02-15T16:00:00Z", "payload": {"status": "offline", "battery_level": null, "signal_strength": -90}},
-  {"device_id": "4008", "event_type": "device_status", "event_timestamp": "2025-02-15T18:30:00Z", "payload": {"status": "online", "battery_level": null, "signal_strength": -65}},
-  {"device_id": "4005", "event_type": "device_status", "event_timestamp": "2025-02-10T12:00:00Z", "payload": {"status": "online", "battery_level": 78, "signal_strength": -58}},
-  {"device_id": "4005", "event_type": "device_status", "event_timestamp": "2025-02-20T12:00:00Z", "payload": {"status": "online", "battery_level": 65, "signal_strength": -56}},
-  {"device_id": "4005", "event_type": "device_status", "event_timestamp": "2025-03-01T12:00:00Z", "payload": {"status": "degraded", "battery_level": 15, "signal_strength": -60}},
-  {"device_id": "4008", "event_type": "device_status", "event_timestamp": "2025-02-20T10:00:00Z", "payload": {"status": "degraded", "battery_level": null, "signal_strength": -75}},
-  {"device_id": "4008", "event_type": "device_status", "event_timestamp": "2025-02-20T14:00:00Z", "payload": {"status": "offline", "battery_level": null, "signal_strength": -88}},
-  {"device_id": "4008", "event_type": "device_status", "event_timestamp": "2025-02-20T17:00:00Z", "payload": {"status": "online", "battery_level": null, "signal_strength": -63}},
-  {"device_id": "4001", "event_type": "device_status", "event_timestamp": "2025-02-15T06:00:00Z", "payload": {"status": "online", "battery_level": null, "signal_strength": -43}},
-  {"device_id": "4002", "event_type": "device_status", "event_timestamp": "2025-02-15T06:00:00Z", "payload": {"status": "online", "battery_level": null, "signal_strength": -50}},
-  {"device_id": "4013", "event_type": "device_status", "event_timestamp": "2025-02-28T06:00:00Z", "payload": {"status": "offline", "battery_level": null, "signal_strength": -95}},
-  {"device_id": "4001", "event_type": "device_status", "event_timestamp": "2025-02-01T05:55:00Z", "payload": {"status": "online", "battery_level": null, "signal_strength": -44}},
-  {"device_id": "4003", "event_type": "device_status", "event_timestamp": "2025-02-15T06:00:00Z", "payload": {"status": "online", "battery_level": null, "signal_strength": -37}},
-  {"device_id": "4009", "event_type": "device_status", "event_timestamp": "2025-02-15T06:00:00Z", "payload": {"status": "online", "battery_level": null, "signal_strength": -43}},
-  {"device_id": "4010", "event_type": "device_status", "event_timestamp": "2025-02-15T06:00:00Z", "payload": {"status": "online", "battery_level": null, "signal_strength": -40}},
-  {"device_id": "4014", "event_type": "device_status", "event_timestamp": "2025-02-15T06:00:00Z", "payload": {"status": "online", "battery_level": null, "signal_strength": -41}},
-  {"device_id": "4006", "event_type": "device_status", "event_timestamp": "2025-02-15T06:00:00Z", "payload": {"status": "online", "battery_level": null, "signal_strength": -47}}
+  {
+    "device_id": "4001",
+    "event_type": "device_status",
+    "event_timestamp": "2025-02-01T06:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": null,
+      "signal_strength": -45
+    }
+  },
+  {
+    "device_id": "4002",
+    "event_type": "device_status",
+    "event_timestamp": "2025-02-01T06:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": null,
+      "signal_strength": -52
+    }
+  },
+  {
+    "device_id": "4003",
+    "event_type": "device_status",
+    "event_timestamp": "2025-02-01T06:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": null,
+      "signal_strength": -38
+    }
+  },
+  {
+    "device_id": "4004",
+    "event_type": "device_status",
+    "event_timestamp": "2025-02-01T06:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": null,
+      "signal_strength": -41
+    }
+  },
+  {
+    "device_id": "4005",
+    "event_type": "device_status",
+    "event_timestamp": "2025-02-01T06:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": 92,
+      "signal_strength": -55
+    }
+  },
+  {
+    "device_id": "4006",
+    "event_type": "device_status",
+    "event_timestamp": "2025-02-01T06:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": null,
+      "signal_strength": -48
+    }
+  },
+  {
+    "device_id": "4007",
+    "event_type": "device_status",
+    "event_timestamp": "2025-02-01T06:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": null,
+      "signal_strength": -50
+    }
+  },
+  {
+    "device_id": "4008",
+    "event_type": "device_status",
+    "event_timestamp": "2025-02-01T06:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": null,
+      "signal_strength": -62
+    }
+  },
+  {
+    "device_id": "4009",
+    "event_type": "device_status",
+    "event_timestamp": "2025-02-01T06:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": null,
+      "signal_strength": -44
+    }
+  },
+  {
+    "device_id": "4010",
+    "event_type": "device_status",
+    "event_timestamp": "2025-02-01T06:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": null,
+      "signal_strength": -39
+    }
+  },
+  {
+    "device_id": "4011",
+    "event_type": "device_status",
+    "event_timestamp": "2025-02-01T06:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": null,
+      "signal_strength": -47
+    }
+  },
+  {
+    "device_id": "4012",
+    "event_type": "device_status",
+    "event_timestamp": "2025-02-01T06:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": null,
+      "signal_strength": -53
+    }
+  },
+  {
+    "device_id": "4013",
+    "event_type": "device_status",
+    "event_timestamp": "2025-02-01T06:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": null,
+      "signal_strength": -46
+    }
+  },
+  {
+    "device_id": "4014",
+    "event_type": "device_status",
+    "event_timestamp": "2025-02-01T06:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": null,
+      "signal_strength": -42
+    }
+  },
+  {
+    "device_id": "4015",
+    "event_type": "device_status",
+    "event_timestamp": "2025-02-01T06:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": null,
+      "signal_strength": -49
+    }
+  },
+  {
+    "device_id": "4008",
+    "event_type": "device_status",
+    "event_timestamp": "2025-02-15T14:30:00Z",
+    "payload": {
+      "status": "degraded",
+      "battery_level": null,
+      "signal_strength": -78
+    }
+  },
+  {
+    "device_id": "4008",
+    "event_type": "device_status",
+    "event_timestamp": "2025-02-15T16:00:00Z",
+    "payload": {
+      "status": "offline",
+      "battery_level": null,
+      "signal_strength": -90
+    }
+  },
+  {
+    "device_id": "4008",
+    "event_type": "device_status",
+    "event_timestamp": "2025-02-15T18:30:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": null,
+      "signal_strength": -65
+    }
+  },
+  {
+    "device_id": "4005",
+    "event_type": "device_status",
+    "event_timestamp": "2025-02-10T12:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": 78,
+      "signal_strength": -58
+    }
+  },
+  {
+    "device_id": "4005",
+    "event_type": "device_status",
+    "event_timestamp": "2025-02-20T12:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": 65,
+      "signal_strength": -56
+    }
+  },
+  {
+    "device_id": "4005",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-01T12:00:00Z",
+    "payload": {
+      "status": "degraded",
+      "battery_level": 15,
+      "signal_strength": -60
+    }
+  },
+  {
+    "device_id": "4008",
+    "event_type": "device_status",
+    "event_timestamp": "2025-02-20T10:00:00Z",
+    "payload": {
+      "status": "degraded",
+      "battery_level": null,
+      "signal_strength": -75
+    }
+  },
+  {
+    "device_id": "4008",
+    "event_type": "device_status",
+    "event_timestamp": "2025-02-20T14:00:00Z",
+    "payload": {
+      "status": "offline",
+      "battery_level": null,
+      "signal_strength": -88
+    }
+  },
+  {
+    "device_id": "4008",
+    "event_type": "device_status",
+    "event_timestamp": "2025-02-20T17:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": null,
+      "signal_strength": -63
+    }
+  },
+  {
+    "device_id": "4001",
+    "event_type": "device_status",
+    "event_timestamp": "2025-02-15T06:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": null,
+      "signal_strength": -43
+    }
+  },
+  {
+    "device_id": "4002",
+    "event_type": "device_status",
+    "event_timestamp": "2025-02-15T06:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": null,
+      "signal_strength": -50
+    }
+  },
+  {
+    "device_id": "4013",
+    "event_type": "device_status",
+    "event_timestamp": "2025-02-28T06:00:00Z",
+    "payload": {
+      "status": "offline",
+      "battery_level": null,
+      "signal_strength": -95
+    }
+  },
+  {
+    "device_id": "4001",
+    "event_type": "device_status",
+    "event_timestamp": "2025-02-01T05:55:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": null,
+      "signal_strength": -44
+    }
+  },
+  {
+    "device_id": "4003",
+    "event_type": "device_status",
+    "event_timestamp": "2025-02-15T06:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": null,
+      "signal_strength": -37
+    }
+  },
+  {
+    "device_id": "4009",
+    "event_type": "device_status",
+    "event_timestamp": "2025-02-15T06:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": null,
+      "signal_strength": -43
+    }
+  },
+  {
+    "device_id": "4010",
+    "event_type": "device_status",
+    "event_timestamp": "2025-02-15T06:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": null,
+      "signal_strength": -40
+    }
+  },
+  {
+    "device_id": "4014",
+    "event_type": "device_status",
+    "event_timestamp": "2025-02-15T06:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": null,
+      "signal_strength": -41
+    }
+  },
+  {
+    "device_id": "4006",
+    "event_type": "device_status",
+    "event_timestamp": "2025-02-15T06:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": null,
+      "signal_strength": -47
+    }
+  },
+  {
+    "device_id": "4002",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-01T06:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": null,
+      "signal_strength": -42
+    }
+  },
+  {
+    "device_id": "4004",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-01T06:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": null,
+      "signal_strength": -44
+    }
+  },
+  {
+    "device_id": "4007",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-01T06:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": null,
+      "signal_strength": -46
+    }
+  },
+  {
+    "device_id": "4008",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-01T06:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": null,
+      "signal_strength": -48
+    }
+  },
+  {
+    "device_id": "4011",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-01T06:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": null,
+      "signal_strength": -50
+    }
+  },
+  {
+    "device_id": "4012",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-01T06:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": null,
+      "signal_strength": -52
+    }
+  },
+  {
+    "device_id": "4015",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-01T06:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": null,
+      "signal_strength": -54
+    }
+  },
+  {
+    "device_id": "4016",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-01T06:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": null,
+      "signal_strength": -56
+    }
+  },
+  {
+    "device_id": "4018",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-01T06:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": null,
+      "signal_strength": -58
+    }
+  },
+  {
+    "device_id": "4020",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-01T06:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": null,
+      "signal_strength": -42
+    }
+  },
+  {
+    "device_id": "4022",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-01T06:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": null,
+      "signal_strength": -44
+    }
+  },
+  {
+    "device_id": "4024",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-01T06:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": null,
+      "signal_strength": -46
+    }
+  },
+  {
+    "device_id": "4026",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-01T06:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": null,
+      "signal_strength": -48
+    }
+  },
+  {
+    "device_id": "4028",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-01T06:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": null,
+      "signal_strength": -50
+    }
+  },
+  {
+    "device_id": "4030",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-01T06:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": null,
+      "signal_strength": -52
+    }
+  },
+  {
+    "device_id": "4032",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-01T06:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": null,
+      "signal_strength": -54
+    }
+  },
+  {
+    "device_id": "4034",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-01T06:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": null,
+      "signal_strength": -56
+    }
+  },
+  {
+    "device_id": "4036",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-01T06:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": null,
+      "signal_strength": -58
+    }
+  },
+  {
+    "device_id": "4001",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-01T07:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": 67,
+      "signal_strength": -54
+    }
+  },
+  {
+    "device_id": "4003",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-01T07:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": 60,
+      "signal_strength": -56
+    }
+  },
+  {
+    "device_id": "4005",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-01T07:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": 88,
+      "signal_strength": -58
+    }
+  },
+  {
+    "device_id": "4006",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-01T07:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": 81,
+      "signal_strength": -46
+    }
+  },
+  {
+    "device_id": "4009",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-01T07:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": 74,
+      "signal_strength": -48
+    }
+  },
+  {
+    "device_id": "4010",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-01T07:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": 67,
+      "signal_strength": -50
+    }
+  },
+  {
+    "device_id": "4014",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-01T07:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": 60,
+      "signal_strength": -52
+    }
+  },
+  {
+    "device_id": "4017",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-01T07:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": 88,
+      "signal_strength": -54
+    }
+  },
+  {
+    "device_id": "4019",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-01T07:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": 81,
+      "signal_strength": -56
+    }
+  },
+  {
+    "device_id": "4021",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-01T07:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": 74,
+      "signal_strength": -58
+    }
+  },
+  {
+    "device_id": "4023",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-01T07:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": 67,
+      "signal_strength": -46
+    }
+  },
+  {
+    "device_id": "4025",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-01T07:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": 60,
+      "signal_strength": -48
+    }
+  },
+  {
+    "device_id": "4027",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-01T07:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": 88,
+      "signal_strength": -50
+    }
+  },
+  {
+    "device_id": "4029",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-01T07:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": 81,
+      "signal_strength": -52
+    }
+  },
+  {
+    "device_id": "4031",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-01T07:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": 74,
+      "signal_strength": -54
+    }
+  },
+  {
+    "device_id": "4033",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-01T07:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": 67,
+      "signal_strength": -56
+    }
+  },
+  {
+    "device_id": "4002",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-02T06:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": null,
+      "signal_strength": -42
+    }
+  },
+  {
+    "device_id": "4004",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-02T06:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": null,
+      "signal_strength": -44
+    }
+  },
+  {
+    "device_id": "4007",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-02T06:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": null,
+      "signal_strength": -46
+    }
+  },
+  {
+    "device_id": "4008",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-02T06:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": null,
+      "signal_strength": -48
+    }
+  },
+  {
+    "device_id": "4011",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-02T06:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": null,
+      "signal_strength": -50
+    }
+  },
+  {
+    "device_id": "4012",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-02T06:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": null,
+      "signal_strength": -52
+    }
+  },
+  {
+    "device_id": "4015",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-02T06:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": null,
+      "signal_strength": -54
+    }
+  },
+  {
+    "device_id": "4016",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-02T06:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": null,
+      "signal_strength": -56
+    }
+  },
+  {
+    "device_id": "4018",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-02T06:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": null,
+      "signal_strength": -58
+    }
+  },
+  {
+    "device_id": "4020",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-02T06:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": null,
+      "signal_strength": -42
+    }
+  },
+  {
+    "device_id": "4022",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-02T06:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": null,
+      "signal_strength": -44
+    }
+  },
+  {
+    "device_id": "4024",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-02T06:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": null,
+      "signal_strength": -46
+    }
+  },
+  {
+    "device_id": "4026",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-02T06:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": null,
+      "signal_strength": -48
+    }
+  },
+  {
+    "device_id": "4028",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-02T06:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": null,
+      "signal_strength": -50
+    }
+  },
+  {
+    "device_id": "4030",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-02T06:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": null,
+      "signal_strength": -52
+    }
+  },
+  {
+    "device_id": "4032",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-02T06:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": null,
+      "signal_strength": -54
+    }
+  },
+  {
+    "device_id": "4034",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-02T06:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": null,
+      "signal_strength": -56
+    }
+  },
+  {
+    "device_id": "4036",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-02T06:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": null,
+      "signal_strength": -58
+    }
+  },
+  {
+    "device_id": "4001",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-02T07:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": 67,
+      "signal_strength": -54
+    }
+  },
+  {
+    "device_id": "4003",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-02T07:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": 60,
+      "signal_strength": -56
+    }
+  },
+  {
+    "device_id": "4005",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-02T07:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": 88,
+      "signal_strength": -58
+    }
+  },
+  {
+    "device_id": "4006",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-02T07:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": 81,
+      "signal_strength": -46
+    }
+  },
+  {
+    "device_id": "4009",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-02T07:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": 74,
+      "signal_strength": -48
+    }
+  },
+  {
+    "device_id": "4010",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-02T07:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": 67,
+      "signal_strength": -50
+    }
+  },
+  {
+    "device_id": "4014",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-02T07:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": 60,
+      "signal_strength": -52
+    }
+  },
+  {
+    "device_id": "4017",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-02T07:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": 88,
+      "signal_strength": -54
+    }
+  },
+  {
+    "device_id": "4019",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-02T07:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": 81,
+      "signal_strength": -56
+    }
+  },
+  {
+    "device_id": "4021",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-02T07:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": 74,
+      "signal_strength": -58
+    }
+  },
+  {
+    "device_id": "4023",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-02T07:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": 67,
+      "signal_strength": -46
+    }
+  },
+  {
+    "device_id": "4025",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-02T07:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": 60,
+      "signal_strength": -48
+    }
+  },
+  {
+    "device_id": "4027",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-02T07:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": 88,
+      "signal_strength": -50
+    }
+  },
+  {
+    "device_id": "4029",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-02T07:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": 81,
+      "signal_strength": -52
+    }
+  },
+  {
+    "device_id": "4031",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-02T07:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": 74,
+      "signal_strength": -54
+    }
+  },
+  {
+    "device_id": "4033",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-02T07:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": 67,
+      "signal_strength": -56
+    }
+  },
+  {
+    "device_id": "4002",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-03T06:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": null,
+      "signal_strength": -42
+    }
+  },
+  {
+    "device_id": "4004",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-03T06:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": null,
+      "signal_strength": -44
+    }
+  },
+  {
+    "device_id": "4007",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-03T06:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": null,
+      "signal_strength": -46
+    }
+  },
+  {
+    "device_id": "4008",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-03T06:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": null,
+      "signal_strength": -48
+    }
+  },
+  {
+    "device_id": "4011",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-03T06:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": null,
+      "signal_strength": -50
+    }
+  },
+  {
+    "device_id": "4012",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-03T06:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": null,
+      "signal_strength": -52
+    }
+  },
+  {
+    "device_id": "4015",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-03T06:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": null,
+      "signal_strength": -54
+    }
+  },
+  {
+    "device_id": "4016",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-03T06:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": null,
+      "signal_strength": -56
+    }
+  },
+  {
+    "device_id": "4018",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-03T06:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": null,
+      "signal_strength": -58
+    }
+  },
+  {
+    "device_id": "4020",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-03T06:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": null,
+      "signal_strength": -42
+    }
+  },
+  {
+    "device_id": "4022",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-03T06:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": null,
+      "signal_strength": -44
+    }
+  },
+  {
+    "device_id": "4024",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-03T06:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": null,
+      "signal_strength": -46
+    }
+  },
+  {
+    "device_id": "4026",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-03T06:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": null,
+      "signal_strength": -48
+    }
+  },
+  {
+    "device_id": "4028",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-03T06:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": null,
+      "signal_strength": -50
+    }
+  },
+  {
+    "device_id": "4030",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-03T06:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": null,
+      "signal_strength": -52
+    }
+  },
+  {
+    "device_id": "4032",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-03T06:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": null,
+      "signal_strength": -54
+    }
+  },
+  {
+    "device_id": "4034",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-03T06:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": null,
+      "signal_strength": -56
+    }
+  },
+  {
+    "device_id": "4036",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-03T06:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": null,
+      "signal_strength": -58
+    }
+  },
+  {
+    "device_id": "4001",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-03T07:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": 67,
+      "signal_strength": -54
+    }
+  },
+  {
+    "device_id": "4003",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-03T07:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": 60,
+      "signal_strength": -56
+    }
+  },
+  {
+    "device_id": "4005",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-03T07:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": 88,
+      "signal_strength": -58
+    }
+  },
+  {
+    "device_id": "4006",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-03T07:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": 81,
+      "signal_strength": -46
+    }
+  },
+  {
+    "device_id": "4009",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-03T07:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": 74,
+      "signal_strength": -48
+    }
+  },
+  {
+    "device_id": "4010",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-03T07:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": 67,
+      "signal_strength": -50
+    }
+  },
+  {
+    "device_id": "4014",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-03T07:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": 60,
+      "signal_strength": -52
+    }
+  },
+  {
+    "device_id": "4017",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-03T07:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": 88,
+      "signal_strength": -54
+    }
+  },
+  {
+    "device_id": "4019",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-03T07:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": 81,
+      "signal_strength": -56
+    }
+  },
+  {
+    "device_id": "4021",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-03T07:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": 74,
+      "signal_strength": -58
+    }
+  },
+  {
+    "device_id": "4023",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-03T07:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": 67,
+      "signal_strength": -46
+    }
+  },
+  {
+    "device_id": "4025",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-03T07:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": 60,
+      "signal_strength": -48
+    }
+  },
+  {
+    "device_id": "4027",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-03T07:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": 88,
+      "signal_strength": -50
+    }
+  },
+  {
+    "device_id": "4029",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-03T07:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": 81,
+      "signal_strength": -52
+    }
+  },
+  {
+    "device_id": "4031",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-03T07:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": 74,
+      "signal_strength": -54
+    }
+  },
+  {
+    "device_id": "4033",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-03T07:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": 67,
+      "signal_strength": -56
+    }
+  },
+  {
+    "device_id": "4002",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-04T06:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": null,
+      "signal_strength": -42
+    }
+  },
+  {
+    "device_id": "4004",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-04T06:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": null,
+      "signal_strength": -44
+    }
+  },
+  {
+    "device_id": "4007",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-04T06:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": null,
+      "signal_strength": -46
+    }
+  },
+  {
+    "device_id": "4008",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-04T06:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": null,
+      "signal_strength": -48
+    }
+  },
+  {
+    "device_id": "4011",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-04T06:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": null,
+      "signal_strength": -50
+    }
+  },
+  {
+    "device_id": "4012",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-04T06:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": null,
+      "signal_strength": -52
+    }
+  },
+  {
+    "device_id": "4015",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-04T06:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": null,
+      "signal_strength": -54
+    }
+  },
+  {
+    "device_id": "4016",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-04T06:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": null,
+      "signal_strength": -56
+    }
+  },
+  {
+    "device_id": "4018",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-04T06:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": null,
+      "signal_strength": -58
+    }
+  },
+  {
+    "device_id": "4020",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-04T06:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": null,
+      "signal_strength": -42
+    }
+  },
+  {
+    "device_id": "4022",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-04T06:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": null,
+      "signal_strength": -44
+    }
+  },
+  {
+    "device_id": "4024",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-04T06:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": null,
+      "signal_strength": -46
+    }
+  },
+  {
+    "device_id": "4026",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-04T06:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": null,
+      "signal_strength": -48
+    }
+  },
+  {
+    "device_id": "4028",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-04T06:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": null,
+      "signal_strength": -50
+    }
+  },
+  {
+    "device_id": "4030",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-04T06:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": null,
+      "signal_strength": -52
+    }
+  },
+  {
+    "device_id": "4032",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-04T06:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": null,
+      "signal_strength": -54
+    }
+  },
+  {
+    "device_id": "4034",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-04T06:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": null,
+      "signal_strength": -56
+    }
+  },
+  {
+    "device_id": "4036",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-04T06:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": null,
+      "signal_strength": -58
+    }
+  },
+  {
+    "device_id": "4001",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-04T07:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": 67,
+      "signal_strength": -54
+    }
+  },
+  {
+    "device_id": "4003",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-04T07:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": 60,
+      "signal_strength": -56
+    }
+  },
+  {
+    "device_id": "4005",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-04T07:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": 88,
+      "signal_strength": -58
+    }
+  },
+  {
+    "device_id": "4006",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-04T07:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": 81,
+      "signal_strength": -46
+    }
+  },
+  {
+    "device_id": "4009",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-04T07:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": 74,
+      "signal_strength": -48
+    }
+  },
+  {
+    "device_id": "4010",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-04T07:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": 67,
+      "signal_strength": -50
+    }
+  },
+  {
+    "device_id": "4014",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-04T07:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": 60,
+      "signal_strength": -52
+    }
+  },
+  {
+    "device_id": "4017",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-04T07:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": 88,
+      "signal_strength": -54
+    }
+  },
+  {
+    "device_id": "4019",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-04T07:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": 81,
+      "signal_strength": -56
+    }
+  },
+  {
+    "device_id": "4021",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-04T07:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": 74,
+      "signal_strength": -58
+    }
+  },
+  {
+    "device_id": "4023",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-04T07:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": 67,
+      "signal_strength": -46
+    }
+  },
+  {
+    "device_id": "4025",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-04T07:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": 60,
+      "signal_strength": -48
+    }
+  },
+  {
+    "device_id": "4027",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-04T07:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": 88,
+      "signal_strength": -50
+    }
+  },
+  {
+    "device_id": "4029",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-04T07:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": 81,
+      "signal_strength": -52
+    }
+  },
+  {
+    "device_id": "4031",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-04T07:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": 74,
+      "signal_strength": -54
+    }
+  },
+  {
+    "device_id": "4033",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-04T07:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": 67,
+      "signal_strength": -56
+    }
+  },
+  {
+    "device_id": "4002",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-05T06:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": null,
+      "signal_strength": -42
+    }
+  },
+  {
+    "device_id": "4004",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-05T06:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": null,
+      "signal_strength": -44
+    }
+  },
+  {
+    "device_id": "4007",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-05T06:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": null,
+      "signal_strength": -46
+    }
+  },
+  {
+    "device_id": "4008",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-05T06:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": null,
+      "signal_strength": -48
+    }
+  },
+  {
+    "device_id": "4011",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-05T06:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": null,
+      "signal_strength": -50
+    }
+  },
+  {
+    "device_id": "4012",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-05T06:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": null,
+      "signal_strength": -52
+    }
+  },
+  {
+    "device_id": "4015",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-05T06:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": null,
+      "signal_strength": -54
+    }
+  },
+  {
+    "device_id": "4016",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-05T06:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": null,
+      "signal_strength": -56
+    }
+  },
+  {
+    "device_id": "4018",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-05T06:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": null,
+      "signal_strength": -58
+    }
+  },
+  {
+    "device_id": "4020",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-05T06:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": null,
+      "signal_strength": -42
+    }
+  },
+  {
+    "device_id": "4022",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-05T06:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": null,
+      "signal_strength": -44
+    }
+  },
+  {
+    "device_id": "4024",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-05T06:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": null,
+      "signal_strength": -46
+    }
+  },
+  {
+    "device_id": "4026",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-05T06:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": null,
+      "signal_strength": -48
+    }
+  },
+  {
+    "device_id": "4028",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-05T06:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": null,
+      "signal_strength": -50
+    }
+  },
+  {
+    "device_id": "4030",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-05T06:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": null,
+      "signal_strength": -52
+    }
+  },
+  {
+    "device_id": "4032",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-05T06:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": null,
+      "signal_strength": -54
+    }
+  },
+  {
+    "device_id": "4034",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-05T06:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": null,
+      "signal_strength": -56
+    }
+  },
+  {
+    "device_id": "4036",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-05T06:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": null,
+      "signal_strength": -58
+    }
+  },
+  {
+    "device_id": "4001",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-05T07:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": 67,
+      "signal_strength": -54
+    }
+  },
+  {
+    "device_id": "4003",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-05T07:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": 60,
+      "signal_strength": -56
+    }
+  },
+  {
+    "device_id": "4005",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-05T07:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": 88,
+      "signal_strength": -58
+    }
+  },
+  {
+    "device_id": "4006",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-05T07:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": 81,
+      "signal_strength": -46
+    }
+  },
+  {
+    "device_id": "4009",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-05T07:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": 74,
+      "signal_strength": -48
+    }
+  },
+  {
+    "device_id": "4010",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-05T07:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": 67,
+      "signal_strength": -50
+    }
+  },
+  {
+    "device_id": "4014",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-05T07:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": 60,
+      "signal_strength": -52
+    }
+  },
+  {
+    "device_id": "4017",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-05T07:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": 88,
+      "signal_strength": -54
+    }
+  },
+  {
+    "device_id": "4019",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-05T07:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": 81,
+      "signal_strength": -56
+    }
+  },
+  {
+    "device_id": "4021",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-05T07:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": 74,
+      "signal_strength": -58
+    }
+  },
+  {
+    "device_id": "4023",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-05T07:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": 67,
+      "signal_strength": -46
+    }
+  },
+  {
+    "device_id": "4025",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-05T07:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": 60,
+      "signal_strength": -48
+    }
+  },
+  {
+    "device_id": "4027",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-05T07:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": 88,
+      "signal_strength": -50
+    }
+  },
+  {
+    "device_id": "4029",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-05T07:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": 81,
+      "signal_strength": -52
+    }
+  },
+  {
+    "device_id": "4031",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-05T07:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": 74,
+      "signal_strength": -54
+    }
+  },
+  {
+    "device_id": "4033",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-05T07:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": 67,
+      "signal_strength": -56
+    }
+  },
+  {
+    "device_id": "4002",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-06T06:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": null,
+      "signal_strength": -42
+    }
+  },
+  {
+    "device_id": "4004",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-06T06:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": null,
+      "signal_strength": -44
+    }
+  },
+  {
+    "device_id": "4007",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-06T06:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": null,
+      "signal_strength": -46
+    }
+  },
+  {
+    "device_id": "4008",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-06T06:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": null,
+      "signal_strength": -48
+    }
+  },
+  {
+    "device_id": "4011",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-06T06:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": null,
+      "signal_strength": -50
+    }
+  },
+  {
+    "device_id": "4012",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-06T06:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": null,
+      "signal_strength": -52
+    }
+  },
+  {
+    "device_id": "4015",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-06T06:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": null,
+      "signal_strength": -54
+    }
+  },
+  {
+    "device_id": "4016",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-06T06:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": null,
+      "signal_strength": -56
+    }
+  },
+  {
+    "device_id": "4018",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-06T06:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": null,
+      "signal_strength": -58
+    }
+  },
+  {
+    "device_id": "4020",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-06T06:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": null,
+      "signal_strength": -42
+    }
+  },
+  {
+    "device_id": "4022",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-06T06:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": null,
+      "signal_strength": -44
+    }
+  },
+  {
+    "device_id": "4024",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-06T06:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": null,
+      "signal_strength": -46
+    }
+  },
+  {
+    "device_id": "4026",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-06T06:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": null,
+      "signal_strength": -48
+    }
+  },
+  {
+    "device_id": "4028",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-06T06:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": null,
+      "signal_strength": -50
+    }
+  },
+  {
+    "device_id": "4030",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-06T06:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": null,
+      "signal_strength": -52
+    }
+  },
+  {
+    "device_id": "4032",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-06T06:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": null,
+      "signal_strength": -54
+    }
+  },
+  {
+    "device_id": "4034",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-06T06:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": null,
+      "signal_strength": -56
+    }
+  },
+  {
+    "device_id": "4036",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-06T06:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": null,
+      "signal_strength": -58
+    }
+  },
+  {
+    "device_id": "4001",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-06T07:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": 67,
+      "signal_strength": -54
+    }
+  },
+  {
+    "device_id": "4003",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-06T07:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": 60,
+      "signal_strength": -56
+    }
+  },
+  {
+    "device_id": "4005",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-06T07:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": 88,
+      "signal_strength": -58
+    }
+  },
+  {
+    "device_id": "4006",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-06T07:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": 81,
+      "signal_strength": -46
+    }
+  },
+  {
+    "device_id": "4009",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-06T07:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": 74,
+      "signal_strength": -48
+    }
+  },
+  {
+    "device_id": "4010",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-06T07:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": 67,
+      "signal_strength": -50
+    }
+  },
+  {
+    "device_id": "4014",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-06T07:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": 60,
+      "signal_strength": -52
+    }
+  },
+  {
+    "device_id": "4017",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-06T07:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": 88,
+      "signal_strength": -54
+    }
+  },
+  {
+    "device_id": "4019",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-06T07:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": 81,
+      "signal_strength": -56
+    }
+  },
+  {
+    "device_id": "4021",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-06T07:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": 74,
+      "signal_strength": -58
+    }
+  },
+  {
+    "device_id": "4023",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-06T07:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": 67,
+      "signal_strength": -46
+    }
+  },
+  {
+    "device_id": "4025",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-06T07:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": 60,
+      "signal_strength": -48
+    }
+  },
+  {
+    "device_id": "4027",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-06T07:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": 88,
+      "signal_strength": -50
+    }
+  },
+  {
+    "device_id": "4029",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-06T07:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": 81,
+      "signal_strength": -52
+    }
+  },
+  {
+    "device_id": "4031",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-06T07:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": 74,
+      "signal_strength": -54
+    }
+  },
+  {
+    "device_id": "4033",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-06T07:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": 67,
+      "signal_strength": -56
+    }
+  },
+  {
+    "device_id": "4002",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-07T06:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": null,
+      "signal_strength": -42
+    }
+  },
+  {
+    "device_id": "4004",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-07T06:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": null,
+      "signal_strength": -44
+    }
+  },
+  {
+    "device_id": "4007",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-07T06:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": null,
+      "signal_strength": -46
+    }
+  },
+  {
+    "device_id": "4008",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-07T06:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": null,
+      "signal_strength": -48
+    }
+  },
+  {
+    "device_id": "4011",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-07T06:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": null,
+      "signal_strength": -50
+    }
+  },
+  {
+    "device_id": "4012",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-07T06:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": null,
+      "signal_strength": -52
+    }
+  },
+  {
+    "device_id": "4015",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-07T06:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": null,
+      "signal_strength": -54
+    }
+  },
+  {
+    "device_id": "4016",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-07T06:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": null,
+      "signal_strength": -56
+    }
+  },
+  {
+    "device_id": "4018",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-07T06:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": null,
+      "signal_strength": -58
+    }
+  },
+  {
+    "device_id": "4020",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-07T06:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": null,
+      "signal_strength": -42
+    }
+  },
+  {
+    "device_id": "4022",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-07T06:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": null,
+      "signal_strength": -44
+    }
+  },
+  {
+    "device_id": "4024",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-07T06:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": null,
+      "signal_strength": -46
+    }
+  },
+  {
+    "device_id": "4026",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-07T06:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": null,
+      "signal_strength": -48
+    }
+  },
+  {
+    "device_id": "4028",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-07T06:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": null,
+      "signal_strength": -50
+    }
+  },
+  {
+    "device_id": "4030",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-07T06:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": null,
+      "signal_strength": -52
+    }
+  },
+  {
+    "device_id": "4032",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-07T06:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": null,
+      "signal_strength": -54
+    }
+  },
+  {
+    "device_id": "4034",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-07T06:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": null,
+      "signal_strength": -56
+    }
+  },
+  {
+    "device_id": "4036",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-07T06:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": null,
+      "signal_strength": -58
+    }
+  },
+  {
+    "device_id": "4001",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-07T07:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": 67,
+      "signal_strength": -54
+    }
+  },
+  {
+    "device_id": "4003",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-07T07:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": 60,
+      "signal_strength": -56
+    }
+  },
+  {
+    "device_id": "4005",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-07T07:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": 88,
+      "signal_strength": -58
+    }
+  },
+  {
+    "device_id": "4006",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-07T07:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": 81,
+      "signal_strength": -46
+    }
+  },
+  {
+    "device_id": "4009",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-07T07:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": 74,
+      "signal_strength": -48
+    }
+  },
+  {
+    "device_id": "4010",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-07T07:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": 67,
+      "signal_strength": -50
+    }
+  },
+  {
+    "device_id": "4014",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-07T07:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": 60,
+      "signal_strength": -52
+    }
+  },
+  {
+    "device_id": "4017",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-07T07:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": 88,
+      "signal_strength": -54
+    }
+  },
+  {
+    "device_id": "4019",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-07T07:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": 81,
+      "signal_strength": -56
+    }
+  },
+  {
+    "device_id": "4021",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-07T07:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": 74,
+      "signal_strength": -58
+    }
+  },
+  {
+    "device_id": "4023",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-07T07:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": 67,
+      "signal_strength": -46
+    }
+  },
+  {
+    "device_id": "4025",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-07T07:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": 60,
+      "signal_strength": -48
+    }
+  },
+  {
+    "device_id": "4027",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-07T07:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": 88,
+      "signal_strength": -50
+    }
+  },
+  {
+    "device_id": "4029",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-07T07:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": 81,
+      "signal_strength": -52
+    }
+  },
+  {
+    "device_id": "4031",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-07T07:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": 74,
+      "signal_strength": -54
+    }
+  },
+  {
+    "device_id": "4033",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-07T07:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": 67,
+      "signal_strength": -56
+    }
+  },
+  {
+    "device_id": "4002",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-08T06:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": null,
+      "signal_strength": -42
+    }
+  },
+  {
+    "device_id": "4004",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-08T06:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": null,
+      "signal_strength": -44
+    }
+  },
+  {
+    "device_id": "4007",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-08T06:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": null,
+      "signal_strength": -46
+    }
+  },
+  {
+    "device_id": "4008",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-08T06:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": null,
+      "signal_strength": -48
+    }
+  },
+  {
+    "device_id": "4011",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-08T06:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": null,
+      "signal_strength": -50
+    }
+  },
+  {
+    "device_id": "4012",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-08T06:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": null,
+      "signal_strength": -52
+    }
+  },
+  {
+    "device_id": "4015",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-08T06:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": null,
+      "signal_strength": -54
+    }
+  },
+  {
+    "device_id": "4016",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-08T06:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": null,
+      "signal_strength": -56
+    }
+  },
+  {
+    "device_id": "4018",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-08T06:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": null,
+      "signal_strength": -58
+    }
+  },
+  {
+    "device_id": "4020",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-08T06:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": null,
+      "signal_strength": -42
+    }
+  },
+  {
+    "device_id": "4022",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-08T06:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": null,
+      "signal_strength": -44
+    }
+  },
+  {
+    "device_id": "4024",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-08T06:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": null,
+      "signal_strength": -46
+    }
+  },
+  {
+    "device_id": "4026",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-08T06:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": null,
+      "signal_strength": -48
+    }
+  },
+  {
+    "device_id": "4028",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-08T06:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": null,
+      "signal_strength": -50
+    }
+  },
+  {
+    "device_id": "4030",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-08T06:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": null,
+      "signal_strength": -52
+    }
+  },
+  {
+    "device_id": "4032",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-08T06:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": null,
+      "signal_strength": -54
+    }
+  },
+  {
+    "device_id": "4034",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-08T06:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": null,
+      "signal_strength": -56
+    }
+  },
+  {
+    "device_id": "4036",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-08T06:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": null,
+      "signal_strength": -58
+    }
+  },
+  {
+    "device_id": "4001",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-08T07:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": 67,
+      "signal_strength": -54
+    }
+  },
+  {
+    "device_id": "4003",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-08T07:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": 60,
+      "signal_strength": -56
+    }
+  },
+  {
+    "device_id": "4005",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-08T07:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": 88,
+      "signal_strength": -58
+    }
+  },
+  {
+    "device_id": "4006",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-08T07:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": 81,
+      "signal_strength": -46
+    }
+  },
+  {
+    "device_id": "4009",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-08T07:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": 74,
+      "signal_strength": -48
+    }
+  },
+  {
+    "device_id": "4010",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-08T07:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": 67,
+      "signal_strength": -50
+    }
+  },
+  {
+    "device_id": "4014",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-08T07:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": 60,
+      "signal_strength": -52
+    }
+  },
+  {
+    "device_id": "4017",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-08T07:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": 88,
+      "signal_strength": -54
+    }
+  },
+  {
+    "device_id": "4019",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-08T07:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": 81,
+      "signal_strength": -56
+    }
+  },
+  {
+    "device_id": "4021",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-08T07:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": 74,
+      "signal_strength": -58
+    }
+  },
+  {
+    "device_id": "4023",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-08T07:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": 67,
+      "signal_strength": -46
+    }
+  },
+  {
+    "device_id": "4025",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-08T07:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": 60,
+      "signal_strength": -48
+    }
+  },
+  {
+    "device_id": "4027",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-08T07:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": 88,
+      "signal_strength": -50
+    }
+  },
+  {
+    "device_id": "4029",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-08T07:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": 81,
+      "signal_strength": -52
+    }
+  },
+  {
+    "device_id": "4031",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-08T07:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": 74,
+      "signal_strength": -54
+    }
+  },
+  {
+    "device_id": "4033",
+    "event_type": "device_status",
+    "event_timestamp": "2025-03-08T07:00:00Z",
+    "payload": {
+      "status": "online",
+      "battery_level": 67,
+      "signal_strength": -56
+    }
+  }
 ]

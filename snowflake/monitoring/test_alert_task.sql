@@ -3,21 +3,35 @@
 -- Reads test results and triggers alerts on error-severity failures
 -- =============================================================================
 
-CREATE OR REPLACE TASK LIGHTHOUSE_PROD_ANALYTICS.TEST_RESULTS.test_failure_alert_task
+SET LIGHTHOUSE_ENV = 'PROD';
+SET LIGHTHOUSE_ANALYTICS_DB = 'LIGHTHOUSE_' || $LIGHTHOUSE_ENV || '_ANALYTICS';
+
+EXECUTE IMMEDIATE 'USE DATABASE ' || $LIGHTHOUSE_ANALYTICS_DB;
+USE SCHEMA TEST_RESULTS;
+
+CREATE TABLE IF NOT EXISTS test_alerts (
+    alert_id        INTEGER AUTOINCREMENT,
+    alert_timestamp TIMESTAMP_NTZ DEFAULT CURRENT_TIMESTAMP(),
+    failure_count   INTEGER,
+    alert_message   VARCHAR,
+    alert_status    VARCHAR DEFAULT 'NEW'
+);
+
+CREATE OR REPLACE TASK test_failure_alert_task
     WAREHOUSE = TRANSFORM_WH
-    SCHEDULE = 'USING CRON 0 */2 * * * UTC'  -- Every 2 hours
+    SCHEDULE = 'USING CRON 0 */2 * * * UTC'
 AS
 BEGIN
     LET failure_count INTEGER;
 
     SELECT COUNT(*) INTO :failure_count
-    FROM LIGHTHOUSE_PROD_ANALYTICS.TEST_RESULTS.elementary_test_results
+    FROM elementary_test_results
     WHERE test_timestamp >= DATEADD('hour', -2, CURRENT_TIMESTAMP())
       AND status = 'fail'
       AND severity = 'ERROR';
 
     IF (:failure_count > 0) THEN
-        INSERT INTO LIGHTHOUSE_PROD_ANALYTICS.TEST_RESULTS.test_alerts (
+        INSERT INTO test_alerts (
             alert_timestamp, failure_count, alert_message, alert_status
         )
         SELECT
@@ -28,14 +42,4 @@ BEGIN
     END IF;
 END;
 
--- Create alerts table if not exists
-CREATE TABLE IF NOT EXISTS LIGHTHOUSE_PROD_ANALYTICS.TEST_RESULTS.test_alerts (
-    alert_id        INTEGER AUTOINCREMENT,
-    alert_timestamp TIMESTAMP_NTZ DEFAULT CURRENT_TIMESTAMP(),
-    failure_count   INTEGER,
-    alert_message   VARCHAR,
-    alert_status    VARCHAR DEFAULT 'NEW'
-);
-
--- Enable the task
-ALTER TASK IF EXISTS LIGHTHOUSE_PROD_ANALYTICS.TEST_RESULTS.test_failure_alert_task RESUME;
+ALTER TASK IF EXISTS test_failure_alert_task RESUME;

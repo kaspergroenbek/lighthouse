@@ -3,54 +3,50 @@
 -- Enables Cortex Analyst natural-language querying over billing data
 -- =============================================================================
 
-CREATE OR REPLACE SEMANTIC VIEW LIGHTHOUSE_PROD_ANALYTICS.SEMANTIC.contract_revenue_analysis
+SET LIGHTHOUSE_ENV = 'PROD';
+SET LIGHTHOUSE_ANALYTICS_DB = 'LIGHTHOUSE_' || $LIGHTHOUSE_ENV || '_ANALYTICS';
 
-  -- -------------------------------------------------------------------------
-  -- TABLES
-  -- -------------------------------------------------------------------------
+EXECUTE IMMEDIATE 'USE DATABASE ' || $LIGHTHOUSE_ANALYTICS_DB;
+USE SCHEMA SEMANTIC;
+
+CREATE OR REPLACE SEMANTIC VIEW contract_revenue_analysis
+
   TABLES (
-    invoices AS LIGHTHOUSE_PROD_ANALYTICS.MARTS.fct_invoices
+    invoices AS MARTS.fct_invoices
       PRIMARY KEY (invoice_line_sk)
-      COMMENT = 'Invoice line items — grain: one row per invoice line item',
+      COMMENT = 'Invoice line items - grain: one row per invoice line item',
 
-    payments AS LIGHTHOUSE_PROD_ANALYTICS.MARTS.fct_payments
+    payments AS MARTS.fct_payments
       PRIMARY KEY (payment_sk)
-      COMMENT = 'Individual payments — grain: one row per payment',
+      COMMENT = 'Individual payments - grain: one row per payment',
 
-    customers AS LIGHTHOUSE_PROD_ANALYTICS.MARTS.dim_customer
+    customers AS MARTS.dim_customer
       PRIMARY KEY (customer_sk)
-      COMMENT = 'Customer dimension (SCD2) — grain: one row per customer version',
+      COMMENT = 'Customer dimension (SCD2) - grain: one row per customer version',
 
-    contracts AS LIGHTHOUSE_PROD_ANALYTICS.MARTS.dim_contract
+    contracts AS MARTS.dim_contract
       PRIMARY KEY (contract_sk)
-      COMMENT = 'Contract dimension (SCD2) — grain: one row per contract version',
+      COMMENT = 'Contract dimension (SCD2) - grain: one row per contract version',
 
-    products AS LIGHTHOUSE_PROD_ANALYTICS.MARTS.dim_product
+    products AS MARTS.dim_product
       PRIMARY KEY (product_sk)
       COMMENT = 'Product/service offering dimension',
 
-    dates AS LIGHTHOUSE_PROD_ANALYTICS.MARTS.dim_date
+    dates AS MARTS.dim_date
       PRIMARY KEY (date_key)
       COMMENT = 'Calendar date dimension (2020-2030)'
   )
 
-
-  -- -------------------------------------------------------------------------
-  -- RELATIONSHIPS
-  -- -------------------------------------------------------------------------
   RELATIONSHIPS (
     invoices (customer_sk) REFERENCES customers (customer_sk),
     invoices (contract_sk) REFERENCES contracts (contract_sk),
-    invoices (product_sk)  REFERENCES products (product_sk),
+    invoices (product_sk) REFERENCES products (product_sk),
     invoices (invoice_date_key) REFERENCES dates (date_key),
     payments (customer_sk) REFERENCES customers (customer_sk),
     payments (contract_sk) REFERENCES contracts (contract_sk),
     payments (payment_date_key) REFERENCES dates (date_key)
   )
 
-  -- -------------------------------------------------------------------------
-  -- FACTS (measures)
-  -- -------------------------------------------------------------------------
   FACTS (
     invoices.amount
       COMMENT = 'Invoice line item amount (DKK)'
@@ -67,9 +63,6 @@ CREATE OR REPLACE SEMANTIC VIEW LIGHTHOUSE_PROD_ANALYTICS.SEMANTIC.contract_reve
       SYNONYMS = ('payment', 'amount paid', 'cash received')
   )
 
-  -- -------------------------------------------------------------------------
-  -- DIMENSIONS (slicing attributes)
-  -- -------------------------------------------------------------------------
   DIMENSIONS (
     customers.full_name
       COMMENT = 'Customer full name'
@@ -132,12 +125,9 @@ CREATE OR REPLACE SEMANTIC VIEW LIGHTHOUSE_PROD_ANALYTICS.SEMANTIC.contract_reve
       COMMENT = 'Fiscal quarter'
   )
 
-  -- -------------------------------------------------------------------------
-  -- METRICS (pre-defined calculations)
-  -- -------------------------------------------------------------------------
   METRICS (
     total_revenue AS SUM(invoices.amount)
-      COMMENT = 'Total revenue — sum of all invoice line item amounts'
+      COMMENT = 'Total revenue - sum of all invoice line item amounts'
       SYNONYMS = ('revenue', 'total sales', 'gross revenue'),
     total_payments AS SUM(payments.payment_amount)
       COMMENT = 'Total payments received'

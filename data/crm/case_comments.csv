@@ -10,3 +10,9 @@ _loaded_at,_sync_id,_is_deleted,comment_id,case_id,body,is_public,created_by,cre
 2025-03-01 02:00:00,sync_004,false,CMT-009,CASE-004,Firmware 2.2.0 pushed to device. Customer confirmed schedule now persists.,true,USR-101,2025-02-20
 2025-03-01 02:00:00,sync_004,false,CMT-010,CASE-006,Signal strength test shows -78 dBm. Recommending WiFi extender near meter location.,true,USR-102,2025-02-26
 2025-03-01 02:00:00,sync_004,false,CMT-011,CASE-005,Scheduling site survey for warehouse meter installation. Estimated 2 weeks.,true,USR-102,2025-02-10
+2025-04-04 23:15:00,sync_005,false,CMT-012,CASE-008,Support requested logs and suggested reboot plus firmware confirmation.,true,USR-111,2025-04-05
+2025-04-04 21:25:00,sync_005,false,CMT-013,CASE-009,Support requested logs and suggested reboot plus firmware confirmation.,true,USR-113,2025-04-05
+2025-04-05 23:10:00,sync_006,false,CMT-014,CASE-010,Support requested logs and suggested reboot plus firmware confirmation.,true,USR-110,2025-04-06
+2025-04-06 21:20:00,sync_006,false,CMT-015,CASE-011,Support requested logs and suggested reboot plus firmware confirmation.,true,USR-112,2025-04-07
+2025-04-06 23:30:00,sync_007,false,CMT-016,CASE-012,Support requested logs and suggested reboot plus firmware confirmation.,true,USR-114,2025-04-07
+2025-04-07 21:15:00,sync_007,false,CMT-017,CASE-013,Support requested logs and suggested reboot plus firmware confirmation.,true,USR-111,2025-04-08

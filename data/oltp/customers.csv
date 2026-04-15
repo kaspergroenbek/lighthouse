@@ -19,3 +19,18 @@ UPDATE,2025-02-20 16:00:00,batch_014,1005,olof.johansson@example.com,Olof,Johans
 UPDATE,2025-02-28 10:00:00,batch_015,1009,bjorn.dahl@example.com,Bjørn,Dahl,+4741234567,Markveien 12,0554,Oslo,Oslo,NO,commercial,inactive,2025-01-12 09:00:00,2025-02-28 10:00:00
 DELETE,2025-03-05 09:00:00,batch_016,1007,karl.petersen@example.com,Karl,Petersen,+4521987654,Vesterbrogade 100,1620,København V,Hovedstaden,DK,residential,churned,2025-01-08 11:20:00,2025-03-05 09:00:00
 UPDATE,2025-03-10 12:00:00,batch_017,1010,freya.madsen@example.com,Freya,Madsen,+4523456789,Nørrebrogade 33,2200,København N,Hovedstaden,DK,premium,active,2025-01-15 16:30:00,2025-03-10 12:00:00
+INSERT,2025-03-12 11:15:00,batch_028,1011,sofie.lund@example.com,Sofie,Lund,+4522113344,Frederiks Alle 18,8000,Aarhus,Midtjylland,DK,residential,active,2025-03-12 11:15:00,2025-03-12 11:15:00
+INSERT,2025-03-12 08:20:00,batch_029,1012,emil.rasmussen@example.com,Emil,Rasmussen,+4522334455,Munkebjergvej 12,5000,Odense,Syddanmark,DK,residential,active,2025-03-12 08:20:00,2025-03-12 08:20:00
+UPDATE,2025-03-26 10:20:00,batch_035,1012,emil.rasmussen@example.com,Emil,Rasmussen,+4522334455,Munkebjergvej 12,5000,Odense,Syddanmark,DK,premium,active,2025-03-12 08:20:00,2025-03-26 10:20:00
+INSERT,2025-03-12 09:25:00,batch_030,1013,nora.halvorsen@example.com,Nora,Halvorsen,+4791122334,Olav Kyrres gate 11,5003,Bergen,Vestland,NO,residential,active,2025-03-12 09:25:00,2025-03-12 09:25:00
+INSERT,2025-03-13 10:30:00,batch_031,1014,jonas.nystrom@example.com,Jonas,Nystrom,+46701122334,Sodra Forstadsgatan 20,21134,Malmo,Skane,SE,residential,active,2025-03-13 10:30:00,2025-03-13 10:30:00
+INSERT,2025-03-13 11:10:00,batch_032,1015,camilla.bergstrom@example.com,Camilla,Bergstrom,+46702233445,Kungsgatan 44,75320,Uppsala,Uppsala,SE,residential,active,2025-03-13 11:10:00,2025-03-13 11:10:00
+UPDATE,2025-03-27 13:10:00,batch_038,1015,camilla.bergstrom@example.com,Camilla,Bergstrom,+46702233445,Kungsgatan 44,75320,Uppsala,Uppsala,SE,premium,active,2025-03-13 11:10:00,2025-03-27 13:10:00
+INSERT,2025-03-13 08:15:00,batch_033,1016,mikael.olsen@example.com,Mikael,Olsen,+4792233445,Kjopmannsgata 9,7011,Trondheim,Trondelag,NO,commercial,active,2025-03-13 08:15:00,2025-03-13 08:15:00
+INSERT,2025-03-14 09:20:00,batch_034,1017,helene.christensen@example.com,Helene,Christensen,+4522445566,Boulevarden 52,9000,Aalborg,Nordjylland,DK,residential,active,2025-03-14 09:20:00,2025-03-14 09:20:00
+INSERT,2025-03-14 10:25:00,batch_035,1018,viktor.sjoberg@example.com,Viktor,Sjoberg,+46703344556,Stora gatan 9,72212,Vasteras,Vastmanland,SE,commercial,active,2025-03-14 10:25:00,2025-03-14 10:25:00
+INSERT,2025-03-14 11:30:00,batch_036,1019,line.andersen@example.com,Line,Andersen,+4793344556,Lagardsveien 41,4006,Stavanger,Rogaland,NO,residential,active,2025-03-14 11:30:00,2025-03-14 11:30:00
+INSERT,2025-03-15 08:10:00,batch_037,1020,oscar.larsson@example.com,Oscar,Larsson,+46704455667,Drottninggatan 17,70210,Orebro,Orebro,SE,residential,active,2025-03-15 08:10:00,2025-03-15 08:10:00
+INSERT,2025-03-15 09:15:00,batch_038,1021,rikke.moller@example.com,Rikke,Moller,+4522556677,Torvegade 6,6700,Esbjerg,Syddanmark,DK,commercial,active,2025-03-15 09:15:00,2025-03-15 09:15:00
+INSERT,2025-03-15 10:20:00,batch_039,1022,filip.eriksson@example.com,Filip,Eriksson,+46705566778,Storgatan 33,58219,Linkoping,Ostergotland,SE,residential,active,2025-03-15 10:20:00,2025-03-15 10:20:00
+UPDATE,2025-03-29 12:20:00,batch_045,1022,filip.eriksson@example.com,Filip,Eriksson,+46705566778,Storgatan 33,58219,Linkoping,Ostergotland,SE,premium,active,2025-03-15 10:20:00,2025-03-29 12:20:00

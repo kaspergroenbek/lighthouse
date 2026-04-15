@@ -7,3 +7,9 @@ _loaded_at,_sync_id,_is_deleted,opportunity_id,account_id,name,stage,amount,clos
 2025-03-01 02:00:00,sync_004,false,OPP-003,ACC-009,Dahl Eiendom — Multi-property Energy Management,negotiation,35964.00,2025-03-30,70,2025-01-12,2025-02-25
 2025-03-01 02:00:00,sync_004,false,OPP-004,ACC-005,Johansson Energi — Warehouse Expansion,proposal,7800.00,2025-04-15,50,2025-02-08,2025-02-28
 2025-03-01 02:00:00,sync_004,false,OPP-005,ACC-001,Lindberg — Solar Integration Upgrade,qualification,12000.00,2025-05-01,15,2025-03-01,2025-03-01
+2025-03-22 08:20:00,sync_005,false,OPP-006,ACC-012,Battery storage upsell,proposal,1899.00,2025-04-26,55,2025-04-03,2025-04-05
+2025-03-23 11:10:00,sync_006,false,OPP-007,ACC-015,Battery storage upsell,proposal,1899.00,2025-04-27,55,2025-04-04,2025-04-06
+2025-03-23 08:15:00,sync_006,false,OPP-008,ACC-016,Fleet meter rollout,qualification,12450.00,2025-04-27,40,2025-04-04,2025-04-06
+2025-03-24 10:25:00,sync_006,false,OPP-009,ACC-018,Fleet meter rollout,qualification,12450.00,2025-04-28,40,2025-04-05,2025-04-07
+2025-03-25 09:15:00,sync_007,false,OPP-010,ACC-021,Fleet meter rollout,qualification,12450.00,2025-04-29,40,2025-04-06,2025-04-08
+2025-03-25 10:20:00,sync_007,false,OPP-011,ACC-022,Battery storage upsell,proposal,1899.00,2025-04-29,55,2025-04-06,2025-04-08

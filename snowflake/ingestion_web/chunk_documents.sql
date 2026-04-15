@@ -21,8 +21,11 @@
 -- Idempotency: Uses CREATE OR REPLACE — safe to re-run.
 -- =============================================================================
 
+SET LIGHTHOUSE_ENV = 'DEV';
+SET LIGHTHOUSE_RAW_DB = 'LIGHTHOUSE_' || $LIGHTHOUSE_ENV || '_RAW';
+
 USE WAREHOUSE INGESTION_WH;
-USE DATABASE LIGHTHOUSE_DEV_RAW;
+EXECUTE IMMEDIATE 'USE DATABASE ' || $LIGHTHOUSE_RAW_DB;
 USE SCHEMA KNOWLEDGE_BASE;
 
 -- ─────────────────────────────────────────────────────────────────────────────
@@ -126,3 +129,4 @@ $$;
 -- ─────────────────────────────────────────────────────────────────────────────
 
 CALL chunk_document_text();
+

@@ -20,3 +20,15 @@ CERT-018,3009,P001,2025-02-02,electrical_safety,2026-02-02,valid,Anders Møller
 CERT-019,3010,P003,2025-02-06,electrical_safety,2026-02-06,valid,Bjarne Holm
 CERT-020,3010,P003,2025-02-06,device_commissioning,2026-02-06,valid,Bjarne Holm
 CERT-021,3003,P001,2025-02-16,maintenance_inspection,2025-08-16,valid,Anders Møller
+CERT-022,3030,P122,2025-03-19,device_commissioning,2026-03-19,valid,Inspector Lund
+CERT-023,3031,P123,2025-03-20,device_commissioning,2026-03-20,valid,Inspector Rasmussen
+CERT-024,3032,P124,2025-03-21,commercial_compliance,2026-03-21,valid,Inspector Halvorsen
+CERT-025,3033,P125,2025-03-22,device_commissioning,2026-03-22,valid,Inspector Nystrom
+CERT-026,3034,P126,2025-03-23,device_commissioning,2026-03-23,valid,Inspector Bergstrom
+CERT-027,3035,P127,2025-03-24,commercial_compliance,2026-03-24,valid,Inspector Olsen
+CERT-028,3036,P128,2025-03-25,device_commissioning,2026-03-25,valid,Inspector Christensen
+CERT-029,3037,P129,2025-03-26,device_commissioning,2026-03-26,valid,Inspector Sjoberg
+CERT-030,3038,P130,2025-03-27,commercial_compliance,2026-03-27,valid,Inspector Andersen
+CERT-031,3039,P131,2025-03-28,device_commissioning,2026-03-28,valid,Inspector Larsson
+CERT-032,3040,P132,2025-03-29,device_commissioning,2026-03-29,valid,Inspector Moller
+CERT-033,3041,P133,2025-03-30,commercial_compliance,2026-03-30,valid,Inspector Eriksson

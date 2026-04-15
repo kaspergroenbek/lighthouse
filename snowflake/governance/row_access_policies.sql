@@ -3,10 +3,13 @@
 -- Region-based access restriction on fct_invoices
 -- =============================================================================
 
--- Row access policy: restrict invoice data by region based on role mapping
--- LIGHTHOUSE_ADMIN and LIGHTHOUSE_ENGINEER see all rows
--- Other roles see only rows matching their assigned region (via session variable)
-CREATE OR REPLACE ROW ACCESS POLICY LIGHTHOUSE_PROD_ANALYTICS.GOVERNANCE.region_row_access
+SET LIGHTHOUSE_ENV = 'PROD';
+SET LIGHTHOUSE_ANALYTICS_DB = 'LIGHTHOUSE_' || $LIGHTHOUSE_ENV || '_ANALYTICS';
+
+EXECUTE IMMEDIATE 'USE DATABASE ' || $LIGHTHOUSE_ANALYTICS_DB;
+USE SCHEMA GOVERNANCE;
+
+CREATE OR REPLACE ROW ACCESS POLICY region_row_access
     AS (region_val VARCHAR) RETURNS BOOLEAN ->
     CASE
         WHEN CURRENT_ROLE() IN ('LIGHTHOUSE_ADMIN', 'LIGHTHOUSE_ENGINEER') THEN TRUE

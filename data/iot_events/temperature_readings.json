@@ -1,37 +1,4192 @@
 [
-  {"device_id": "4001", "event_type": "temperature_reading", "event_timestamp": "2025-02-01T07:00:00Z", "payload": {"temperature_celsius": 19.2, "humidity_percent": 42, "target_temperature": 21.0}},
-  {"device_id": "4003", "event_type": "temperature_reading", "event_timestamp": "2025-02-01T07:00:00Z", "payload": {"temperature_celsius": 20.5, "humidity_percent": 38, "target_temperature": 22.0}},
-  {"device_id": "4005", "event_type": "temperature_reading", "event_timestamp": "2025-02-01T07:00:00Z", "payload": {"temperature_celsius": 21.1, "humidity_percent": 40, "target_temperature": 22.0}},
-  {"device_id": "4006", "event_type": "temperature_reading", "event_timestamp": "2025-02-01T07:00:00Z", "payload": {"temperature_celsius": 18.8, "humidity_percent": 45, "target_temperature": 21.0}},
-  {"device_id": "4009", "event_type": "temperature_reading", "event_timestamp": "2025-02-01T07:00:00Z", "payload": {"temperature_celsius": 20.0, "humidity_percent": 39, "target_temperature": 21.0}},
-  {"device_id": "4010", "event_type": "temperature_reading", "event_timestamp": "2025-02-01T07:00:00Z", "payload": {"temperature_celsius": 19.5, "humidity_percent": 41, "target_temperature": 21.0}},
-  {"device_id": "4013", "event_type": "temperature_reading", "event_timestamp": "2025-02-01T07:00:00Z", "payload": {"temperature_celsius": 18.3, "humidity_percent": 44, "target_temperature": 20.0}},
-  {"device_id": "4014", "event_type": "temperature_reading", "event_timestamp": "2025-02-01T07:00:00Z", "payload": {"temperature_celsius": 19.8, "humidity_percent": 40, "target_temperature": 21.0}},
-  {"device_id": "4001", "event_type": "temperature_reading", "event_timestamp": "2025-02-01T12:00:00Z", "payload": {"temperature_celsius": 21.0, "humidity_percent": 40, "target_temperature": 21.0}},
-  {"device_id": "4003", "event_type": "temperature_reading", "event_timestamp": "2025-02-01T12:00:00Z", "payload": {"temperature_celsius": 22.1, "humidity_percent": 36, "target_temperature": 22.0}},
-  {"device_id": "4006", "event_type": "temperature_reading", "event_timestamp": "2025-02-01T12:00:00Z", "payload": {"temperature_celsius": 20.8, "humidity_percent": 43, "target_temperature": 21.0}},
-  {"device_id": "4009", "event_type": "temperature_reading", "event_timestamp": "2025-02-01T12:00:00Z", "payload": {"temperature_celsius": 21.2, "humidity_percent": 37, "target_temperature": 21.0}},
-  {"device_id": "4010", "event_type": "temperature_reading", "event_timestamp": "2025-02-01T12:00:00Z", "payload": {"temperature_celsius": 21.0, "humidity_percent": 39, "target_temperature": 21.0}},
-  {"device_id": "4014", "event_type": "temperature_reading", "event_timestamp": "2025-02-01T12:00:00Z", "payload": {"temperature_celsius": 21.3, "humidity_percent": 38, "target_temperature": 21.0}},
-  {"device_id": "4001", "event_type": "temperature_reading", "event_timestamp": "2025-02-01T18:00:00Z", "payload": {"temperature_celsius": 21.5, "humidity_percent": 41, "target_temperature": 21.0}},
-  {"device_id": "4003", "event_type": "temperature_reading", "event_timestamp": "2025-02-01T18:00:00Z", "payload": {"temperature_celsius": 22.3, "humidity_percent": 37, "target_temperature": 22.0}},
-  {"device_id": "4005", "event_type": "temperature_reading", "event_timestamp": "2025-02-01T18:00:00Z", "payload": {"temperature_celsius": 22.0, "humidity_percent": 39, "target_temperature": 22.0}},
-  {"device_id": "4006", "event_type": "temperature_reading", "event_timestamp": "2025-02-01T18:00:00Z", "payload": {"temperature_celsius": 21.2, "humidity_percent": 42, "target_temperature": 21.0}},
-  {"device_id": "4013", "event_type": "temperature_reading", "event_timestamp": "2025-02-01T18:00:00Z", "payload": {"temperature_celsius": 20.1, "humidity_percent": 43, "target_temperature": 20.0}},
-  {"device_id": "4001", "event_type": "temperature_reading", "event_timestamp": "2025-02-02T07:00:00Z", "payload": {"temperature_celsius": 18.9, "humidity_percent": 43, "target_temperature": 21.0}},
-  {"device_id": "4003", "event_type": "temperature_reading", "event_timestamp": "2025-02-02T07:00:00Z", "payload": {"temperature_celsius": 20.2, "humidity_percent": 39, "target_temperature": 22.0}},
-  {"device_id": "4006", "event_type": "temperature_reading", "event_timestamp": "2025-02-02T07:00:00Z", "payload": {"temperature_celsius": 18.5, "humidity_percent": 46, "target_temperature": 21.0}},
-  {"device_id": "4009", "event_type": "temperature_reading", "event_timestamp": "2025-02-02T07:00:00Z", "payload": {"temperature_celsius": 19.7, "humidity_percent": 40, "target_temperature": 21.0}},
-  {"device_id": "4010", "event_type": "temperature_reading", "event_timestamp": "2025-02-02T07:00:00Z", "payload": {"temperature_celsius": 19.1, "humidity_percent": 42, "target_temperature": 21.0}},
-  {"device_id": "4014", "event_type": "temperature_reading", "event_timestamp": "2025-02-02T07:00:00Z", "payload": {"temperature_celsius": 19.4, "humidity_percent": 41, "target_temperature": 21.0}},
-  {"device_id": "4001", "event_type": "temperature_reading", "event_timestamp": "2025-02-02T12:00:00Z", "payload": {"temperature_celsius": 20.8, "humidity_percent": 40, "target_temperature": 21.0}},
-  {"device_id": "4003", "event_type": "temperature_reading", "event_timestamp": "2025-02-02T12:00:00Z", "payload": {"temperature_celsius": 21.9, "humidity_percent": 37, "target_temperature": 22.0}},
-  {"device_id": "4005", "event_type": "temperature_reading", "event_timestamp": "2025-02-02T12:00:00Z", "payload": {"temperature_celsius": 21.8, "humidity_percent": 38, "target_temperature": 22.0}},
-  {"device_id": "4006", "event_type": "temperature_reading", "event_timestamp": "2025-02-02T12:00:00Z", "payload": {"temperature_celsius": 20.5, "humidity_percent": 44, "target_temperature": 21.0}},
-  {"device_id": "4013", "event_type": "temperature_reading", "event_timestamp": "2025-02-02T12:00:00Z", "payload": {"temperature_celsius": 19.8, "humidity_percent": 43, "target_temperature": 20.0}},
-  {"device_id": "4003", "event_type": "temperature_reading", "event_timestamp": "2025-01-31T23:00:00Z", "payload": {"temperature_celsius": 19.0, "humidity_percent": 41, "target_temperature": 22.0}},
-  {"device_id": "4006", "event_type": "temperature_reading", "event_timestamp": "2025-01-31T23:00:00Z", "payload": {"temperature_celsius": 17.5, "humidity_percent": 48, "target_temperature": 21.0}},
-  {"device_id": "4001", "event_type": "temperature_reading", "event_timestamp": "2025-02-02T18:00:00Z", "payload": {"temperature_celsius": 21.3, "humidity_percent": 41, "target_temperature": 21.0}},
-  {"device_id": "4003", "event_type": "temperature_reading", "event_timestamp": "2025-02-02T18:00:00Z", "payload": {"temperature_celsius": 22.0, "humidity_percent": 38, "target_temperature": 22.0}},
-  {"device_id": "4009", "event_type": "temperature_reading", "event_timestamp": "2025-02-02T18:00:00Z", "payload": {"temperature_celsius": 21.0, "humidity_percent": 38, "target_temperature": 21.0}}
+  {
+    "device_id": "4001",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-02-01T07:00:00Z",
+    "payload": {
+      "temperature_celsius": 19.2,
+      "humidity_percent": 42,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4003",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-02-01T07:00:00Z",
+    "payload": {
+      "temperature_celsius": 20.5,
+      "humidity_percent": 38,
+      "target_temperature": 22.0
+    }
+  },
+  {
+    "device_id": "4005",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-02-01T07:00:00Z",
+    "payload": {
+      "temperature_celsius": 21.1,
+      "humidity_percent": 40,
+      "target_temperature": 22.0
+    }
+  },
+  {
+    "device_id": "4006",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-02-01T07:00:00Z",
+    "payload": {
+      "temperature_celsius": 18.8,
+      "humidity_percent": 45,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4009",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-02-01T07:00:00Z",
+    "payload": {
+      "temperature_celsius": 20.0,
+      "humidity_percent": 39,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4010",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-02-01T07:00:00Z",
+    "payload": {
+      "temperature_celsius": 19.5,
+      "humidity_percent": 41,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4013",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-02-01T07:00:00Z",
+    "payload": {
+      "temperature_celsius": 18.3,
+      "humidity_percent": 44,
+      "target_temperature": 20.0
+    }
+  },
+  {
+    "device_id": "4014",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-02-01T07:00:00Z",
+    "payload": {
+      "temperature_celsius": 19.8,
+      "humidity_percent": 40,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4001",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-02-01T12:00:00Z",
+    "payload": {
+      "temperature_celsius": 21.0,
+      "humidity_percent": 40,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4003",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-02-01T12:00:00Z",
+    "payload": {
+      "temperature_celsius": 22.1,
+      "humidity_percent": 36,
+      "target_temperature": 22.0
+    }
+  },
+  {
+    "device_id": "4006",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-02-01T12:00:00Z",
+    "payload": {
+      "temperature_celsius": 20.8,
+      "humidity_percent": 43,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4009",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-02-01T12:00:00Z",
+    "payload": {
+      "temperature_celsius": 21.2,
+      "humidity_percent": 37,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4010",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-02-01T12:00:00Z",
+    "payload": {
+      "temperature_celsius": 21.0,
+      "humidity_percent": 39,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4014",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-02-01T12:00:00Z",
+    "payload": {
+      "temperature_celsius": 21.3,
+      "humidity_percent": 38,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4001",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-02-01T18:00:00Z",
+    "payload": {
+      "temperature_celsius": 21.5,
+      "humidity_percent": 41,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4003",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-02-01T18:00:00Z",
+    "payload": {
+      "temperature_celsius": 22.3,
+      "humidity_percent": 37,
+      "target_temperature": 22.0
+    }
+  },
+  {
+    "device_id": "4005",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-02-01T18:00:00Z",
+    "payload": {
+      "temperature_celsius": 22.0,
+      "humidity_percent": 39,
+      "target_temperature": 22.0
+    }
+  },
+  {
+    "device_id": "4006",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-02-01T18:00:00Z",
+    "payload": {
+      "temperature_celsius": 21.2,
+      "humidity_percent": 42,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4013",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-02-01T18:00:00Z",
+    "payload": {
+      "temperature_celsius": 20.1,
+      "humidity_percent": 43,
+      "target_temperature": 20.0
+    }
+  },
+  {
+    "device_id": "4001",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-02-02T07:00:00Z",
+    "payload": {
+      "temperature_celsius": 18.9,
+      "humidity_percent": 43,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4003",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-02-02T07:00:00Z",
+    "payload": {
+      "temperature_celsius": 20.2,
+      "humidity_percent": 39,
+      "target_temperature": 22.0
+    }
+  },
+  {
+    "device_id": "4006",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-02-02T07:00:00Z",
+    "payload": {
+      "temperature_celsius": 18.5,
+      "humidity_percent": 46,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4009",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-02-02T07:00:00Z",
+    "payload": {
+      "temperature_celsius": 19.7,
+      "humidity_percent": 40,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4010",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-02-02T07:00:00Z",
+    "payload": {
+      "temperature_celsius": 19.1,
+      "humidity_percent": 42,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4014",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-02-02T07:00:00Z",
+    "payload": {
+      "temperature_celsius": 19.4,
+      "humidity_percent": 41,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4001",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-02-02T12:00:00Z",
+    "payload": {
+      "temperature_celsius": 20.8,
+      "humidity_percent": 40,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4003",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-02-02T12:00:00Z",
+    "payload": {
+      "temperature_celsius": 21.9,
+      "humidity_percent": 37,
+      "target_temperature": 22.0
+    }
+  },
+  {
+    "device_id": "4005",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-02-02T12:00:00Z",
+    "payload": {
+      "temperature_celsius": 21.8,
+      "humidity_percent": 38,
+      "target_temperature": 22.0
+    }
+  },
+  {
+    "device_id": "4006",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-02-02T12:00:00Z",
+    "payload": {
+      "temperature_celsius": 20.5,
+      "humidity_percent": 44,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4013",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-02-02T12:00:00Z",
+    "payload": {
+      "temperature_celsius": 19.8,
+      "humidity_percent": 43,
+      "target_temperature": 20.0
+    }
+  },
+  {
+    "device_id": "4003",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-01-31T23:00:00Z",
+    "payload": {
+      "temperature_celsius": 19.0,
+      "humidity_percent": 41,
+      "target_temperature": 22.0
+    }
+  },
+  {
+    "device_id": "4006",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-01-31T23:00:00Z",
+    "payload": {
+      "temperature_celsius": 17.5,
+      "humidity_percent": 48,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4001",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-02-02T18:00:00Z",
+    "payload": {
+      "temperature_celsius": 21.3,
+      "humidity_percent": 41,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4003",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-02-02T18:00:00Z",
+    "payload": {
+      "temperature_celsius": 22.0,
+      "humidity_percent": 38,
+      "target_temperature": 22.0
+    }
+  },
+  {
+    "device_id": "4009",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-02-02T18:00:00Z",
+    "payload": {
+      "temperature_celsius": 21.0,
+      "humidity_percent": 38,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4001",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-01T07:00:00Z",
+    "payload": {
+      "temperature_celsius": 20.4,
+      "humidity_percent": 37,
+      "target_temperature": 22.0
+    }
+  },
+  {
+    "device_id": "4001",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-01T13:00:00Z",
+    "payload": {
+      "temperature_celsius": 21.9,
+      "humidity_percent": 37,
+      "target_temperature": 22.0
+    }
+  },
+  {
+    "device_id": "4001",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-01T19:00:00Z",
+    "payload": {
+      "temperature_celsius": 20.8,
+      "humidity_percent": 37,
+      "target_temperature": 22.0
+    }
+  },
+  {
+    "device_id": "4003",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-01T07:00:00Z",
+    "payload": {
+      "temperature_celsius": 20.8,
+      "humidity_percent": 38,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4003",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-01T13:00:00Z",
+    "payload": {
+      "temperature_celsius": 22.3,
+      "humidity_percent": 38,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4003",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-01T19:00:00Z",
+    "payload": {
+      "temperature_celsius": 21.2,
+      "humidity_percent": 38,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4005",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-01T07:00:00Z",
+    "payload": {
+      "temperature_celsius": 21.2,
+      "humidity_percent": 39,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4005",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-01T13:00:00Z",
+    "payload": {
+      "temperature_celsius": 22.7,
+      "humidity_percent": 39,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4005",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-01T19:00:00Z",
+    "payload": {
+      "temperature_celsius": 21.6,
+      "humidity_percent": 39,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4006",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-01T07:00:00Z",
+    "payload": {
+      "temperature_celsius": 21.6,
+      "humidity_percent": 40,
+      "target_temperature": 22.0
+    }
+  },
+  {
+    "device_id": "4006",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-01T13:00:00Z",
+    "payload": {
+      "temperature_celsius": 23.1,
+      "humidity_percent": 40,
+      "target_temperature": 22.0
+    }
+  },
+  {
+    "device_id": "4006",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-01T19:00:00Z",
+    "payload": {
+      "temperature_celsius": 22.0,
+      "humidity_percent": 40,
+      "target_temperature": 22.0
+    }
+  },
+  {
+    "device_id": "4009",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-01T07:00:00Z",
+    "payload": {
+      "temperature_celsius": 20.4,
+      "humidity_percent": 41,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4009",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-01T13:00:00Z",
+    "payload": {
+      "temperature_celsius": 21.9,
+      "humidity_percent": 41,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4009",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-01T19:00:00Z",
+    "payload": {
+      "temperature_celsius": 20.8,
+      "humidity_percent": 41,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4010",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-01T07:00:00Z",
+    "payload": {
+      "temperature_celsius": 20.8,
+      "humidity_percent": 42,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4010",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-01T13:00:00Z",
+    "payload": {
+      "temperature_celsius": 22.3,
+      "humidity_percent": 42,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4010",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-01T19:00:00Z",
+    "payload": {
+      "temperature_celsius": 21.2,
+      "humidity_percent": 42,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4014",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-01T07:00:00Z",
+    "payload": {
+      "temperature_celsius": 21.2,
+      "humidity_percent": 43,
+      "target_temperature": 22.0
+    }
+  },
+  {
+    "device_id": "4014",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-01T13:00:00Z",
+    "payload": {
+      "temperature_celsius": 22.7,
+      "humidity_percent": 43,
+      "target_temperature": 22.0
+    }
+  },
+  {
+    "device_id": "4014",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-01T19:00:00Z",
+    "payload": {
+      "temperature_celsius": 21.6,
+      "humidity_percent": 43,
+      "target_temperature": 22.0
+    }
+  },
+  {
+    "device_id": "4017",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-01T07:00:00Z",
+    "payload": {
+      "temperature_celsius": 21.6,
+      "humidity_percent": 44,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4017",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-01T13:00:00Z",
+    "payload": {
+      "temperature_celsius": 23.1,
+      "humidity_percent": 44,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4017",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-01T19:00:00Z",
+    "payload": {
+      "temperature_celsius": 22.0,
+      "humidity_percent": 44,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4019",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-01T07:00:00Z",
+    "payload": {
+      "temperature_celsius": 20.4,
+      "humidity_percent": 37,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4019",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-01T13:00:00Z",
+    "payload": {
+      "temperature_celsius": 21.9,
+      "humidity_percent": 37,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4019",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-01T19:00:00Z",
+    "payload": {
+      "temperature_celsius": 20.8,
+      "humidity_percent": 37,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4021",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-01T07:00:00Z",
+    "payload": {
+      "temperature_celsius": 20.8,
+      "humidity_percent": 38,
+      "target_temperature": 22.0
+    }
+  },
+  {
+    "device_id": "4021",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-01T13:00:00Z",
+    "payload": {
+      "temperature_celsius": 22.3,
+      "humidity_percent": 38,
+      "target_temperature": 22.0
+    }
+  },
+  {
+    "device_id": "4021",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-01T19:00:00Z",
+    "payload": {
+      "temperature_celsius": 21.2,
+      "humidity_percent": 38,
+      "target_temperature": 22.0
+    }
+  },
+  {
+    "device_id": "4023",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-01T07:00:00Z",
+    "payload": {
+      "temperature_celsius": 21.2,
+      "humidity_percent": 39,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4023",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-01T13:00:00Z",
+    "payload": {
+      "temperature_celsius": 22.7,
+      "humidity_percent": 39,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4023",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-01T19:00:00Z",
+    "payload": {
+      "temperature_celsius": 21.6,
+      "humidity_percent": 39,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4025",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-01T07:00:00Z",
+    "payload": {
+      "temperature_celsius": 21.6,
+      "humidity_percent": 40,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4025",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-01T13:00:00Z",
+    "payload": {
+      "temperature_celsius": 23.1,
+      "humidity_percent": 40,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4025",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-01T19:00:00Z",
+    "payload": {
+      "temperature_celsius": 22.0,
+      "humidity_percent": 40,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4027",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-01T07:00:00Z",
+    "payload": {
+      "temperature_celsius": 20.4,
+      "humidity_percent": 41,
+      "target_temperature": 22.0
+    }
+  },
+  {
+    "device_id": "4027",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-01T13:00:00Z",
+    "payload": {
+      "temperature_celsius": 21.9,
+      "humidity_percent": 41,
+      "target_temperature": 22.0
+    }
+  },
+  {
+    "device_id": "4027",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-01T19:00:00Z",
+    "payload": {
+      "temperature_celsius": 20.8,
+      "humidity_percent": 41,
+      "target_temperature": 22.0
+    }
+  },
+  {
+    "device_id": "4029",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-01T07:00:00Z",
+    "payload": {
+      "temperature_celsius": 20.8,
+      "humidity_percent": 42,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4029",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-01T13:00:00Z",
+    "payload": {
+      "temperature_celsius": 22.3,
+      "humidity_percent": 42,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4029",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-01T19:00:00Z",
+    "payload": {
+      "temperature_celsius": 21.2,
+      "humidity_percent": 42,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4031",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-01T07:00:00Z",
+    "payload": {
+      "temperature_celsius": 21.2,
+      "humidity_percent": 43,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4031",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-01T13:00:00Z",
+    "payload": {
+      "temperature_celsius": 22.7,
+      "humidity_percent": 43,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4031",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-01T19:00:00Z",
+    "payload": {
+      "temperature_celsius": 21.6,
+      "humidity_percent": 43,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4033",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-01T07:00:00Z",
+    "payload": {
+      "temperature_celsius": 21.6,
+      "humidity_percent": 44,
+      "target_temperature": 22.0
+    }
+  },
+  {
+    "device_id": "4033",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-01T13:00:00Z",
+    "payload": {
+      "temperature_celsius": 23.1,
+      "humidity_percent": 44,
+      "target_temperature": 22.0
+    }
+  },
+  {
+    "device_id": "4033",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-01T19:00:00Z",
+    "payload": {
+      "temperature_celsius": 22.0,
+      "humidity_percent": 44,
+      "target_temperature": 22.0
+    }
+  },
+  {
+    "device_id": "4001",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-02T07:00:00Z",
+    "payload": {
+      "temperature_celsius": 20.8,
+      "humidity_percent": 38,
+      "target_temperature": 22.0
+    }
+  },
+  {
+    "device_id": "4001",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-02T13:00:00Z",
+    "payload": {
+      "temperature_celsius": 22.3,
+      "humidity_percent": 38,
+      "target_temperature": 22.0
+    }
+  },
+  {
+    "device_id": "4001",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-02T19:00:00Z",
+    "payload": {
+      "temperature_celsius": 21.2,
+      "humidity_percent": 38,
+      "target_temperature": 22.0
+    }
+  },
+  {
+    "device_id": "4003",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-02T07:00:00Z",
+    "payload": {
+      "temperature_celsius": 21.2,
+      "humidity_percent": 39,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4003",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-02T13:00:00Z",
+    "payload": {
+      "temperature_celsius": 22.7,
+      "humidity_percent": 39,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4003",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-02T19:00:00Z",
+    "payload": {
+      "temperature_celsius": 21.6,
+      "humidity_percent": 39,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4005",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-02T07:00:00Z",
+    "payload": {
+      "temperature_celsius": 21.6,
+      "humidity_percent": 40,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4005",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-02T13:00:00Z",
+    "payload": {
+      "temperature_celsius": 23.1,
+      "humidity_percent": 40,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4005",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-02T19:00:00Z",
+    "payload": {
+      "temperature_celsius": 22.0,
+      "humidity_percent": 40,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4006",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-02T07:00:00Z",
+    "payload": {
+      "temperature_celsius": 20.4,
+      "humidity_percent": 41,
+      "target_temperature": 22.0
+    }
+  },
+  {
+    "device_id": "4006",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-02T13:00:00Z",
+    "payload": {
+      "temperature_celsius": 21.9,
+      "humidity_percent": 41,
+      "target_temperature": 22.0
+    }
+  },
+  {
+    "device_id": "4006",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-02T19:00:00Z",
+    "payload": {
+      "temperature_celsius": 20.8,
+      "humidity_percent": 41,
+      "target_temperature": 22.0
+    }
+  },
+  {
+    "device_id": "4009",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-02T07:00:00Z",
+    "payload": {
+      "temperature_celsius": 20.8,
+      "humidity_percent": 42,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4009",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-02T13:00:00Z",
+    "payload": {
+      "temperature_celsius": 22.3,
+      "humidity_percent": 42,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4009",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-02T19:00:00Z",
+    "payload": {
+      "temperature_celsius": 21.2,
+      "humidity_percent": 42,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4010",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-02T07:00:00Z",
+    "payload": {
+      "temperature_celsius": 21.2,
+      "humidity_percent": 43,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4010",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-02T13:00:00Z",
+    "payload": {
+      "temperature_celsius": 22.7,
+      "humidity_percent": 43,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4010",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-02T19:00:00Z",
+    "payload": {
+      "temperature_celsius": 21.6,
+      "humidity_percent": 43,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4014",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-02T07:00:00Z",
+    "payload": {
+      "temperature_celsius": 21.6,
+      "humidity_percent": 44,
+      "target_temperature": 22.0
+    }
+  },
+  {
+    "device_id": "4014",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-02T13:00:00Z",
+    "payload": {
+      "temperature_celsius": 23.1,
+      "humidity_percent": 44,
+      "target_temperature": 22.0
+    }
+  },
+  {
+    "device_id": "4014",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-02T19:00:00Z",
+    "payload": {
+      "temperature_celsius": 22.0,
+      "humidity_percent": 44,
+      "target_temperature": 22.0
+    }
+  },
+  {
+    "device_id": "4017",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-02T07:00:00Z",
+    "payload": {
+      "temperature_celsius": 20.4,
+      "humidity_percent": 37,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4017",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-02T13:00:00Z",
+    "payload": {
+      "temperature_celsius": 21.9,
+      "humidity_percent": 37,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4017",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-02T19:00:00Z",
+    "payload": {
+      "temperature_celsius": 20.8,
+      "humidity_percent": 37,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4019",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-02T07:00:00Z",
+    "payload": {
+      "temperature_celsius": 20.8,
+      "humidity_percent": 38,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4019",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-02T13:00:00Z",
+    "payload": {
+      "temperature_celsius": 22.3,
+      "humidity_percent": 38,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4019",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-02T19:00:00Z",
+    "payload": {
+      "temperature_celsius": 21.2,
+      "humidity_percent": 38,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4021",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-02T07:00:00Z",
+    "payload": {
+      "temperature_celsius": 21.2,
+      "humidity_percent": 39,
+      "target_temperature": 22.0
+    }
+  },
+  {
+    "device_id": "4021",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-02T13:00:00Z",
+    "payload": {
+      "temperature_celsius": 22.7,
+      "humidity_percent": 39,
+      "target_temperature": 22.0
+    }
+  },
+  {
+    "device_id": "4021",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-02T19:00:00Z",
+    "payload": {
+      "temperature_celsius": 21.6,
+      "humidity_percent": 39,
+      "target_temperature": 22.0
+    }
+  },
+  {
+    "device_id": "4023",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-02T07:00:00Z",
+    "payload": {
+      "temperature_celsius": 21.6,
+      "humidity_percent": 40,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4023",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-02T13:00:00Z",
+    "payload": {
+      "temperature_celsius": 23.1,
+      "humidity_percent": 40,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4023",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-02T19:00:00Z",
+    "payload": {
+      "temperature_celsius": 22.0,
+      "humidity_percent": 40,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4025",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-02T07:00:00Z",
+    "payload": {
+      "temperature_celsius": 20.4,
+      "humidity_percent": 41,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4025",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-02T13:00:00Z",
+    "payload": {
+      "temperature_celsius": 21.9,
+      "humidity_percent": 41,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4025",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-02T19:00:00Z",
+    "payload": {
+      "temperature_celsius": 20.8,
+      "humidity_percent": 41,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4027",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-02T07:00:00Z",
+    "payload": {
+      "temperature_celsius": 20.8,
+      "humidity_percent": 42,
+      "target_temperature": 22.0
+    }
+  },
+  {
+    "device_id": "4027",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-02T13:00:00Z",
+    "payload": {
+      "temperature_celsius": 22.3,
+      "humidity_percent": 42,
+      "target_temperature": 22.0
+    }
+  },
+  {
+    "device_id": "4027",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-02T19:00:00Z",
+    "payload": {
+      "temperature_celsius": 21.2,
+      "humidity_percent": 42,
+      "target_temperature": 22.0
+    }
+  },
+  {
+    "device_id": "4029",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-02T07:00:00Z",
+    "payload": {
+      "temperature_celsius": 21.2,
+      "humidity_percent": 43,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4029",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-02T13:00:00Z",
+    "payload": {
+      "temperature_celsius": 22.7,
+      "humidity_percent": 43,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4029",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-02T19:00:00Z",
+    "payload": {
+      "temperature_celsius": 21.6,
+      "humidity_percent": 43,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4031",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-02T07:00:00Z",
+    "payload": {
+      "temperature_celsius": 21.6,
+      "humidity_percent": 44,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4031",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-02T13:00:00Z",
+    "payload": {
+      "temperature_celsius": 23.1,
+      "humidity_percent": 44,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4031",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-02T19:00:00Z",
+    "payload": {
+      "temperature_celsius": 22.0,
+      "humidity_percent": 44,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4033",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-02T07:00:00Z",
+    "payload": {
+      "temperature_celsius": 20.4,
+      "humidity_percent": 37,
+      "target_temperature": 22.0
+    }
+  },
+  {
+    "device_id": "4033",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-02T13:00:00Z",
+    "payload": {
+      "temperature_celsius": 21.9,
+      "humidity_percent": 37,
+      "target_temperature": 22.0
+    }
+  },
+  {
+    "device_id": "4033",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-02T19:00:00Z",
+    "payload": {
+      "temperature_celsius": 20.8,
+      "humidity_percent": 37,
+      "target_temperature": 22.0
+    }
+  },
+  {
+    "device_id": "4001",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-03T07:00:00Z",
+    "payload": {
+      "temperature_celsius": 21.2,
+      "humidity_percent": 39,
+      "target_temperature": 22.0
+    }
+  },
+  {
+    "device_id": "4001",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-03T13:00:00Z",
+    "payload": {
+      "temperature_celsius": 22.7,
+      "humidity_percent": 39,
+      "target_temperature": 22.0
+    }
+  },
+  {
+    "device_id": "4001",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-03T19:00:00Z",
+    "payload": {
+      "temperature_celsius": 21.6,
+      "humidity_percent": 39,
+      "target_temperature": 22.0
+    }
+  },
+  {
+    "device_id": "4003",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-03T07:00:00Z",
+    "payload": {
+      "temperature_celsius": 21.6,
+      "humidity_percent": 40,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4003",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-03T13:00:00Z",
+    "payload": {
+      "temperature_celsius": 23.1,
+      "humidity_percent": 40,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4003",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-03T19:00:00Z",
+    "payload": {
+      "temperature_celsius": 22.0,
+      "humidity_percent": 40,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4005",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-03T07:00:00Z",
+    "payload": {
+      "temperature_celsius": 20.4,
+      "humidity_percent": 41,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4005",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-03T13:00:00Z",
+    "payload": {
+      "temperature_celsius": 21.9,
+      "humidity_percent": 41,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4005",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-03T19:00:00Z",
+    "payload": {
+      "temperature_celsius": 20.8,
+      "humidity_percent": 41,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4006",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-03T07:00:00Z",
+    "payload": {
+      "temperature_celsius": 20.8,
+      "humidity_percent": 42,
+      "target_temperature": 22.0
+    }
+  },
+  {
+    "device_id": "4006",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-03T13:00:00Z",
+    "payload": {
+      "temperature_celsius": 22.3,
+      "humidity_percent": 42,
+      "target_temperature": 22.0
+    }
+  },
+  {
+    "device_id": "4006",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-03T19:00:00Z",
+    "payload": {
+      "temperature_celsius": 21.2,
+      "humidity_percent": 42,
+      "target_temperature": 22.0
+    }
+  },
+  {
+    "device_id": "4009",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-03T07:00:00Z",
+    "payload": {
+      "temperature_celsius": 21.2,
+      "humidity_percent": 43,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4009",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-03T13:00:00Z",
+    "payload": {
+      "temperature_celsius": 22.7,
+      "humidity_percent": 43,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4009",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-03T19:00:00Z",
+    "payload": {
+      "temperature_celsius": 21.6,
+      "humidity_percent": 43,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4010",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-03T07:00:00Z",
+    "payload": {
+      "temperature_celsius": 21.6,
+      "humidity_percent": 44,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4010",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-03T13:00:00Z",
+    "payload": {
+      "temperature_celsius": 23.1,
+      "humidity_percent": 44,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4010",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-03T19:00:00Z",
+    "payload": {
+      "temperature_celsius": 22.0,
+      "humidity_percent": 44,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4014",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-03T07:00:00Z",
+    "payload": {
+      "temperature_celsius": 20.4,
+      "humidity_percent": 37,
+      "target_temperature": 22.0
+    }
+  },
+  {
+    "device_id": "4014",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-03T13:00:00Z",
+    "payload": {
+      "temperature_celsius": 21.9,
+      "humidity_percent": 37,
+      "target_temperature": 22.0
+    }
+  },
+  {
+    "device_id": "4014",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-03T19:00:00Z",
+    "payload": {
+      "temperature_celsius": 20.8,
+      "humidity_percent": 37,
+      "target_temperature": 22.0
+    }
+  },
+  {
+    "device_id": "4017",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-03T07:00:00Z",
+    "payload": {
+      "temperature_celsius": 20.8,
+      "humidity_percent": 38,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4017",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-03T13:00:00Z",
+    "payload": {
+      "temperature_celsius": 22.3,
+      "humidity_percent": 38,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4017",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-03T19:00:00Z",
+    "payload": {
+      "temperature_celsius": 21.2,
+      "humidity_percent": 38,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4019",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-03T07:00:00Z",
+    "payload": {
+      "temperature_celsius": 21.2,
+      "humidity_percent": 39,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4019",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-03T13:00:00Z",
+    "payload": {
+      "temperature_celsius": 22.7,
+      "humidity_percent": 39,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4019",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-03T19:00:00Z",
+    "payload": {
+      "temperature_celsius": 21.6,
+      "humidity_percent": 39,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4021",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-03T07:00:00Z",
+    "payload": {
+      "temperature_celsius": 21.6,
+      "humidity_percent": 40,
+      "target_temperature": 22.0
+    }
+  },
+  {
+    "device_id": "4021",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-03T13:00:00Z",
+    "payload": {
+      "temperature_celsius": 23.1,
+      "humidity_percent": 40,
+      "target_temperature": 22.0
+    }
+  },
+  {
+    "device_id": "4021",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-03T19:00:00Z",
+    "payload": {
+      "temperature_celsius": 22.0,
+      "humidity_percent": 40,
+      "target_temperature": 22.0
+    }
+  },
+  {
+    "device_id": "4023",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-03T07:00:00Z",
+    "payload": {
+      "temperature_celsius": 20.4,
+      "humidity_percent": 41,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4023",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-03T13:00:00Z",
+    "payload": {
+      "temperature_celsius": 21.9,
+      "humidity_percent": 41,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4023",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-03T19:00:00Z",
+    "payload": {
+      "temperature_celsius": 20.8,
+      "humidity_percent": 41,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4025",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-03T07:00:00Z",
+    "payload": {
+      "temperature_celsius": 20.8,
+      "humidity_percent": 42,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4025",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-03T13:00:00Z",
+    "payload": {
+      "temperature_celsius": 22.3,
+      "humidity_percent": 42,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4025",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-03T19:00:00Z",
+    "payload": {
+      "temperature_celsius": 21.2,
+      "humidity_percent": 42,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4027",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-03T07:00:00Z",
+    "payload": {
+      "temperature_celsius": 21.2,
+      "humidity_percent": 43,
+      "target_temperature": 22.0
+    }
+  },
+  {
+    "device_id": "4027",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-03T13:00:00Z",
+    "payload": {
+      "temperature_celsius": 22.7,
+      "humidity_percent": 43,
+      "target_temperature": 22.0
+    }
+  },
+  {
+    "device_id": "4027",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-03T19:00:00Z",
+    "payload": {
+      "temperature_celsius": 21.6,
+      "humidity_percent": 43,
+      "target_temperature": 22.0
+    }
+  },
+  {
+    "device_id": "4029",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-03T07:00:00Z",
+    "payload": {
+      "temperature_celsius": 21.6,
+      "humidity_percent": 44,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4029",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-03T13:00:00Z",
+    "payload": {
+      "temperature_celsius": 23.1,
+      "humidity_percent": 44,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4029",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-03T19:00:00Z",
+    "payload": {
+      "temperature_celsius": 22.0,
+      "humidity_percent": 44,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4031",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-03T07:00:00Z",
+    "payload": {
+      "temperature_celsius": 20.4,
+      "humidity_percent": 37,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4031",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-03T13:00:00Z",
+    "payload": {
+      "temperature_celsius": 21.9,
+      "humidity_percent": 37,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4031",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-03T19:00:00Z",
+    "payload": {
+      "temperature_celsius": 20.8,
+      "humidity_percent": 37,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4033",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-03T07:00:00Z",
+    "payload": {
+      "temperature_celsius": 20.8,
+      "humidity_percent": 38,
+      "target_temperature": 22.0
+    }
+  },
+  {
+    "device_id": "4033",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-03T13:00:00Z",
+    "payload": {
+      "temperature_celsius": 22.3,
+      "humidity_percent": 38,
+      "target_temperature": 22.0
+    }
+  },
+  {
+    "device_id": "4033",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-03T19:00:00Z",
+    "payload": {
+      "temperature_celsius": 21.2,
+      "humidity_percent": 38,
+      "target_temperature": 22.0
+    }
+  },
+  {
+    "device_id": "4001",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-04T07:00:00Z",
+    "payload": {
+      "temperature_celsius": 21.6,
+      "humidity_percent": 40,
+      "target_temperature": 22.0
+    }
+  },
+  {
+    "device_id": "4001",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-04T13:00:00Z",
+    "payload": {
+      "temperature_celsius": 23.1,
+      "humidity_percent": 40,
+      "target_temperature": 22.0
+    }
+  },
+  {
+    "device_id": "4001",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-04T19:00:00Z",
+    "payload": {
+      "temperature_celsius": 22.0,
+      "humidity_percent": 40,
+      "target_temperature": 22.0
+    }
+  },
+  {
+    "device_id": "4003",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-04T07:00:00Z",
+    "payload": {
+      "temperature_celsius": 20.4,
+      "humidity_percent": 41,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4003",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-04T13:00:00Z",
+    "payload": {
+      "temperature_celsius": 21.9,
+      "humidity_percent": 41,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4003",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-04T19:00:00Z",
+    "payload": {
+      "temperature_celsius": 20.8,
+      "humidity_percent": 41,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4005",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-04T07:00:00Z",
+    "payload": {
+      "temperature_celsius": 20.8,
+      "humidity_percent": 42,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4005",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-04T13:00:00Z",
+    "payload": {
+      "temperature_celsius": 22.3,
+      "humidity_percent": 42,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4005",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-04T19:00:00Z",
+    "payload": {
+      "temperature_celsius": 21.2,
+      "humidity_percent": 42,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4006",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-04T07:00:00Z",
+    "payload": {
+      "temperature_celsius": 21.2,
+      "humidity_percent": 43,
+      "target_temperature": 22.0
+    }
+  },
+  {
+    "device_id": "4006",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-04T13:00:00Z",
+    "payload": {
+      "temperature_celsius": 22.7,
+      "humidity_percent": 43,
+      "target_temperature": 22.0
+    }
+  },
+  {
+    "device_id": "4006",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-04T19:00:00Z",
+    "payload": {
+      "temperature_celsius": 21.6,
+      "humidity_percent": 43,
+      "target_temperature": 22.0
+    }
+  },
+  {
+    "device_id": "4009",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-04T07:00:00Z",
+    "payload": {
+      "temperature_celsius": 21.6,
+      "humidity_percent": 44,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4009",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-04T13:00:00Z",
+    "payload": {
+      "temperature_celsius": 23.1,
+      "humidity_percent": 44,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4009",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-04T19:00:00Z",
+    "payload": {
+      "temperature_celsius": 22.0,
+      "humidity_percent": 44,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4010",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-04T07:00:00Z",
+    "payload": {
+      "temperature_celsius": 20.4,
+      "humidity_percent": 37,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4010",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-04T13:00:00Z",
+    "payload": {
+      "temperature_celsius": 21.9,
+      "humidity_percent": 37,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4010",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-04T19:00:00Z",
+    "payload": {
+      "temperature_celsius": 20.8,
+      "humidity_percent": 37,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4014",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-04T07:00:00Z",
+    "payload": {
+      "temperature_celsius": 20.8,
+      "humidity_percent": 38,
+      "target_temperature": 22.0
+    }
+  },
+  {
+    "device_id": "4014",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-04T13:00:00Z",
+    "payload": {
+      "temperature_celsius": 22.3,
+      "humidity_percent": 38,
+      "target_temperature": 22.0
+    }
+  },
+  {
+    "device_id": "4014",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-04T19:00:00Z",
+    "payload": {
+      "temperature_celsius": 21.2,
+      "humidity_percent": 38,
+      "target_temperature": 22.0
+    }
+  },
+  {
+    "device_id": "4017",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-04T07:00:00Z",
+    "payload": {
+      "temperature_celsius": 21.2,
+      "humidity_percent": 39,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4017",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-04T13:00:00Z",
+    "payload": {
+      "temperature_celsius": 22.7,
+      "humidity_percent": 39,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4017",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-04T19:00:00Z",
+    "payload": {
+      "temperature_celsius": 21.6,
+      "humidity_percent": 39,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4019",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-04T07:00:00Z",
+    "payload": {
+      "temperature_celsius": 21.6,
+      "humidity_percent": 40,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4019",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-04T13:00:00Z",
+    "payload": {
+      "temperature_celsius": 23.1,
+      "humidity_percent": 40,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4019",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-04T19:00:00Z",
+    "payload": {
+      "temperature_celsius": 22.0,
+      "humidity_percent": 40,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4021",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-04T07:00:00Z",
+    "payload": {
+      "temperature_celsius": 20.4,
+      "humidity_percent": 41,
+      "target_temperature": 22.0
+    }
+  },
+  {
+    "device_id": "4021",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-04T13:00:00Z",
+    "payload": {
+      "temperature_celsius": 21.9,
+      "humidity_percent": 41,
+      "target_temperature": 22.0
+    }
+  },
+  {
+    "device_id": "4021",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-04T19:00:00Z",
+    "payload": {
+      "temperature_celsius": 20.8,
+      "humidity_percent": 41,
+      "target_temperature": 22.0
+    }
+  },
+  {
+    "device_id": "4023",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-04T07:00:00Z",
+    "payload": {
+      "temperature_celsius": 20.8,
+      "humidity_percent": 42,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4023",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-04T13:00:00Z",
+    "payload": {
+      "temperature_celsius": 22.3,
+      "humidity_percent": 42,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4023",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-04T19:00:00Z",
+    "payload": {
+      "temperature_celsius": 21.2,
+      "humidity_percent": 42,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4025",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-04T07:00:00Z",
+    "payload": {
+      "temperature_celsius": 21.2,
+      "humidity_percent": 43,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4025",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-04T13:00:00Z",
+    "payload": {
+      "temperature_celsius": 22.7,
+      "humidity_percent": 43,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4025",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-04T19:00:00Z",
+    "payload": {
+      "temperature_celsius": 21.6,
+      "humidity_percent": 43,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4027",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-04T07:00:00Z",
+    "payload": {
+      "temperature_celsius": 21.6,
+      "humidity_percent": 44,
+      "target_temperature": 22.0
+    }
+  },
+  {
+    "device_id": "4027",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-04T13:00:00Z",
+    "payload": {
+      "temperature_celsius": 23.1,
+      "humidity_percent": 44,
+      "target_temperature": 22.0
+    }
+  },
+  {
+    "device_id": "4027",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-04T19:00:00Z",
+    "payload": {
+      "temperature_celsius": 22.0,
+      "humidity_percent": 44,
+      "target_temperature": 22.0
+    }
+  },
+  {
+    "device_id": "4029",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-04T07:00:00Z",
+    "payload": {
+      "temperature_celsius": 20.4,
+      "humidity_percent": 37,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4029",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-04T13:00:00Z",
+    "payload": {
+      "temperature_celsius": 21.9,
+      "humidity_percent": 37,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4029",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-04T19:00:00Z",
+    "payload": {
+      "temperature_celsius": 20.8,
+      "humidity_percent": 37,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4031",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-04T07:00:00Z",
+    "payload": {
+      "temperature_celsius": 20.8,
+      "humidity_percent": 38,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4031",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-04T13:00:00Z",
+    "payload": {
+      "temperature_celsius": 22.3,
+      "humidity_percent": 38,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4031",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-04T19:00:00Z",
+    "payload": {
+      "temperature_celsius": 21.2,
+      "humidity_percent": 38,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4033",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-04T07:00:00Z",
+    "payload": {
+      "temperature_celsius": 21.2,
+      "humidity_percent": 39,
+      "target_temperature": 22.0
+    }
+  },
+  {
+    "device_id": "4033",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-04T13:00:00Z",
+    "payload": {
+      "temperature_celsius": 22.7,
+      "humidity_percent": 39,
+      "target_temperature": 22.0
+    }
+  },
+  {
+    "device_id": "4033",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-04T19:00:00Z",
+    "payload": {
+      "temperature_celsius": 21.6,
+      "humidity_percent": 39,
+      "target_temperature": 22.0
+    }
+  },
+  {
+    "device_id": "4001",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-05T07:00:00Z",
+    "payload": {
+      "temperature_celsius": 20.4,
+      "humidity_percent": 41,
+      "target_temperature": 22.0
+    }
+  },
+  {
+    "device_id": "4001",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-05T13:00:00Z",
+    "payload": {
+      "temperature_celsius": 21.9,
+      "humidity_percent": 41,
+      "target_temperature": 22.0
+    }
+  },
+  {
+    "device_id": "4001",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-05T19:00:00Z",
+    "payload": {
+      "temperature_celsius": 20.8,
+      "humidity_percent": 41,
+      "target_temperature": 22.0
+    }
+  },
+  {
+    "device_id": "4003",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-05T07:00:00Z",
+    "payload": {
+      "temperature_celsius": 20.8,
+      "humidity_percent": 42,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4003",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-05T13:00:00Z",
+    "payload": {
+      "temperature_celsius": 22.3,
+      "humidity_percent": 42,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4003",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-05T19:00:00Z",
+    "payload": {
+      "temperature_celsius": 21.2,
+      "humidity_percent": 42,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4005",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-05T07:00:00Z",
+    "payload": {
+      "temperature_celsius": 21.2,
+      "humidity_percent": 43,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4005",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-05T13:00:00Z",
+    "payload": {
+      "temperature_celsius": 22.7,
+      "humidity_percent": 43,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4005",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-05T19:00:00Z",
+    "payload": {
+      "temperature_celsius": 21.6,
+      "humidity_percent": 43,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4006",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-05T07:00:00Z",
+    "payload": {
+      "temperature_celsius": 21.6,
+      "humidity_percent": 44,
+      "target_temperature": 22.0
+    }
+  },
+  {
+    "device_id": "4006",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-05T13:00:00Z",
+    "payload": {
+      "temperature_celsius": 23.1,
+      "humidity_percent": 44,
+      "target_temperature": 22.0
+    }
+  },
+  {
+    "device_id": "4006",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-05T19:00:00Z",
+    "payload": {
+      "temperature_celsius": 22.0,
+      "humidity_percent": 44,
+      "target_temperature": 22.0
+    }
+  },
+  {
+    "device_id": "4009",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-05T07:00:00Z",
+    "payload": {
+      "temperature_celsius": 20.4,
+      "humidity_percent": 37,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4009",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-05T13:00:00Z",
+    "payload": {
+      "temperature_celsius": 21.9,
+      "humidity_percent": 37,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4009",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-05T19:00:00Z",
+    "payload": {
+      "temperature_celsius": 20.8,
+      "humidity_percent": 37,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4010",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-05T07:00:00Z",
+    "payload": {
+      "temperature_celsius": 20.8,
+      "humidity_percent": 38,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4010",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-05T13:00:00Z",
+    "payload": {
+      "temperature_celsius": 22.3,
+      "humidity_percent": 38,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4010",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-05T19:00:00Z",
+    "payload": {
+      "temperature_celsius": 21.2,
+      "humidity_percent": 38,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4014",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-05T07:00:00Z",
+    "payload": {
+      "temperature_celsius": 21.2,
+      "humidity_percent": 39,
+      "target_temperature": 22.0
+    }
+  },
+  {
+    "device_id": "4014",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-05T13:00:00Z",
+    "payload": {
+      "temperature_celsius": 22.7,
+      "humidity_percent": 39,
+      "target_temperature": 22.0
+    }
+  },
+  {
+    "device_id": "4014",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-05T19:00:00Z",
+    "payload": {
+      "temperature_celsius": 21.6,
+      "humidity_percent": 39,
+      "target_temperature": 22.0
+    }
+  },
+  {
+    "device_id": "4017",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-05T07:00:00Z",
+    "payload": {
+      "temperature_celsius": 21.6,
+      "humidity_percent": 40,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4017",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-05T13:00:00Z",
+    "payload": {
+      "temperature_celsius": 23.1,
+      "humidity_percent": 40,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4017",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-05T19:00:00Z",
+    "payload": {
+      "temperature_celsius": 22.0,
+      "humidity_percent": 40,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4019",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-05T07:00:00Z",
+    "payload": {
+      "temperature_celsius": 20.4,
+      "humidity_percent": 41,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4019",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-05T13:00:00Z",
+    "payload": {
+      "temperature_celsius": 21.9,
+      "humidity_percent": 41,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4019",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-05T19:00:00Z",
+    "payload": {
+      "temperature_celsius": 20.8,
+      "humidity_percent": 41,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4021",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-05T07:00:00Z",
+    "payload": {
+      "temperature_celsius": 20.8,
+      "humidity_percent": 42,
+      "target_temperature": 22.0
+    }
+  },
+  {
+    "device_id": "4021",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-05T13:00:00Z",
+    "payload": {
+      "temperature_celsius": 22.3,
+      "humidity_percent": 42,
+      "target_temperature": 22.0
+    }
+  },
+  {
+    "device_id": "4021",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-05T19:00:00Z",
+    "payload": {
+      "temperature_celsius": 21.2,
+      "humidity_percent": 42,
+      "target_temperature": 22.0
+    }
+  },
+  {
+    "device_id": "4023",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-05T07:00:00Z",
+    "payload": {
+      "temperature_celsius": 21.2,
+      "humidity_percent": 43,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4023",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-05T13:00:00Z",
+    "payload": {
+      "temperature_celsius": 22.7,
+      "humidity_percent": 43,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4023",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-05T19:00:00Z",
+    "payload": {
+      "temperature_celsius": 21.6,
+      "humidity_percent": 43,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4025",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-05T07:00:00Z",
+    "payload": {
+      "temperature_celsius": 21.6,
+      "humidity_percent": 44,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4025",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-05T13:00:00Z",
+    "payload": {
+      "temperature_celsius": 23.1,
+      "humidity_percent": 44,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4025",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-05T19:00:00Z",
+    "payload": {
+      "temperature_celsius": 22.0,
+      "humidity_percent": 44,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4027",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-05T07:00:00Z",
+    "payload": {
+      "temperature_celsius": 20.4,
+      "humidity_percent": 37,
+      "target_temperature": 22.0
+    }
+  },
+  {
+    "device_id": "4027",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-05T13:00:00Z",
+    "payload": {
+      "temperature_celsius": 21.9,
+      "humidity_percent": 37,
+      "target_temperature": 22.0
+    }
+  },
+  {
+    "device_id": "4027",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-05T19:00:00Z",
+    "payload": {
+      "temperature_celsius": 20.8,
+      "humidity_percent": 37,
+      "target_temperature": 22.0
+    }
+  },
+  {
+    "device_id": "4029",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-05T07:00:00Z",
+    "payload": {
+      "temperature_celsius": 20.8,
+      "humidity_percent": 38,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4029",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-05T13:00:00Z",
+    "payload": {
+      "temperature_celsius": 22.3,
+      "humidity_percent": 38,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4029",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-05T19:00:00Z",
+    "payload": {
+      "temperature_celsius": 21.2,
+      "humidity_percent": 38,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4031",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-05T07:00:00Z",
+    "payload": {
+      "temperature_celsius": 21.2,
+      "humidity_percent": 39,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4031",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-05T13:00:00Z",
+    "payload": {
+      "temperature_celsius": 22.7,
+      "humidity_percent": 39,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4031",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-05T19:00:00Z",
+    "payload": {
+      "temperature_celsius": 21.6,
+      "humidity_percent": 39,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4033",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-05T07:00:00Z",
+    "payload": {
+      "temperature_celsius": 21.6,
+      "humidity_percent": 40,
+      "target_temperature": 22.0
+    }
+  },
+  {
+    "device_id": "4033",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-05T13:00:00Z",
+    "payload": {
+      "temperature_celsius": 23.1,
+      "humidity_percent": 40,
+      "target_temperature": 22.0
+    }
+  },
+  {
+    "device_id": "4033",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-05T19:00:00Z",
+    "payload": {
+      "temperature_celsius": 22.0,
+      "humidity_percent": 40,
+      "target_temperature": 22.0
+    }
+  },
+  {
+    "device_id": "4001",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-06T07:00:00Z",
+    "payload": {
+      "temperature_celsius": 20.8,
+      "humidity_percent": 42,
+      "target_temperature": 22.0
+    }
+  },
+  {
+    "device_id": "4001",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-06T13:00:00Z",
+    "payload": {
+      "temperature_celsius": 22.3,
+      "humidity_percent": 42,
+      "target_temperature": 22.0
+    }
+  },
+  {
+    "device_id": "4001",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-06T19:00:00Z",
+    "payload": {
+      "temperature_celsius": 21.2,
+      "humidity_percent": 42,
+      "target_temperature": 22.0
+    }
+  },
+  {
+    "device_id": "4003",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-06T07:00:00Z",
+    "payload": {
+      "temperature_celsius": 21.2,
+      "humidity_percent": 43,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4003",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-06T13:00:00Z",
+    "payload": {
+      "temperature_celsius": 22.7,
+      "humidity_percent": 43,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4003",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-06T19:00:00Z",
+    "payload": {
+      "temperature_celsius": 21.6,
+      "humidity_percent": 43,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4005",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-06T07:00:00Z",
+    "payload": {
+      "temperature_celsius": 21.6,
+      "humidity_percent": 44,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4005",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-06T13:00:00Z",
+    "payload": {
+      "temperature_celsius": 23.1,
+      "humidity_percent": 44,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4005",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-06T19:00:00Z",
+    "payload": {
+      "temperature_celsius": 22.0,
+      "humidity_percent": 44,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4006",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-06T07:00:00Z",
+    "payload": {
+      "temperature_celsius": 20.4,
+      "humidity_percent": 37,
+      "target_temperature": 22.0
+    }
+  },
+  {
+    "device_id": "4006",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-06T13:00:00Z",
+    "payload": {
+      "temperature_celsius": 21.9,
+      "humidity_percent": 37,
+      "target_temperature": 22.0
+    }
+  },
+  {
+    "device_id": "4006",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-06T19:00:00Z",
+    "payload": {
+      "temperature_celsius": 20.8,
+      "humidity_percent": 37,
+      "target_temperature": 22.0
+    }
+  },
+  {
+    "device_id": "4009",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-06T07:00:00Z",
+    "payload": {
+      "temperature_celsius": 20.8,
+      "humidity_percent": 38,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4009",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-06T13:00:00Z",
+    "payload": {
+      "temperature_celsius": 22.3,
+      "humidity_percent": 38,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4009",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-06T19:00:00Z",
+    "payload": {
+      "temperature_celsius": 21.2,
+      "humidity_percent": 38,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4010",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-06T07:00:00Z",
+    "payload": {
+      "temperature_celsius": 21.2,
+      "humidity_percent": 39,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4010",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-06T13:00:00Z",
+    "payload": {
+      "temperature_celsius": 22.7,
+      "humidity_percent": 39,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4010",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-06T19:00:00Z",
+    "payload": {
+      "temperature_celsius": 21.6,
+      "humidity_percent": 39,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4014",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-06T07:00:00Z",
+    "payload": {
+      "temperature_celsius": 21.6,
+      "humidity_percent": 40,
+      "target_temperature": 22.0
+    }
+  },
+  {
+    "device_id": "4014",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-06T13:00:00Z",
+    "payload": {
+      "temperature_celsius": 23.1,
+      "humidity_percent": 40,
+      "target_temperature": 22.0
+    }
+  },
+  {
+    "device_id": "4014",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-06T19:00:00Z",
+    "payload": {
+      "temperature_celsius": 22.0,
+      "humidity_percent": 40,
+      "target_temperature": 22.0
+    }
+  },
+  {
+    "device_id": "4017",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-06T07:00:00Z",
+    "payload": {
+      "temperature_celsius": 20.4,
+      "humidity_percent": 41,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4017",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-06T13:00:00Z",
+    "payload": {
+      "temperature_celsius": 21.9,
+      "humidity_percent": 41,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4017",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-06T19:00:00Z",
+    "payload": {
+      "temperature_celsius": 20.8,
+      "humidity_percent": 41,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4019",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-06T07:00:00Z",
+    "payload": {
+      "temperature_celsius": 20.8,
+      "humidity_percent": 42,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4019",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-06T13:00:00Z",
+    "payload": {
+      "temperature_celsius": 22.3,
+      "humidity_percent": 42,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4019",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-06T19:00:00Z",
+    "payload": {
+      "temperature_celsius": 21.2,
+      "humidity_percent": 42,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4021",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-06T07:00:00Z",
+    "payload": {
+      "temperature_celsius": 21.2,
+      "humidity_percent": 43,
+      "target_temperature": 22.0
+    }
+  },
+  {
+    "device_id": "4021",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-06T13:00:00Z",
+    "payload": {
+      "temperature_celsius": 22.7,
+      "humidity_percent": 43,
+      "target_temperature": 22.0
+    }
+  },
+  {
+    "device_id": "4021",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-06T19:00:00Z",
+    "payload": {
+      "temperature_celsius": 21.6,
+      "humidity_percent": 43,
+      "target_temperature": 22.0
+    }
+  },
+  {
+    "device_id": "4023",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-06T07:00:00Z",
+    "payload": {
+      "temperature_celsius": 21.6,
+      "humidity_percent": 44,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4023",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-06T13:00:00Z",
+    "payload": {
+      "temperature_celsius": 23.1,
+      "humidity_percent": 44,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4023",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-06T19:00:00Z",
+    "payload": {
+      "temperature_celsius": 22.0,
+      "humidity_percent": 44,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4025",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-06T07:00:00Z",
+    "payload": {
+      "temperature_celsius": 20.4,
+      "humidity_percent": 37,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4025",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-06T13:00:00Z",
+    "payload": {
+      "temperature_celsius": 21.9,
+      "humidity_percent": 37,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4025",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-06T19:00:00Z",
+    "payload": {
+      "temperature_celsius": 20.8,
+      "humidity_percent": 37,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4027",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-06T07:00:00Z",
+    "payload": {
+      "temperature_celsius": 20.8,
+      "humidity_percent": 38,
+      "target_temperature": 22.0
+    }
+  },
+  {
+    "device_id": "4027",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-06T13:00:00Z",
+    "payload": {
+      "temperature_celsius": 22.3,
+      "humidity_percent": 38,
+      "target_temperature": 22.0
+    }
+  },
+  {
+    "device_id": "4027",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-06T19:00:00Z",
+    "payload": {
+      "temperature_celsius": 21.2,
+      "humidity_percent": 38,
+      "target_temperature": 22.0
+    }
+  },
+  {
+    "device_id": "4029",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-06T07:00:00Z",
+    "payload": {
+      "temperature_celsius": 21.2,
+      "humidity_percent": 39,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4029",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-06T13:00:00Z",
+    "payload": {
+      "temperature_celsius": 22.7,
+      "humidity_percent": 39,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4029",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-06T19:00:00Z",
+    "payload": {
+      "temperature_celsius": 21.6,
+      "humidity_percent": 39,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4031",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-06T07:00:00Z",
+    "payload": {
+      "temperature_celsius": 21.6,
+      "humidity_percent": 40,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4031",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-06T13:00:00Z",
+    "payload": {
+      "temperature_celsius": 23.1,
+      "humidity_percent": 40,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4031",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-06T19:00:00Z",
+    "payload": {
+      "temperature_celsius": 22.0,
+      "humidity_percent": 40,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4033",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-06T07:00:00Z",
+    "payload": {
+      "temperature_celsius": 20.4,
+      "humidity_percent": 41,
+      "target_temperature": 22.0
+    }
+  },
+  {
+    "device_id": "4033",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-06T13:00:00Z",
+    "payload": {
+      "temperature_celsius": 21.9,
+      "humidity_percent": 41,
+      "target_temperature": 22.0
+    }
+  },
+  {
+    "device_id": "4033",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-06T19:00:00Z",
+    "payload": {
+      "temperature_celsius": 20.8,
+      "humidity_percent": 41,
+      "target_temperature": 22.0
+    }
+  },
+  {
+    "device_id": "4001",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-07T07:00:00Z",
+    "payload": {
+      "temperature_celsius": 21.2,
+      "humidity_percent": 43,
+      "target_temperature": 22.0
+    }
+  },
+  {
+    "device_id": "4001",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-07T13:00:00Z",
+    "payload": {
+      "temperature_celsius": 22.7,
+      "humidity_percent": 43,
+      "target_temperature": 22.0
+    }
+  },
+  {
+    "device_id": "4001",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-07T19:00:00Z",
+    "payload": {
+      "temperature_celsius": 21.6,
+      "humidity_percent": 43,
+      "target_temperature": 22.0
+    }
+  },
+  {
+    "device_id": "4003",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-07T07:00:00Z",
+    "payload": {
+      "temperature_celsius": 21.6,
+      "humidity_percent": 44,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4003",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-07T13:00:00Z",
+    "payload": {
+      "temperature_celsius": 23.1,
+      "humidity_percent": 44,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4003",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-07T19:00:00Z",
+    "payload": {
+      "temperature_celsius": 22.0,
+      "humidity_percent": 44,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4005",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-07T07:00:00Z",
+    "payload": {
+      "temperature_celsius": 20.4,
+      "humidity_percent": 37,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4005",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-07T13:00:00Z",
+    "payload": {
+      "temperature_celsius": 21.9,
+      "humidity_percent": 37,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4005",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-07T19:00:00Z",
+    "payload": {
+      "temperature_celsius": 20.8,
+      "humidity_percent": 37,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4006",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-07T07:00:00Z",
+    "payload": {
+      "temperature_celsius": 20.8,
+      "humidity_percent": 38,
+      "target_temperature": 22.0
+    }
+  },
+  {
+    "device_id": "4006",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-07T13:00:00Z",
+    "payload": {
+      "temperature_celsius": 22.3,
+      "humidity_percent": 38,
+      "target_temperature": 22.0
+    }
+  },
+  {
+    "device_id": "4006",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-07T19:00:00Z",
+    "payload": {
+      "temperature_celsius": 21.2,
+      "humidity_percent": 38,
+      "target_temperature": 22.0
+    }
+  },
+  {
+    "device_id": "4009",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-07T07:00:00Z",
+    "payload": {
+      "temperature_celsius": 21.2,
+      "humidity_percent": 39,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4009",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-07T13:00:00Z",
+    "payload": {
+      "temperature_celsius": 22.7,
+      "humidity_percent": 39,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4009",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-07T19:00:00Z",
+    "payload": {
+      "temperature_celsius": 21.6,
+      "humidity_percent": 39,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4010",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-07T07:00:00Z",
+    "payload": {
+      "temperature_celsius": 21.6,
+      "humidity_percent": 40,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4010",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-07T13:00:00Z",
+    "payload": {
+      "temperature_celsius": 23.1,
+      "humidity_percent": 40,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4010",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-07T19:00:00Z",
+    "payload": {
+      "temperature_celsius": 22.0,
+      "humidity_percent": 40,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4014",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-07T07:00:00Z",
+    "payload": {
+      "temperature_celsius": 20.4,
+      "humidity_percent": 41,
+      "target_temperature": 22.0
+    }
+  },
+  {
+    "device_id": "4014",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-07T13:00:00Z",
+    "payload": {
+      "temperature_celsius": 21.9,
+      "humidity_percent": 41,
+      "target_temperature": 22.0
+    }
+  },
+  {
+    "device_id": "4014",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-07T19:00:00Z",
+    "payload": {
+      "temperature_celsius": 20.8,
+      "humidity_percent": 41,
+      "target_temperature": 22.0
+    }
+  },
+  {
+    "device_id": "4017",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-07T07:00:00Z",
+    "payload": {
+      "temperature_celsius": 20.8,
+      "humidity_percent": 42,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4017",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-07T13:00:00Z",
+    "payload": {
+      "temperature_celsius": 22.3,
+      "humidity_percent": 42,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4017",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-07T19:00:00Z",
+    "payload": {
+      "temperature_celsius": 21.2,
+      "humidity_percent": 42,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4019",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-07T07:00:00Z",
+    "payload": {
+      "temperature_celsius": 21.2,
+      "humidity_percent": 43,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4019",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-07T13:00:00Z",
+    "payload": {
+      "temperature_celsius": 22.7,
+      "humidity_percent": 43,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4019",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-07T19:00:00Z",
+    "payload": {
+      "temperature_celsius": 21.6,
+      "humidity_percent": 43,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4021",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-07T07:00:00Z",
+    "payload": {
+      "temperature_celsius": 21.6,
+      "humidity_percent": 44,
+      "target_temperature": 22.0
+    }
+  },
+  {
+    "device_id": "4021",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-07T13:00:00Z",
+    "payload": {
+      "temperature_celsius": 23.1,
+      "humidity_percent": 44,
+      "target_temperature": 22.0
+    }
+  },
+  {
+    "device_id": "4021",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-07T19:00:00Z",
+    "payload": {
+      "temperature_celsius": 22.0,
+      "humidity_percent": 44,
+      "target_temperature": 22.0
+    }
+  },
+  {
+    "device_id": "4023",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-07T07:00:00Z",
+    "payload": {
+      "temperature_celsius": 20.4,
+      "humidity_percent": 37,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4023",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-07T13:00:00Z",
+    "payload": {
+      "temperature_celsius": 21.9,
+      "humidity_percent": 37,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4023",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-07T19:00:00Z",
+    "payload": {
+      "temperature_celsius": 20.8,
+      "humidity_percent": 37,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4025",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-07T07:00:00Z",
+    "payload": {
+      "temperature_celsius": 20.8,
+      "humidity_percent": 38,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4025",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-07T13:00:00Z",
+    "payload": {
+      "temperature_celsius": 22.3,
+      "humidity_percent": 38,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4025",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-07T19:00:00Z",
+    "payload": {
+      "temperature_celsius": 21.2,
+      "humidity_percent": 38,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4027",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-07T07:00:00Z",
+    "payload": {
+      "temperature_celsius": 21.2,
+      "humidity_percent": 39,
+      "target_temperature": 22.0
+    }
+  },
+  {
+    "device_id": "4027",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-07T13:00:00Z",
+    "payload": {
+      "temperature_celsius": 22.7,
+      "humidity_percent": 39,
+      "target_temperature": 22.0
+    }
+  },
+  {
+    "device_id": "4027",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-07T19:00:00Z",
+    "payload": {
+      "temperature_celsius": 21.6,
+      "humidity_percent": 39,
+      "target_temperature": 22.0
+    }
+  },
+  {
+    "device_id": "4029",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-07T07:00:00Z",
+    "payload": {
+      "temperature_celsius": 21.6,
+      "humidity_percent": 40,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4029",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-07T13:00:00Z",
+    "payload": {
+      "temperature_celsius": 23.1,
+      "humidity_percent": 40,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4029",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-07T19:00:00Z",
+    "payload": {
+      "temperature_celsius": 22.0,
+      "humidity_percent": 40,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4031",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-07T07:00:00Z",
+    "payload": {
+      "temperature_celsius": 20.4,
+      "humidity_percent": 41,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4031",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-07T13:00:00Z",
+    "payload": {
+      "temperature_celsius": 21.9,
+      "humidity_percent": 41,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4031",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-07T19:00:00Z",
+    "payload": {
+      "temperature_celsius": 20.8,
+      "humidity_percent": 41,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4033",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-07T07:00:00Z",
+    "payload": {
+      "temperature_celsius": 20.8,
+      "humidity_percent": 42,
+      "target_temperature": 22.0
+    }
+  },
+  {
+    "device_id": "4033",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-07T13:00:00Z",
+    "payload": {
+      "temperature_celsius": 22.3,
+      "humidity_percent": 42,
+      "target_temperature": 22.0
+    }
+  },
+  {
+    "device_id": "4033",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-07T19:00:00Z",
+    "payload": {
+      "temperature_celsius": 21.2,
+      "humidity_percent": 42,
+      "target_temperature": 22.0
+    }
+  },
+  {
+    "device_id": "4001",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-08T07:00:00Z",
+    "payload": {
+      "temperature_celsius": 21.6,
+      "humidity_percent": 44,
+      "target_temperature": 22.0
+    }
+  },
+  {
+    "device_id": "4001",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-08T13:00:00Z",
+    "payload": {
+      "temperature_celsius": 23.1,
+      "humidity_percent": 44,
+      "target_temperature": 22.0
+    }
+  },
+  {
+    "device_id": "4001",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-08T19:00:00Z",
+    "payload": {
+      "temperature_celsius": 22.0,
+      "humidity_percent": 44,
+      "target_temperature": 22.0
+    }
+  },
+  {
+    "device_id": "4003",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-08T07:00:00Z",
+    "payload": {
+      "temperature_celsius": 20.4,
+      "humidity_percent": 37,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4003",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-08T13:00:00Z",
+    "payload": {
+      "temperature_celsius": 21.9,
+      "humidity_percent": 37,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4003",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-08T19:00:00Z",
+    "payload": {
+      "temperature_celsius": 20.8,
+      "humidity_percent": 37,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4005",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-08T07:00:00Z",
+    "payload": {
+      "temperature_celsius": 20.8,
+      "humidity_percent": 38,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4005",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-08T13:00:00Z",
+    "payload": {
+      "temperature_celsius": 22.3,
+      "humidity_percent": 38,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4005",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-08T19:00:00Z",
+    "payload": {
+      "temperature_celsius": 21.2,
+      "humidity_percent": 38,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4006",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-08T07:00:00Z",
+    "payload": {
+      "temperature_celsius": 21.2,
+      "humidity_percent": 39,
+      "target_temperature": 22.0
+    }
+  },
+  {
+    "device_id": "4006",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-08T13:00:00Z",
+    "payload": {
+      "temperature_celsius": 22.7,
+      "humidity_percent": 39,
+      "target_temperature": 22.0
+    }
+  },
+  {
+    "device_id": "4006",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-08T19:00:00Z",
+    "payload": {
+      "temperature_celsius": 21.6,
+      "humidity_percent": 39,
+      "target_temperature": 22.0
+    }
+  },
+  {
+    "device_id": "4009",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-08T07:00:00Z",
+    "payload": {
+      "temperature_celsius": 21.6,
+      "humidity_percent": 40,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4009",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-08T13:00:00Z",
+    "payload": {
+      "temperature_celsius": 23.1,
+      "humidity_percent": 40,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4009",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-08T19:00:00Z",
+    "payload": {
+      "temperature_celsius": 22.0,
+      "humidity_percent": 40,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4010",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-08T07:00:00Z",
+    "payload": {
+      "temperature_celsius": 20.4,
+      "humidity_percent": 41,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4010",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-08T13:00:00Z",
+    "payload": {
+      "temperature_celsius": 21.9,
+      "humidity_percent": 41,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4010",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-08T19:00:00Z",
+    "payload": {
+      "temperature_celsius": 20.8,
+      "humidity_percent": 41,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4014",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-08T07:00:00Z",
+    "payload": {
+      "temperature_celsius": 20.8,
+      "humidity_percent": 42,
+      "target_temperature": 22.0
+    }
+  },
+  {
+    "device_id": "4014",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-08T13:00:00Z",
+    "payload": {
+      "temperature_celsius": 22.3,
+      "humidity_percent": 42,
+      "target_temperature": 22.0
+    }
+  },
+  {
+    "device_id": "4014",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-08T19:00:00Z",
+    "payload": {
+      "temperature_celsius": 21.2,
+      "humidity_percent": 42,
+      "target_temperature": 22.0
+    }
+  },
+  {
+    "device_id": "4017",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-08T07:00:00Z",
+    "payload": {
+      "temperature_celsius": 21.2,
+      "humidity_percent": 43,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4017",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-08T13:00:00Z",
+    "payload": {
+      "temperature_celsius": 22.7,
+      "humidity_percent": 43,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4017",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-08T19:00:00Z",
+    "payload": {
+      "temperature_celsius": 21.6,
+      "humidity_percent": 43,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4019",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-08T07:00:00Z",
+    "payload": {
+      "temperature_celsius": 21.6,
+      "humidity_percent": 44,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4019",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-08T13:00:00Z",
+    "payload": {
+      "temperature_celsius": 23.1,
+      "humidity_percent": 44,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4019",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-08T19:00:00Z",
+    "payload": {
+      "temperature_celsius": 22.0,
+      "humidity_percent": 44,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4021",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-08T07:00:00Z",
+    "payload": {
+      "temperature_celsius": 20.4,
+      "humidity_percent": 37,
+      "target_temperature": 22.0
+    }
+  },
+  {
+    "device_id": "4021",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-08T13:00:00Z",
+    "payload": {
+      "temperature_celsius": 21.9,
+      "humidity_percent": 37,
+      "target_temperature": 22.0
+    }
+  },
+  {
+    "device_id": "4021",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-08T19:00:00Z",
+    "payload": {
+      "temperature_celsius": 20.8,
+      "humidity_percent": 37,
+      "target_temperature": 22.0
+    }
+  },
+  {
+    "device_id": "4023",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-08T07:00:00Z",
+    "payload": {
+      "temperature_celsius": 20.8,
+      "humidity_percent": 38,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4023",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-08T13:00:00Z",
+    "payload": {
+      "temperature_celsius": 22.3,
+      "humidity_percent": 38,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4023",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-08T19:00:00Z",
+    "payload": {
+      "temperature_celsius": 21.2,
+      "humidity_percent": 38,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4025",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-08T07:00:00Z",
+    "payload": {
+      "temperature_celsius": 21.2,
+      "humidity_percent": 39,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4025",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-08T13:00:00Z",
+    "payload": {
+      "temperature_celsius": 22.7,
+      "humidity_percent": 39,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4025",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-08T19:00:00Z",
+    "payload": {
+      "temperature_celsius": 21.6,
+      "humidity_percent": 39,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4027",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-08T07:00:00Z",
+    "payload": {
+      "temperature_celsius": 21.6,
+      "humidity_percent": 40,
+      "target_temperature": 22.0
+    }
+  },
+  {
+    "device_id": "4027",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-08T13:00:00Z",
+    "payload": {
+      "temperature_celsius": 23.1,
+      "humidity_percent": 40,
+      "target_temperature": 22.0
+    }
+  },
+  {
+    "device_id": "4027",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-08T19:00:00Z",
+    "payload": {
+      "temperature_celsius": 22.0,
+      "humidity_percent": 40,
+      "target_temperature": 22.0
+    }
+  },
+  {
+    "device_id": "4029",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-08T07:00:00Z",
+    "payload": {
+      "temperature_celsius": 20.4,
+      "humidity_percent": 41,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4029",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-08T13:00:00Z",
+    "payload": {
+      "temperature_celsius": 21.9,
+      "humidity_percent": 41,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4029",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-08T19:00:00Z",
+    "payload": {
+      "temperature_celsius": 20.8,
+      "humidity_percent": 41,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4031",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-08T07:00:00Z",
+    "payload": {
+      "temperature_celsius": 20.8,
+      "humidity_percent": 42,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4031",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-08T13:00:00Z",
+    "payload": {
+      "temperature_celsius": 22.3,
+      "humidity_percent": 42,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4031",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-08T19:00:00Z",
+    "payload": {
+      "temperature_celsius": 21.2,
+      "humidity_percent": 42,
+      "target_temperature": 21.0
+    }
+  },
+  {
+    "device_id": "4033",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-08T07:00:00Z",
+    "payload": {
+      "temperature_celsius": 21.2,
+      "humidity_percent": 43,
+      "target_temperature": 22.0
+    }
+  },
+  {
+    "device_id": "4033",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-08T13:00:00Z",
+    "payload": {
+      "temperature_celsius": 22.7,
+      "humidity_percent": 43,
+      "target_temperature": 22.0
+    }
+  },
+  {
+    "device_id": "4033",
+    "event_type": "temperature_reading",
+    "event_timestamp": "2025-03-08T19:00:00Z",
+    "payload": {
+      "temperature_celsius": 21.6,
+      "humidity_percent": 43,
+      "target_temperature": 22.0
+    }
+  }
 ]

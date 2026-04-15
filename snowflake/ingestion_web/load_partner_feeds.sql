@@ -16,8 +16,11 @@
 -- Idempotency: Uses CREATE OR REPLACE — safe to re-run.
 -- =============================================================================
 
+SET LIGHTHOUSE_ENV = 'DEV';
+SET LIGHTHOUSE_RAW_DB = 'LIGHTHOUSE_' || $LIGHTHOUSE_ENV || '_RAW';
+
 USE WAREHOUSE INGESTION_WH;
-USE DATABASE LIGHTHOUSE_DEV_RAW;
+EXECUTE IMMEDIATE 'USE DATABASE ' || $LIGHTHOUSE_RAW_DB;
 USE SCHEMA PARTNER_FEEDS;
 
 -- ─────────────────────────────────────────────────────────────────────────────
@@ -163,3 +166,5 @@ VALUES
     (7001, 'Smart Thermostat v2', 'thermostat', 'NordHjem', 'NH-TH-V2', 'WiFi 802.11 b/g/n/ac, 3.5in touchscreen, learning algorithm, geofencing, voice control, Matter compatible', 1349.00, '2025-02-01', FALSE, 'product_catalog_updates.csv', 6),
     (7002, 'Energy Meter Pro', 'energy_meter', 'NordHjem', 'NH-EM-PRO', '3-phase CT clamp, real-time monitoring, grid export measurement, 0.5% accuracy class, Zigbee gateway', 1949.00, '2025-02-01', FALSE, 'product_catalog_updates.csv', 7),
     (7008, 'Solar Integration Kit', 'solar_monitor', 'NordHjem', 'NH-SOL-V1', 'PV inverter monitoring, grid export optimization, compatible with major inverter brands', 3499.00, '2025-03-01', TRUE, 'product_catalog_updates.csv', 8);
+
+

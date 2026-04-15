@@ -1,26 +1,506 @@
 [
-  {"device_id": "4008", "event_type": "alert_event", "event_timestamp": "2025-02-15T14:32:00Z", "payload": {"alert_type": "signal_degraded", "severity": "warning", "message": "WiFi signal strength below threshold", "threshold_value": -70, "actual_value": -78}},
-  {"device_id": "4008", "event_type": "alert_event", "event_timestamp": "2025-02-15T16:01:00Z", "payload": {"alert_type": "device_offline", "severity": "critical", "message": "Device lost connectivity", "threshold_value": 300, "actual_value": 0}},
-  {"device_id": "4008", "event_type": "alert_event", "event_timestamp": "2025-02-15T18:31:00Z", "payload": {"alert_type": "device_recovered", "severity": "info", "message": "Device reconnected after outage", "threshold_value": 0, "actual_value": 1}},
-  {"device_id": "4005", "event_type": "alert_event", "event_timestamp": "2025-02-20T12:05:00Z", "payload": {"alert_type": "low_battery", "severity": "warning", "message": "Battery level below 70%", "threshold_value": 70, "actual_value": 65}},
-  {"device_id": "4008", "event_type": "alert_event", "event_timestamp": "2025-02-20T10:02:00Z", "payload": {"alert_type": "signal_degraded", "severity": "warning", "message": "WiFi signal strength below threshold", "threshold_value": -70, "actual_value": -75}},
-  {"device_id": "4008", "event_type": "alert_event", "event_timestamp": "2025-02-20T14:01:00Z", "payload": {"alert_type": "device_offline", "severity": "critical", "message": "Device lost connectivity", "threshold_value": 300, "actual_value": 0}},
-  {"device_id": "4008", "event_type": "alert_event", "event_timestamp": "2025-02-20T17:01:00Z", "payload": {"alert_type": "device_recovered", "severity": "info", "message": "Device reconnected after outage", "threshold_value": 0, "actual_value": 1}},
-  {"device_id": "4004", "event_type": "alert_event", "event_timestamp": "2025-02-01T08:05:00Z", "payload": {"alert_type": "high_consumption", "severity": "warning", "message": "Energy consumption exceeds daily threshold", "threshold_value": 50.0, "actual_value": 62.3}},
-  {"device_id": "4008", "event_type": "alert_event", "event_timestamp": "2025-02-01T12:05:00Z", "payload": {"alert_type": "high_consumption", "severity": "warning", "message": "Energy consumption exceeds daily threshold", "threshold_value": 80.0, "actual_value": 89.4}},
-  {"device_id": "4005", "event_type": "alert_event", "event_timestamp": "2025-03-01T12:05:00Z", "payload": {"alert_type": "critical_battery", "severity": "critical", "message": "Battery level critically low", "threshold_value": 20, "actual_value": 15}},
-  {"device_id": "4013", "event_type": "alert_event", "event_timestamp": "2025-02-28T06:02:00Z", "payload": {"alert_type": "device_offline", "severity": "critical", "message": "Device lost connectivity", "threshold_value": 300, "actual_value": 0}},
-  {"device_id": "4001", "event_type": "alert_event", "event_timestamp": "2025-02-01T07:05:00Z", "payload": {"alert_type": "temperature_deviation", "severity": "info", "message": "Room temperature 1.8C below target", "threshold_value": 1.5, "actual_value": 1.8}},
-  {"device_id": "4006", "event_type": "alert_event", "event_timestamp": "2025-02-01T07:05:00Z", "payload": {"alert_type": "temperature_deviation", "severity": "warning", "message": "Room temperature 2.2C below target", "threshold_value": 1.5, "actual_value": 2.2}},
-  {"device_id": "4006", "event_type": "alert_event", "event_timestamp": "2025-02-02T07:05:00Z", "payload": {"alert_type": "temperature_deviation", "severity": "warning", "message": "Room temperature 2.5C below target", "threshold_value": 1.5, "actual_value": 2.5}},
-  {"device_id": "4006", "event_type": "alert_event", "event_timestamp": "2025-01-31T23:05:00Z", "payload": {"alert_type": "temperature_deviation", "severity": "critical", "message": "Room temperature 3.5C below target", "threshold_value": 3.0, "actual_value": 3.5}},
-  {"device_id": "4004", "event_type": "alert_event", "event_timestamp": "2025-02-02T18:05:00Z", "payload": {"alert_type": "high_consumption", "severity": "warning", "message": "Energy consumption exceeds daily threshold", "threshold_value": 50.0, "actual_value": 81.3}},
-  {"device_id": "4008", "event_type": "alert_event", "event_timestamp": "2025-02-02T18:05:00Z", "payload": {"alert_type": "high_consumption", "severity": "critical", "message": "Energy consumption exceeds critical threshold", "threshold_value": 100.0, "actual_value": 115.2}},
-  {"device_id": "4002", "event_type": "alert_event", "event_timestamp": "2025-02-01T18:05:00Z", "payload": {"alert_type": "voltage_fluctuation", "severity": "info", "message": "Voltage reading outside normal range", "threshold_value": 230.0, "actual_value": 230.3}},
-  {"device_id": "4012", "event_type": "alert_event", "event_timestamp": "2025-02-02T18:05:00Z", "payload": {"alert_type": "high_consumption", "severity": "warning", "message": "Energy consumption exceeds daily threshold", "threshold_value": 60.0, "actual_value": 73.9}},
-  {"device_id": "4001", "event_type": "alert_event", "event_timestamp": "2025-02-15T11:05:00Z", "payload": {"alert_type": "firmware_update_available", "severity": "info", "message": "Firmware 2.2.0 available for installation", "threshold_value": 0, "actual_value": 1}},
-  {"device_id": "4003", "event_type": "alert_event", "event_timestamp": "2025-02-10T09:05:00Z", "payload": {"alert_type": "firmware_update_applied", "severity": "info", "message": "Firmware updated from 2.1.0 to 2.2.0", "threshold_value": 0, "actual_value": 1}},
-  {"device_id": "4004", "event_type": "alert_event", "event_timestamp": "2025-02-10T09:10:00Z", "payload": {"alert_type": "firmware_update_applied", "severity": "info", "message": "Firmware updated from 1.4.2 to 1.5.0", "threshold_value": 0, "actual_value": 1}},
-  {"device_id": "4008", "event_type": "alert_event", "event_timestamp": "2025-03-01T08:05:00Z", "payload": {"alert_type": "firmware_update_applied", "severity": "info", "message": "Firmware updated from 1.5.0 to 1.5.1", "threshold_value": 0, "actual_value": 1}},
-  {"device_id": "4006", "event_type": "alert_event", "event_timestamp": "2025-02-01T06:55:00Z", "payload": {"alert_type": "temperature_deviation", "severity": "info", "message": "Room temperature 2.2C below target at startup", "threshold_value": 1.5, "actual_value": 2.2}}
+  {
+    "device_id": "4008",
+    "event_type": "alert_event",
+    "event_timestamp": "2025-02-15T14:32:00Z",
+    "payload": {
+      "alert_type": "signal_degraded",
+      "severity": "warning",
+      "message": "WiFi signal strength below threshold",
+      "threshold_value": -70,
+      "actual_value": -78
+    }
+  },
+  {
+    "device_id": "4008",
+    "event_type": "alert_event",
+    "event_timestamp": "2025-02-15T16:01:00Z",
+    "payload": {
+      "alert_type": "device_offline",
+      "severity": "critical",
+      "message": "Device lost connectivity",
+      "threshold_value": 300,
+      "actual_value": 0
+    }
+  },
+  {
+    "device_id": "4008",
+    "event_type": "alert_event",
+    "event_timestamp": "2025-02-15T18:31:00Z",
+    "payload": {
+      "alert_type": "device_recovered",
+      "severity": "info",
+      "message": "Device reconnected after outage",
+      "threshold_value": 0,
+      "actual_value": 1
+    }
+  },
+  {
+    "device_id": "4005",
+    "event_type": "alert_event",
+    "event_timestamp": "2025-02-20T12:05:00Z",
+    "payload": {
+      "alert_type": "low_battery",
+      "severity": "warning",
+      "message": "Battery level below 70%",
+      "threshold_value": 70,
+      "actual_value": 65
+    }
+  },
+  {
+    "device_id": "4008",
+    "event_type": "alert_event",
+    "event_timestamp": "2025-02-20T10:02:00Z",
+    "payload": {
+      "alert_type": "signal_degraded",
+      "severity": "warning",
+      "message": "WiFi signal strength below threshold",
+      "threshold_value": -70,
+      "actual_value": -75
+    }
+  },
+  {
+    "device_id": "4008",
+    "event_type": "alert_event",
+    "event_timestamp": "2025-02-20T14:01:00Z",
+    "payload": {
+      "alert_type": "device_offline",
+      "severity": "critical",
+      "message": "Device lost connectivity",
+      "threshold_value": 300,
+      "actual_value": 0
+    }
+  },
+  {
+    "device_id": "4008",
+    "event_type": "alert_event",
+    "event_timestamp": "2025-02-20T17:01:00Z",
+    "payload": {
+      "alert_type": "device_recovered",
+      "severity": "info",
+      "message": "Device reconnected after outage",
+      "threshold_value": 0,
+      "actual_value": 1
+    }
+  },
+  {
+    "device_id": "4004",
+    "event_type": "alert_event",
+    "event_timestamp": "2025-02-01T08:05:00Z",
+    "payload": {
+      "alert_type": "high_consumption",
+      "severity": "warning",
+      "message": "Energy consumption exceeds daily threshold",
+      "threshold_value": 50.0,
+      "actual_value": 62.3
+    }
+  },
+  {
+    "device_id": "4008",
+    "event_type": "alert_event",
+    "event_timestamp": "2025-02-01T12:05:00Z",
+    "payload": {
+      "alert_type": "high_consumption",
+      "severity": "warning",
+      "message": "Energy consumption exceeds daily threshold",
+      "threshold_value": 80.0,
+      "actual_value": 89.4
+    }
+  },
+  {
+    "device_id": "4005",
+    "event_type": "alert_event",
+    "event_timestamp": "2025-03-01T12:05:00Z",
+    "payload": {
+      "alert_type": "critical_battery",
+      "severity": "critical",
+      "message": "Battery level critically low",
+      "threshold_value": 20,
+      "actual_value": 15
+    }
+  },
+  {
+    "device_id": "4013",
+    "event_type": "alert_event",
+    "event_timestamp": "2025-02-28T06:02:00Z",
+    "payload": {
+      "alert_type": "device_offline",
+      "severity": "critical",
+      "message": "Device lost connectivity",
+      "threshold_value": 300,
+      "actual_value": 0
+    }
+  },
+  {
+    "device_id": "4001",
+    "event_type": "alert_event",
+    "event_timestamp": "2025-02-01T07:05:00Z",
+    "payload": {
+      "alert_type": "temperature_deviation",
+      "severity": "info",
+      "message": "Room temperature 1.8C below target",
+      "threshold_value": 1.5,
+      "actual_value": 1.8
+    }
+  },
+  {
+    "device_id": "4006",
+    "event_type": "alert_event",
+    "event_timestamp": "2025-02-01T07:05:00Z",
+    "payload": {
+      "alert_type": "temperature_deviation",
+      "severity": "warning",
+      "message": "Room temperature 2.2C below target",
+      "threshold_value": 1.5,
+      "actual_value": 2.2
+    }
+  },
+  {
+    "device_id": "4006",
+    "event_type": "alert_event",
+    "event_timestamp": "2025-02-02T07:05:00Z",
+    "payload": {
+      "alert_type": "temperature_deviation",
+      "severity": "warning",
+      "message": "Room temperature 2.5C below target",
+      "threshold_value": 1.5,
+      "actual_value": 2.5
+    }
+  },
+  {
+    "device_id": "4006",
+    "event_type": "alert_event",
+    "event_timestamp": "2025-01-31T23:05:00Z",
+    "payload": {
+      "alert_type": "temperature_deviation",
+      "severity": "critical",
+      "message": "Room temperature 3.5C below target",
+      "threshold_value": 3.0,
+      "actual_value": 3.5
+    }
+  },
+  {
+    "device_id": "4004",
+    "event_type": "alert_event",
+    "event_timestamp": "2025-02-02T18:05:00Z",
+    "payload": {
+      "alert_type": "high_consumption",
+      "severity": "warning",
+      "message": "Energy consumption exceeds daily threshold",
+      "threshold_value": 50.0,
+      "actual_value": 81.3
+    }
+  },
+  {
+    "device_id": "4008",
+    "event_type": "alert_event",
+    "event_timestamp": "2025-02-02T18:05:00Z",
+    "payload": {
+      "alert_type": "high_consumption",
+      "severity": "critical",
+      "message": "Energy consumption exceeds critical threshold",
+      "threshold_value": 100.0,
+      "actual_value": 115.2
+    }
+  },
+  {
+    "device_id": "4002",
+    "event_type": "alert_event",
+    "event_timestamp": "2025-02-01T18:05:00Z",
+    "payload": {
+      "alert_type": "voltage_fluctuation",
+      "severity": "info",
+      "message": "Voltage reading outside normal range",
+      "threshold_value": 230.0,
+      "actual_value": 230.3
+    }
+  },
+  {
+    "device_id": "4012",
+    "event_type": "alert_event",
+    "event_timestamp": "2025-02-02T18:05:00Z",
+    "payload": {
+      "alert_type": "high_consumption",
+      "severity": "warning",
+      "message": "Energy consumption exceeds daily threshold",
+      "threshold_value": 60.0,
+      "actual_value": 73.9
+    }
+  },
+  {
+    "device_id": "4001",
+    "event_type": "alert_event",
+    "event_timestamp": "2025-02-15T11:05:00Z",
+    "payload": {
+      "alert_type": "firmware_update_available",
+      "severity": "info",
+      "message": "Firmware 2.2.0 available for installation",
+      "threshold_value": 0,
+      "actual_value": 1
+    }
+  },
+  {
+    "device_id": "4003",
+    "event_type": "alert_event",
+    "event_timestamp": "2025-02-10T09:05:00Z",
+    "payload": {
+      "alert_type": "firmware_update_applied",
+      "severity": "info",
+      "message": "Firmware updated from 2.1.0 to 2.2.0",
+      "threshold_value": 0,
+      "actual_value": 1
+    }
+  },
+  {
+    "device_id": "4004",
+    "event_type": "alert_event",
+    "event_timestamp": "2025-02-10T09:10:00Z",
+    "payload": {
+      "alert_type": "firmware_update_applied",
+      "severity": "info",
+      "message": "Firmware updated from 1.4.2 to 1.5.0",
+      "threshold_value": 0,
+      "actual_value": 1
+    }
+  },
+  {
+    "device_id": "4008",
+    "event_type": "alert_event",
+    "event_timestamp": "2025-03-01T08:05:00Z",
+    "payload": {
+      "alert_type": "firmware_update_applied",
+      "severity": "info",
+      "message": "Firmware updated from 1.5.0 to 1.5.1",
+      "threshold_value": 0,
+      "actual_value": 1
+    }
+  },
+  {
+    "device_id": "4006",
+    "event_type": "alert_event",
+    "event_timestamp": "2025-02-01T06:55:00Z",
+    "payload": {
+      "alert_type": "temperature_deviation",
+      "severity": "info",
+      "message": "Room temperature 2.2C below target at startup",
+      "threshold_value": 1.5,
+      "actual_value": 2.2
+    }
+  },
+  {
+    "device_id": "4002",
+    "event_type": "alert_event",
+    "event_timestamp": "2025-03-03T06:20:00Z",
+    "payload": {
+      "alert_type": "high_consumption",
+      "severity": "warning",
+      "message": "Consumption rose more than 25 percent versus previous day baseline.",
+      "threshold_value": 25.0,
+      "actual_value": 31.5
+    }
+  },
+  {
+    "device_id": "4015",
+    "event_type": "alert_event",
+    "event_timestamp": "2025-03-03T06:20:00Z",
+    "payload": {
+      "alert_type": "high_consumption",
+      "severity": "warning",
+      "message": "Consumption rose more than 25 percent versus previous day baseline.",
+      "threshold_value": 25.0,
+      "actual_value": 37.5
+    }
+  },
+  {
+    "device_id": "4026",
+    "event_type": "alert_event",
+    "event_timestamp": "2025-03-03T06:20:00Z",
+    "payload": {
+      "alert_type": "high_consumption",
+      "severity": "warning",
+      "message": "Consumption rose more than 25 percent versus previous day baseline.",
+      "threshold_value": 25.0,
+      "actual_value": 43.5
+    }
+  },
+  {
+    "device_id": "4001",
+    "event_type": "alert_event",
+    "event_timestamp": "2025-03-03T06:20:00Z",
+    "payload": {
+      "alert_type": "high_consumption",
+      "severity": "warning",
+      "message": "Consumption rose more than 25 percent versus previous day baseline.",
+      "threshold_value": 25.0,
+      "actual_value": 49.5
+    }
+  },
+  {
+    "device_id": "4014",
+    "event_type": "alert_event",
+    "event_timestamp": "2025-03-03T06:20:00Z",
+    "payload": {
+      "alert_type": "high_consumption",
+      "severity": "warning",
+      "message": "Consumption rose more than 25 percent versus previous day baseline.",
+      "threshold_value": 25.0,
+      "actual_value": 55.5
+    }
+  },
+  {
+    "device_id": "4027",
+    "event_type": "alert_event",
+    "event_timestamp": "2025-03-03T06:20:00Z",
+    "payload": {
+      "alert_type": "high_consumption",
+      "severity": "warning",
+      "message": "Consumption rose more than 25 percent versus previous day baseline.",
+      "threshold_value": 25.0,
+      "actual_value": 61.5
+    }
+  },
+  {
+    "device_id": "4003",
+    "event_type": "alert_event",
+    "event_timestamp": "2025-03-04T07:15:00Z",
+    "payload": {
+      "alert_type": "low_battery",
+      "severity": "warning",
+      "message": "Battery level is below recommended operating threshold.",
+      "threshold_value": 45,
+      "actual_value": 60
+    }
+  },
+  {
+    "device_id": "4014",
+    "event_type": "alert_event",
+    "event_timestamp": "2025-03-04T07:15:00Z",
+    "payload": {
+      "alert_type": "low_battery",
+      "severity": "warning",
+      "message": "Battery level is below recommended operating threshold.",
+      "threshold_value": 45,
+      "actual_value": 60
+    }
+  },
+  {
+    "device_id": "4025",
+    "event_type": "alert_event",
+    "event_timestamp": "2025-03-04T07:15:00Z",
+    "payload": {
+      "alert_type": "low_battery",
+      "severity": "warning",
+      "message": "Battery level is below recommended operating threshold.",
+      "threshold_value": 45,
+      "actual_value": 60
+    }
+  },
+  {
+    "device_id": "4002",
+    "event_type": "alert_event",
+    "event_timestamp": "2025-03-06T06:20:00Z",
+    "payload": {
+      "alert_type": "high_consumption",
+      "severity": "warning",
+      "message": "Consumption rose more than 25 percent versus previous day baseline.",
+      "threshold_value": 25.0,
+      "actual_value": 31.5
+    }
+  },
+  {
+    "device_id": "4015",
+    "event_type": "alert_event",
+    "event_timestamp": "2025-03-06T06:20:00Z",
+    "payload": {
+      "alert_type": "high_consumption",
+      "severity": "warning",
+      "message": "Consumption rose more than 25 percent versus previous day baseline.",
+      "threshold_value": 25.0,
+      "actual_value": 37.5
+    }
+  },
+  {
+    "device_id": "4026",
+    "event_type": "alert_event",
+    "event_timestamp": "2025-03-06T06:20:00Z",
+    "payload": {
+      "alert_type": "high_consumption",
+      "severity": "warning",
+      "message": "Consumption rose more than 25 percent versus previous day baseline.",
+      "threshold_value": 25.0,
+      "actual_value": 43.5
+    }
+  },
+  {
+    "device_id": "4001",
+    "event_type": "alert_event",
+    "event_timestamp": "2025-03-06T06:20:00Z",
+    "payload": {
+      "alert_type": "high_consumption",
+      "severity": "warning",
+      "message": "Consumption rose more than 25 percent versus previous day baseline.",
+      "threshold_value": 25.0,
+      "actual_value": 49.5
+    }
+  },
+  {
+    "device_id": "4014",
+    "event_type": "alert_event",
+    "event_timestamp": "2025-03-06T06:20:00Z",
+    "payload": {
+      "alert_type": "high_consumption",
+      "severity": "warning",
+      "message": "Consumption rose more than 25 percent versus previous day baseline.",
+      "threshold_value": 25.0,
+      "actual_value": 55.5
+    }
+  },
+  {
+    "device_id": "4027",
+    "event_type": "alert_event",
+    "event_timestamp": "2025-03-06T06:20:00Z",
+    "payload": {
+      "alert_type": "high_consumption",
+      "severity": "warning",
+      "message": "Consumption rose more than 25 percent versus previous day baseline.",
+      "threshold_value": 25.0,
+      "actual_value": 61.5
+    }
+  },
+  {
+    "device_id": "4003",
+    "event_type": "alert_event",
+    "event_timestamp": "2025-03-07T07:15:00Z",
+    "payload": {
+      "alert_type": "low_battery",
+      "severity": "warning",
+      "message": "Battery level is below recommended operating threshold.",
+      "threshold_value": 45,
+      "actual_value": 60
+    }
+  },
+  {
+    "device_id": "4014",
+    "event_type": "alert_event",
+    "event_timestamp": "2025-03-07T07:15:00Z",
+    "payload": {
+      "alert_type": "low_battery",
+      "severity": "warning",
+      "message": "Battery level is below recommended operating threshold.",
+      "threshold_value": 45,
+      "actual_value": 60
+    }
+  },
+  {
+    "device_id": "4025",
+    "event_type": "alert_event",
+    "event_timestamp": "2025-03-07T07:15:00Z",
+    "payload": {
+      "alert_type": "low_battery",
+      "severity": "warning",
+      "message": "Battery level is below recommended operating threshold.",
+      "threshold_value": 45,
+      "actual_value": 60
+    }
+  }
 ]

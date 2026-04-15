@@ -12,3 +12,15 @@ _loaded_at,_sync_id,_is_deleted,account_id,account_name,industry,website,phone,b
 2025-02-01 02:00:00,sync_003,false,ACC-003,Hansen Consulting AS,commercial,https://hansen-consulting.example.no,+4731234567,Karl Johans gate 20 0159 Oslo,Oslo,USR-101,2025-01-05,2025-02-01
 2025-02-01 02:00:00,sync_003,true,ACC-007,Petersen Household,residential,,,Vesterbrogade 100 1620 København V,Hovedstaden,USR-103,2025-01-08,2025-02-01
 2025-03-01 02:00:00,sync_004,false,ACC-005,Johansson Energi AB,commercial,https://johansson-energi.example.se,+46701234567,Kungsgatan 10 41119 Göteborg,Västra Götaland,USR-102,2025-01-06,2025-02-20
+2025-03-14 01:15:00,sync_005,false,ACC-011,Lund Household,residential,https://lund-1011.example.dk,+4522113344,Frederiks Alle 18 8000 Aarhus,Midtjylland,USR-111,2025-03-12,2025-03-12
+2025-03-13 22:20:00,sync_005,false,ACC-012,Rasmussen Household,residential,https://rasmussen-1012.example.dk,+4522334455,Munkebjergvej 12 5000 Odense,Syddanmark,USR-112,2025-03-12,2025-03-12
+2025-03-13 23:25:00,sync_005,false,ACC-013,Halvorsen Household,residential,https://halvorsen-1013.example.no,+4791122334,Olav Kyrres gate 11 5003 Bergen,Vestland,USR-113,2025-03-12,2025-03-12
+2025-03-15 00:30:00,sync_005,false,ACC-014,Nystrom Household,residential,https://nystrom-1014.example.se,+46701122334,Sodra Forstadsgatan 20 21134 Malmo,Skane,USR-114,2025-03-13,2025-03-13
+2025-03-15 01:10:00,sync_006,false,ACC-015,Bergstrom Household,residential,https://bergstrom-1015.example.se,+46702233445,Kungsgatan 44 75320 Uppsala,Uppsala,USR-110,2025-03-13,2025-03-13
+2025-03-14 22:15:00,sync_006,false,ACC-016,Olsen Energy NO,commercial,https://olsen-1016.example.no,+4792233445,Kjopmannsgata 9 7011 Trondheim,Trondelag,USR-111,2025-03-13,2025-03-13
+2025-03-15 23:20:00,sync_006,false,ACC-017,Christensen Household,residential,https://christensen-1017.example.dk,+4522445566,Boulevarden 52 9000 Aalborg,Nordjylland,USR-112,2025-03-14,2025-03-14
+2025-03-16 00:25:00,sync_006,false,ACC-018,Sjoberg Energy SE,commercial,https://sjoberg-1018.example.se,+46703344556,Stora gatan 9 72212 Vasteras,Vastmanland,USR-113,2025-03-14,2025-03-14
+2025-03-16 01:30:00,sync_007,false,ACC-019,Andersen Household,residential,https://andersen-1019.example.no,+4793344556,Lagardsveien 41 4006 Stavanger,Rogaland,USR-114,2025-03-14,2025-03-14
+2025-03-16 22:10:00,sync_007,false,ACC-020,Larsson Household,residential,https://larsson-1020.example.se,+46704455667,Drottninggatan 17 70210 Orebro,Orebro,USR-110,2025-03-15,2025-03-15
+2025-03-16 23:15:00,sync_007,false,ACC-021,Moller Energy DK,commercial,https://moller-1021.example.dk,+4522556677,Torvegade 6 6700 Esbjerg,Syddanmark,USR-111,2025-03-15,2025-03-15
+2025-03-17 00:20:00,sync_007,false,ACC-022,Eriksson Household,residential,https://eriksson-1022.example.se,+46705566778,Storgatan 33 58219 Linkoping,Ostergotland,USR-112,2025-03-15,2025-03-15
