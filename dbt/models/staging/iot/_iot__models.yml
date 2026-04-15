@@ -38,7 +38,8 @@ models:
         description: "Device connectivity status"
         tests:
           - accepted_values:
-              values: ['online', 'offline', 'degraded']
+              arguments:
+                values: ['online', 'offline', 'degraded']
       - name: battery_level
         description: "Battery level percentage (null for mains-powered devices)"
       - name: signal_strength
@@ -85,7 +86,8 @@ models:
         description: "Type of alert triggered"
         tests:
           - accepted_values:
-              values:
+              arguments:
+                values:
                 - high_consumption
                 - low_battery
                 - critical_battery
@@ -100,7 +102,8 @@ models:
         description: "Alert severity level"
         tests:
           - accepted_values:
-              values: ['info', 'warning', 'critical']
+              arguments:
+                values: ['info', 'warning', 'critical']
       - name: message
         description: "Human-readable alert message"
       - name: threshold_value

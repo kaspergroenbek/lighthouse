@@ -5,10 +5,11 @@ sources:
     description: "NordHjem knowledge base — documents, text, chunks"
     database: "{{ env_var('DBT_LIGHTHOUSE_RAW_DB', env_var('LIGHTHOUSE_RAW_DB', 'LIGHTHOUSE_DEV_RAW')) }}"
     schema: KNOWLEDGE_BASE
-    loaded_at_field: _loaded_at
-    freshness:
-      warn_after: {count: 48, period: hour}
-      error_after: {count: 96, period: hour}
+    config:
+      loaded_at_field: _loaded_at
+      freshness:
+        warn_after: {count: 48, period: hour}
+        error_after: {count: 96, period: hour}
     tables:
       - name: documents
         columns:

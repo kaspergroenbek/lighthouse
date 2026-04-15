@@ -5,10 +5,11 @@ sources:
     description: "NordHjem PostgreSQL OLTP system — CDC replicated"
     database: "{{ env_var('DBT_LIGHTHOUSE_RAW_DB', env_var('LIGHTHOUSE_RAW_DB', 'LIGHTHOUSE_DEV_RAW')) }}"
     schema: OLTP
-    loaded_at_field: _loaded_at
-    freshness:
-      warn_after: {count: 30, period: minute}
-      error_after: {count: 60, period: minute}
+    config:
+      loaded_at_field: _loaded_at
+      freshness:
+        warn_after: {count: 30, period: minute}
+        error_after: {count: 60, period: minute}
     tables:
       - name: customers
         description: "CDC raw — customer records"

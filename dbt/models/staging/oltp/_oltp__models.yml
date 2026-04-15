@@ -33,7 +33,8 @@ models:
         description: "Customer account status"
         tests:
           - accepted_values:
-              values: ['active', 'inactive', 'churned']
+              arguments:
+                values: ['active', 'inactive', 'churned']
       - name: created_at
         description: "Record creation timestamp in source"
       - name: updated_at
@@ -126,7 +127,8 @@ models:
         description: "Contract status"
         tests:
           - accepted_values:
-              values: ['active', 'renewed', 'cancelled', 'expired', 'suspended', 'service_agreement']
+              arguments:
+                values: ['active', 'renewed', 'cancelled', 'expired', 'suspended', 'service_agreement']
       - name: start_date
         description: "Contract start date"
       - name: end_date
@@ -217,7 +219,8 @@ models:
         description: "Invoice status"
         tests:
           - accepted_values:
-              values: ['issued', 'paid', 'overdue', 'cancelled']
+              arguments:
+                values: ['issued', 'paid', 'overdue', 'cancelled']
 
   - name: stg_oltp__invoice_line_items
     description: "Staged invoice line item records from the NordHjem OLTP system. Deduplicated to latest record per line_item_id. Monetary amounts cast to NUMBER(12,2)."
@@ -264,4 +267,5 @@ models:
         description: "Payment status"
         tests:
           - accepted_values:
-              values: ['completed', 'pending', 'failed', 'refunded', 'voided', 'partial']
+              arguments:
+                values: ['completed', 'pending', 'failed', 'refunded', 'voided', 'partial']

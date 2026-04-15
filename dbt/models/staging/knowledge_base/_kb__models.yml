@@ -19,7 +19,8 @@ models:
         description: "Document category"
         tests:
           - accepted_values:
-              values: ['manual', 'procedure', 'policy', 'support_article']
+              arguments:
+                values: ['manual', 'procedure', 'policy', 'support_article']
       - name: _loaded_at
         description: "Platform ingestion timestamp"
 
@@ -36,8 +37,9 @@ models:
         tests:
           - not_null
           - relationships:
-              to: ref('stg_kb__documents')
-              field: document_id
+              arguments:
+                to: ref('stg_kb__documents')
+                field: document_id
       - name: chunk_sequence_number
         description: "Chunk sequence within document (1-based)"
       - name: chunk_text

@@ -5,10 +5,11 @@ sources:
     description: "Partner data feeds — batch CSV/Parquet files"
     database: "{{ env_var('DBT_LIGHTHOUSE_RAW_DB', env_var('LIGHTHOUSE_RAW_DB', 'LIGHTHOUSE_DEV_RAW')) }}"
     schema: PARTNER_FEEDS
-    loaded_at_field: _loaded_at
-    freshness:
-      warn_after: {count: 36, period: hour}
-      error_after: {count: 72, period: hour}
+    config:
+      loaded_at_field: _loaded_at
+      freshness:
+        warn_after: {count: 36, period: hour}
+        error_after: {count: 72, period: hour}
     tables:
       - name: grid_usage_readings
         columns:

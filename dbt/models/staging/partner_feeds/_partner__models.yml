@@ -25,7 +25,8 @@ models:
         description: "Reading source method"
         tests:
           - accepted_values:
-              values: ['automatic', 'manual']
+              arguments:
+                values: ['automatic', 'manual']
       - name: _loaded_at
         description: "Platform ingestion timestamp"
       - name: _source_file_name
@@ -51,14 +52,16 @@ models:
         description: "Type of certification"
         tests:
           - accepted_values:
-              values: ['electrical_safety', 'device_commissioning', 'commercial_compliance', 'maintenance_inspection']
+              arguments:
+                values: ['electrical_safety', 'device_commissioning', 'commercial_compliance', 'maintenance_inspection']
       - name: expiry_date
         description: "Certification expiry date"
       - name: status
         description: "Certification status"
         tests:
           - accepted_values:
-              values: ['valid', 'expired', 'revoked']
+              arguments:
+                values: ['valid', 'expired', 'revoked']
       - name: inspector_name
         description: "Name of the certifying inspector"
       - name: _loaded_at

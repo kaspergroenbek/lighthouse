@@ -68,12 +68,14 @@ models:
         description: "Case status"
         tests:
           - accepted_values:
-              values: ['open', 'closed', 'escalated']
+              arguments:
+                values: ['open', 'closed', 'escalated']
       - name: priority
         description: "Case priority level"
         tests:
           - accepted_values:
-              values: ['low', 'medium', 'high', 'critical']
+              arguments:
+                values: ['low', 'medium', 'high', 'critical']
       - name: severity
         description: "Case severity classification"
       - name: origin
@@ -119,7 +121,8 @@ models:
         description: "Sales pipeline stage"
         tests:
           - accepted_values:
-              values: ['prospecting', 'qualification', 'proposal', 'negotiation', 'closed_won', 'closed_lost']
+              arguments:
+                values: ['prospecting', 'qualification', 'proposal', 'negotiation', 'closed_won', 'closed_lost']
       - name: amount
         description: "Opportunity value"
       - name: close_date
@@ -148,7 +151,8 @@ models:
         description: "Task status"
         tests:
           - accepted_values:
-              values: ['open', 'completed', 'deferred']
+              arguments:
+                values: ['open', 'completed', 'deferred']
       - name: priority
         description: "Task priority level"
       - name: due_date
@@ -173,7 +177,8 @@ models:
         description: "Campaign status"
         tests:
           - accepted_values:
-              values: ['planned', 'active', 'completed', 'aborted']
+              arguments:
+                values: ['planned', 'active', 'completed', 'aborted']
       - name: start_date
         description: "Campaign start date"
       - name: end_date
