@@ -109,7 +109,8 @@ final AS (
             'ae.device_id',
             'ae.event_timestamp',
             'ae.event_type',
-            "COALESCE(TO_VARCHAR(ae.reading_value), '__NULL__')"
+            "COALESCE(TO_VARCHAR(ae.reading_value), '__NULL__')",
+            "TO_VARCHAR(ROW_NUMBER() OVER (PARTITION BY ae.device_id, ae.event_timestamp, ae.event_type ORDER BY COALESCE(ae.reading_value, -999999999), COALESCE(d.device_sk, ''), COALESCE(dh.household_sk, '')))"
         ]) }} AS telemetry_sk,
         d.device_sk,
         dh.household_sk,
