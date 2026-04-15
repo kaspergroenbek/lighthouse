@@ -45,7 +45,7 @@ CREATE OR REPLACE PROCEDURE chunk_document_text()
     LANGUAGE JAVASCRIPT
     EXECUTE AS CALLER
 AS
-$
+$$
     var CHUNK_SIZE = 2048;
     var OVERLAP    = 200;
     var totalChunks = 0;
@@ -119,7 +119,7 @@ $
     }
 
     return 'Chunking complete. Total chunks created: ' + totalChunks + '. Errors: ' + errorCount;
-$;
+$$;
 
 -- ─────────────────────────────────────────────────────────────────────────────
 -- 3. EXECUTE
