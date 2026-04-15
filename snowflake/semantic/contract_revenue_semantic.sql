@@ -146,23 +146,23 @@ CREATE OR REPLACE SEMANTIC VIEW contract_revenue_analysis
   )
 
   METRICS (
-    total_revenue AS SUM(invoices.revenue_amount)
+    invoices.total_revenue AS SUM(invoices.revenue_amount)
       WITH SYNONYMS ('revenue', 'total sales', 'gross revenue')
       COMMENT = 'Total revenue',
 
-    total_payments AS SUM(payments.payment_amount)
+    payments.total_payments AS SUM(payments.payment_amount)
       WITH SYNONYMS ('cash collected', 'total collected')
       COMMENT = 'Total payments received',
 
-    invoice_count AS COUNT(invoices.invoice_line_sk)
+    invoices.invoice_count AS COUNT(invoices.invoice_line_sk)
       WITH SYNONYMS ('number of invoices', 'invoice volume')
       COMMENT = 'Number of invoice line items',
 
-    average_invoice_amount AS AVG(invoices.revenue_amount)
+    invoices.average_invoice_amount AS AVG(invoices.revenue_amount)
       WITH SYNONYMS ('avg invoice', 'mean invoice amount')
       COMMENT = 'Average invoice line amount',
 
-    late_payment_count AS COUNT_IF(payments.is_late_payment = TRUE)
+    payments.late_payment_count AS COUNT_IF(payments.is_late_payment = TRUE)
       WITH SYNONYMS ('overdue payments', 'late payments')
       COMMENT = 'Number of late payments'
   )
