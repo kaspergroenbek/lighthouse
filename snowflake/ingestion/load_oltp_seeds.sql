@@ -254,69 +254,59 @@ PUT file://data/oltp/payments.csv          @oltp_stage/payments/          AUTO_C
 -- ─────────────────────────────────────────────────────────────────────────────
 -- 3. COPY INTO — Load seed data from stage into raw tables
 -- ─────────────────────────────────────────────────────────────────────────────
+-- Note: _loaded_at is excluded from column lists — it auto-populates via DEFAULT.
 
-COPY INTO customers
+COPY INTO customers (_op, _source_ts, _connector_batch_id, customer_id, email, first_name, last_name, phone, address, postal_code, municipality, region, country, segment, status, created_at, updated_at)
     FROM @oltp_stage/customers/
     FILE_FORMAT = (FORMAT_NAME = csv_format)
-    MATCH_BY_COLUMN_NAME = CASE_INSENSITIVE
     ON_ERROR = 'ABORT_STATEMENT';
 
-COPY INTO households
+COPY INTO households (_op, _source_ts, _connector_batch_id, household_id, customer_id, address, postal_code, municipality, country, household_type, created_at, updated_at)
     FROM @oltp_stage/households/
     FILE_FORMAT = (FORMAT_NAME = csv_format)
-    MATCH_BY_COLUMN_NAME = CASE_INSENSITIVE
     ON_ERROR = 'ABORT_STATEMENT';
 
-COPY INTO installations
+COPY INTO installations (_op, _source_ts, _connector_batch_id, installation_id, household_id, installation_date, installer_partner_id, status, notes, created_at, updated_at)
     FROM @oltp_stage/installations/
     FILE_FORMAT = (FORMAT_NAME = csv_format)
-    MATCH_BY_COLUMN_NAME = CASE_INSENSITIVE
     ON_ERROR = 'ABORT_STATEMENT';
 
-COPY INTO devices
+COPY INTO devices (_op, _source_ts, _connector_batch_id, device_id, device_serial, household_id, device_type, manufacturer, model, firmware_version, installed_at, status, created_at, updated_at)
     FROM @oltp_stage/devices/
     FILE_FORMAT = (FORMAT_NAME = csv_format)
-    MATCH_BY_COLUMN_NAME = CASE_INSENSITIVE
     ON_ERROR = 'ABORT_STATEMENT';
 
-COPY INTO contracts
+COPY INTO contracts (_op, _source_ts, _connector_batch_id, contract_id, customer_id, household_id, product_id, tariff_plan_id, contract_type, status, start_date, end_date, monthly_amount, created_at, updated_at)
     FROM @oltp_stage/contracts/
     FILE_FORMAT = (FORMAT_NAME = csv_format)
-    MATCH_BY_COLUMN_NAME = CASE_INSENSITIVE
     ON_ERROR = 'ABORT_STATEMENT';
 
-COPY INTO tariff_plans
+COPY INTO tariff_plans (_op, _source_ts, _connector_batch_id, tariff_plan_id, plan_name, plan_type, price_per_kwh, monthly_base_fee, valid_from, valid_to, created_at, updated_at)
     FROM @oltp_stage/tariff_plans/
     FILE_FORMAT = (FORMAT_NAME = csv_format)
-    MATCH_BY_COLUMN_NAME = CASE_INSENSITIVE
     ON_ERROR = 'ABORT_STATEMENT';
 
-COPY INTO products
+COPY INTO products (_op, _source_ts, _connector_batch_id, product_id, product_name, category, description, pricing_tier, is_active, created_at, updated_at)
     FROM @oltp_stage/products/
     FILE_FORMAT = (FORMAT_NAME = csv_format)
-    MATCH_BY_COLUMN_NAME = CASE_INSENSITIVE
     ON_ERROR = 'ABORT_STATEMENT';
 
-COPY INTO services
+COPY INTO services (_op, _source_ts, _connector_batch_id, service_id, service_name, category, description, is_active, created_at, updated_at)
     FROM @oltp_stage/services/
     FILE_FORMAT = (FORMAT_NAME = csv_format)
-    MATCH_BY_COLUMN_NAME = CASE_INSENSITIVE
     ON_ERROR = 'ABORT_STATEMENT';
 
-COPY INTO invoices
+COPY INTO invoices (_op, _source_ts, _connector_batch_id, invoice_id, customer_id, household_id, contract_id, invoice_date, due_date, total_amount, tax_amount, status, created_at, updated_at)
     FROM @oltp_stage/invoices/
     FILE_FORMAT = (FORMAT_NAME = csv_format)
-    MATCH_BY_COLUMN_NAME = CASE_INSENSITIVE
     ON_ERROR = 'ABORT_STATEMENT';
 
-COPY INTO invoice_line_items
+COPY INTO invoice_line_items (_op, _source_ts, _connector_batch_id, line_item_id, invoice_id, product_id, description, quantity, unit_price, amount, tax_amount, created_at, updated_at)
     FROM @oltp_stage/invoice_line_items/
     FILE_FORMAT = (FORMAT_NAME = csv_format)
-    MATCH_BY_COLUMN_NAME = CASE_INSENSITIVE
     ON_ERROR = 'ABORT_STATEMENT';
 
-COPY INTO payments
+COPY INTO payments (_op, _source_ts, _connector_batch_id, payment_id, invoice_id, customer_id, payment_date, payment_amount, payment_method, status, created_at, updated_at)
     FROM @oltp_stage/payments/
     FILE_FORMAT = (FORMAT_NAME = csv_format)
-    MATCH_BY_COLUMN_NAME = CASE_INSENSITIVE
     ON_ERROR = 'ABORT_STATEMENT';

@@ -182,47 +182,39 @@ PUT file://data/crm/campaign_members.csv @crm_stage/campaign_members/ AUTO_COMPR
 COPY INTO accounts
     FROM @crm_stage/accounts/
     FILE_FORMAT = (FORMAT_NAME = csv_format)
-    MATCH_BY_COLUMN_NAME = CASE_INSENSITIVE
     ON_ERROR = 'ABORT_STATEMENT';
 
 COPY INTO contacts
     FROM @crm_stage/contacts/
     FILE_FORMAT = (FORMAT_NAME = csv_format)
-    MATCH_BY_COLUMN_NAME = CASE_INSENSITIVE
     ON_ERROR = 'ABORT_STATEMENT';
 
 COPY INTO cases
     FROM @crm_stage/cases/
     FILE_FORMAT = (FORMAT_NAME = csv_format)
-    MATCH_BY_COLUMN_NAME = CASE_INSENSITIVE
     ON_ERROR = 'ABORT_STATEMENT';
 
 COPY INTO case_comments
     FROM @crm_stage/case_comments/
     FILE_FORMAT = (FORMAT_NAME = csv_format)
-    MATCH_BY_COLUMN_NAME = CASE_INSENSITIVE
     ON_ERROR = 'ABORT_STATEMENT';
 
 COPY INTO opportunities
     FROM @crm_stage/opportunities/
     FILE_FORMAT = (FORMAT_NAME = csv_format)
-    MATCH_BY_COLUMN_NAME = CASE_INSENSITIVE
     ON_ERROR = 'ABORT_STATEMENT';
 
 COPY INTO tasks
     FROM @crm_stage/tasks/
     FILE_FORMAT = (FORMAT_NAME = csv_format)
-    MATCH_BY_COLUMN_NAME = CASE_INSENSITIVE
     ON_ERROR = 'ABORT_STATEMENT';
 
 COPY INTO campaigns
     FROM @crm_stage/campaigns/
     FILE_FORMAT = (FORMAT_NAME = csv_format)
-    MATCH_BY_COLUMN_NAME = CASE_INSENSITIVE
     ON_ERROR = 'ABORT_STATEMENT';
 
 COPY INTO campaign_members
     FROM @crm_stage/campaign_members/
     FILE_FORMAT = (FORMAT_NAME = csv_format)
-    MATCH_BY_COLUMN_NAME = CASE_INSENSITIVE
     ON_ERROR = 'ABORT_STATEMENT';
