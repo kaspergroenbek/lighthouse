@@ -12,7 +12,7 @@
 -- =============================================================================
 
 DECLARE
-    env VARCHAR DEFAULT 'DEV';  -- ← Change this to STAGING or PROD as needed
+    env VARCHAR DEFAULT 'PROD';  -- ← Change this to STAGING or PROD as needed
     db_raw VARCHAR;
     db_analytics VARCHAR;
     db_serving VARCHAR;
