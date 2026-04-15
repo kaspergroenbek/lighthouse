@@ -30,7 +30,7 @@ models:
         data_type: integer
       - name: allocation_pct
         description: "Allocation percentage across customer relationships for the ticket"
-        data_type: float
+        data_type: number
 
   - name: fct_service_ticket_lifecycle
     description: "Accumulating snapshot at service ticket grain. Grain: one row per ticket."
