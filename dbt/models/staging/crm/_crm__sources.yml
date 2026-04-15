@@ -3,7 +3,7 @@ version: 2
 sources:
   - name: crm
     description: "NordHjem CRM platform — SaaS connector replicated"
-    database: "{{ env_var('LIGHTHOUSE_RAW_DB', 'LIGHTHOUSE_DEV_RAW') }}"
+    database: "{{ env_var('DBT_LIGHTHOUSE_RAW_DB', env_var('LIGHTHOUSE_RAW_DB', 'LIGHTHOUSE_DEV_RAW')) }}"
     schema: CRM
     loaded_at_field: _loaded_at
     freshness:

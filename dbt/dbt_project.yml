@@ -77,7 +77,7 @@ seeds:
     +schema: SEEDS
 
 vars:
-  lighthouse_env: "{{ env_var('LIGHTHOUSE_ENV', 'DEV') }}"
+  lighthouse_env: "{{ env_var('DBT_LIGHTHOUSE_ENV', env_var('LIGHTHOUSE_ENV', 'DEV')) }}"
 
 on-run-end:
   - "{{ elementary.edr_upload_results() if target.name == 'prod' }}"

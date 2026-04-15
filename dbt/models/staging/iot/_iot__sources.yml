@@ -3,7 +3,7 @@ version: 2
 sources:
   - name: iot
     description: "NordHjem IoT telemetry — streaming events"
-    database: "{{ env_var('LIGHTHOUSE_RAW_DB', 'LIGHTHOUSE_DEV_RAW') }}"
+    database: "{{ env_var('DBT_LIGHTHOUSE_RAW_DB', env_var('LIGHTHOUSE_RAW_DB', 'LIGHTHOUSE_DEV_RAW')) }}"
     schema: IOT
     loaded_at_field: _loaded_at
     freshness:

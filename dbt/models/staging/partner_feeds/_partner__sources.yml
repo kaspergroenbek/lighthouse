@@ -3,7 +3,7 @@ version: 2
 sources:
   - name: partner_feeds
     description: "Partner data feeds — batch CSV/Parquet files"
-    database: "{{ env_var('LIGHTHOUSE_RAW_DB', 'LIGHTHOUSE_DEV_RAW') }}"
+    database: "{{ env_var('DBT_LIGHTHOUSE_RAW_DB', env_var('LIGHTHOUSE_RAW_DB', 'LIGHTHOUSE_DEV_RAW')) }}"
     schema: PARTNER_FEEDS
     loaded_at_field: _loaded_at
     freshness:
