@@ -8,7 +8,6 @@ models:
         enforced: true
       group: billing
     access: public
-    latest_version: 1
     columns:
       - name: invoice_line_sk
         description: "Surrogate key"
@@ -94,7 +93,6 @@ models:
         enforced: true
       group: billing
     access: public
-    latest_version: 1
     columns:
       - name: payment_sk
         description: "Surrogate key"
@@ -155,7 +153,6 @@ models:
         enforced: true
       group: billing
     access: public
-    latest_version: 1
     columns:
       - name: contract_lifecycle_sk
         description: "Surrogate key"

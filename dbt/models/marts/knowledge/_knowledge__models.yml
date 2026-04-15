@@ -7,7 +7,6 @@ models:
       contract:
         enforced: true
     access: public
-    latest_version: 1
     columns:
       - name: chunk_id
         description: "Primary key — chunk identifier"

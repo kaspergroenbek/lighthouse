@@ -8,7 +8,6 @@ models:
         enforced: true
       group: device
     access: public
-    latest_version: 1
     columns:
       - name: energy_usage_daily_sk
         description: "Surrogate key"
@@ -71,7 +70,6 @@ models:
         enforced: true
       group: device
     access: public
-    latest_version: 1
     columns:
       - name: telemetry_sk
         description: "Surrogate key"

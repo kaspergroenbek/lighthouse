@@ -8,7 +8,6 @@ models:
         enforced: true
       group: service
     access: public
-    latest_version: 1
     columns:
       - name: service_ticket_sk
         description: "Surrogate key"

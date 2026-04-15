@@ -8,7 +8,6 @@ models:
         enforced: true
       group: customer
     access: public
-    latest_version: 1
     columns:
       - name: customer_360_sk
         description: "Surrogate key"
@@ -157,14 +156,26 @@ metrics:
       measure: active_customers
     filter:
       - "{{ Dimension('customer__status') }} = 'active'"
+  - name: total_active_devices_metric
+    type: simple
+    label: "Total Active Devices"
+    description: "Sum of active devices across customers"
+    type_params:
+      measure: total_active_devices
+  - name: total_all_devices_metric
+    type: simple
+    label: "Total All Devices"
+    description: "Sum of all devices across customers"
+    type_params:
+      measure: total_all_devices
   - name: device_uptime_rate
     type: derived
     label: "Device Uptime Rate (%)"
     description: "Percentage of devices with active status across all customers"
     type_params:
-      expr: "total_active_devices * 100.0 / NULLIF(total_all_devices, 0)"
+      expr: "total_active_devices_metric * 100.0 / NULLIF(total_all_devices_metric, 0)"
       metrics:
-        - name: total_active_devices
-          alias: total_active_devices
-        - name: total_all_devices
-          alias: total_all_devices
+        - name: total_active_devices_metric
+          alias: total_active_devices_metric
+        - name: total_all_devices_metric
+          alias: total_all_devices_metric

@@ -8,7 +8,6 @@ models:
         enforced: true
       group: customer
     access: public
-    latest_version: 1
     columns:
       - name: customer_sk
         description: "Surrogate key (hash of customer_id + valid_from)"
@@ -85,7 +84,6 @@ models:
         enforced: true
       group: customer
     access: public
-    latest_version: 1
     columns:
       - name: household_sk
         description: "Surrogate key"
@@ -132,7 +130,6 @@ models:
         enforced: true
       group: device
     access: public
-    latest_version: 1
     columns:
       - name: device_sk
         description: "Surrogate key"
@@ -187,7 +184,6 @@ models:
         enforced: true
       group: billing
     access: public
-    latest_version: 1
     columns:
       - name: product_sk
         description: "Surrogate key"
@@ -230,7 +226,6 @@ models:
         enforced: true
       group: billing
     access: public
-    latest_version: 1
     columns:
       - name: contract_sk
         description: "Surrogate key (hash of contract_id + valid_from)"
@@ -300,7 +295,6 @@ models:
       contract:
         enforced: true
     access: public
-    latest_version: 1
     columns:
       - name: date_key
         description: "Integer date key (YYYYMMDD)"
@@ -350,7 +344,6 @@ models:
       contract:
         enforced: true
     access: public
-    latest_version: 1
     columns:
       - name: time_key
         description: "Integer time key (minute of day, 0-1439)"
@@ -375,7 +368,6 @@ models:
       contract:
         enforced: true
     access: public
-    latest_version: 1
     columns:
       - name: geography_sk
         description: "Surrogate key"
@@ -406,7 +398,6 @@ models:
         enforced: true
       group: device
     access: public
-    latest_version: 1
     columns:
       - name: household_sk
         description: "FK to dim_household"
