@@ -105,7 +105,12 @@ dim_time AS (
 
 final AS (
     SELECT
-        {{ dbt_utils.generate_surrogate_key(['ae.device_id', 'ae.event_timestamp', 'ae.event_type']) }} AS telemetry_sk,
+        {{ dbt_utils.generate_surrogate_key([
+            'ae.device_id',
+            'ae.event_timestamp',
+            'ae.event_type',
+            "COALESCE(TO_VARCHAR(ae.reading_value), '__NULL__')"
+        ]) }} AS telemetry_sk,
         d.device_sk,
         dh.household_sk,
         dd.date_key,
