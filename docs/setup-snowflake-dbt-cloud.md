@@ -123,9 +123,9 @@ This orchestrator executes:
 - `snowflake/ingestion_web/load_knowledge_base.sql`
 - `snowflake/ingestion_web/chunk_documents.sql`
 
-Convenience wrapper available:
+Preferred entrypoint:
 
-- `snowflake/orchestration/load_raw_prod.sql`
+- `snowflake/orchestration/bootstrap_orchestrator.sql`
 
 ### Step 4: Sanity-check raw data
 
