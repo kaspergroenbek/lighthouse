@@ -37,6 +37,8 @@ matched AS (
         c.account_id AS crm_account_id,
         c.title AS crm_title,
         c.department AS crm_department,
+        c.created_date AS crm_contact_created_date,
+        c.last_modified_date AS crm_contact_last_modified_date,
         a.account_name AS crm_account_name,
         CASE
             WHEN o.customer_id IS NOT NULL AND c.contact_id IS NOT NULL THEN 'matched'
@@ -57,8 +59,8 @@ ranked AS (
             PARTITION BY customer_id
             ORDER BY
                 CASE WHEN crm_contact_id IS NOT NULL THEN 0 ELSE 1 END,
-                last_modified_date DESC NULLS LAST,
-                created_date DESC NULLS LAST,
+                crm_contact_last_modified_date DESC NULLS LAST,
+                crm_contact_created_date DESC NULLS LAST,
                 crm_contact_id DESC NULLS LAST
         ) AS customer_match_rank
     FROM matched
