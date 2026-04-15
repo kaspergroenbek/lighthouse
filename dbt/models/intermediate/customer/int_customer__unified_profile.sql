@@ -48,6 +48,42 @@ matched AS (
         ON LOWER(o.email) = LOWER(c.email)
     LEFT JOIN crm_accounts a
         ON c.account_id = a.account_id
+),
+
+ranked AS (
+    SELECT
+        *,
+        ROW_NUMBER() OVER (
+            PARTITION BY customer_id
+            ORDER BY
+                CASE WHEN crm_contact_id IS NOT NULL THEN 0 ELSE 1 END,
+                last_modified_date DESC NULLS LAST,
+                created_date DESC NULLS LAST,
+                crm_contact_id DESC NULLS LAST
+        ) AS customer_match_rank
+    FROM matched
 )
 
-SELECT * FROM matched
+SELECT
+    customer_id,
+    oltp_email,
+    first_name,
+    last_name,
+    phone,
+    address,
+    postal_code,
+    municipality,
+    region,
+    country,
+    segment,
+    status,
+    created_at,
+    updated_at,
+    crm_contact_id,
+    crm_account_id,
+    crm_title,
+    crm_department,
+    crm_account_name,
+    match_status
+FROM ranked
+WHERE customer_match_rank = 1
