@@ -15,6 +15,9 @@
 --   - Chunks are created by splitting on character boundaries
 --   - Each chunk gets a sequential ID within its document
 --
+-- Note: This script is identical to the SnowSQL version — it already works
+--       in Snowsight without modification.
+--
 -- Idempotency: Uses CREATE OR REPLACE — safe to re-run.
 -- =============================================================================
 
@@ -42,7 +45,7 @@ CREATE OR REPLACE PROCEDURE chunk_document_text()
     LANGUAGE JAVASCRIPT
     EXECUTE AS CALLER
 AS
-$$
+$
     var CHUNK_SIZE = 2048;
     var OVERLAP    = 200;
     var totalChunks = 0;
@@ -116,7 +119,7 @@ $$
     }
 
     return 'Chunking complete. Total chunks created: ' + totalChunks + '. Errors: ' + errorCount;
-$$;
+$;
 
 -- ─────────────────────────────────────────────────────────────────────────────
 -- 3. EXECUTE
