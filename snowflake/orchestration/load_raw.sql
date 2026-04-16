@@ -13,7 +13,3 @@ EXECUTE IMMEDIATE FROM {{ repo_root }}/snowflake/ingestion_web/load_iot_seeds.sq
   USING (env => '{{ env }}');
 EXECUTE IMMEDIATE FROM {{ repo_root }}/snowflake/ingestion_web/load_partner_feeds.sql
   USING (env => '{{ env }}');
-EXECUTE IMMEDIATE FROM {{ repo_root }}/snowflake/ingestion_web/load_knowledge_base.sql
-  USING (env => '{{ env }}');
-EXECUTE IMMEDIATE FROM {{ repo_root }}/snowflake/ingestion_web/chunk_documents.sql
-  USING (env => '{{ env }}');

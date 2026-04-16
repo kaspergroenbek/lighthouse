@@ -102,20 +102,6 @@ Internal package-generated monitoring objects, such as Elementary observability 
 
 ---
 
-## 6. AI-Ready Knowledge
-
-**Purpose**: Make unstructured support and product documents searchable and AI-ready.
-
-| Model | Type | Description |
-|-------|------|-------------|
-| `knowledge_chunks` | Data product | Chunked documents with metadata and source tracking |
-
-**Sources**: `stg_kb__documents`, `stg_kb__chunks`
-
-**Use cases**: support search, Cortex Search, RAG-style retrieval
-
----
-
 ## Internal Observability Models
 
 The dbt Cloud catalog will also show internal monitoring models from packages such as Elementary, including objects like:
@@ -136,5 +122,4 @@ These are useful operational assets, but they are not part of the curated Lighth
 | Device and Usage | `LIGHTHOUSE_PROD_ANALYTICS` | `MARTS` | `dim_device`, `fct_energy_usage_daily`, `fct_device_telemetry` |
 | Service Operations | `LIGHTHOUSE_PROD_ANALYTICS` | `MARTS` | `fct_service_ticket_lifecycle`, `bridge_service_ticket_customer` |
 | Reference and Semantic | `LIGHTHOUSE_PROD_ANALYTICS` | `MARTS` and Snowflake semantic schemas | `dim_date`, `dim_time`, `dim_geography`, `dim_product`, `dim_household`, `dim_contract`, `bridge_household_device` |
-| AI-Ready Knowledge | `LIGHTHOUSE_PROD_ANALYTICS` | `MARTS` | `knowledge_chunks` |
 | Real-time serving | `LIGHTHOUSE_PROD_SERVING` | `REALTIME` | Dynamic Tables |

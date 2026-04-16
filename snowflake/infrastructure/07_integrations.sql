@@ -19,7 +19,7 @@
 -- Storage Integration — AWS S3
 -- ─────────────────────────────────────────────────────────────────────────────
 -- Enables external stage access for batch file ingestion from S3 buckets.
--- Required for production Partner Feeds and Knowledge Base ingestion.
+-- Required for production Partner Feeds ingestion.
 --
 -- To activate:
 --   1. Uncomment the CREATE STORAGE INTEGRATION block below
@@ -34,7 +34,6 @@
 --     STORAGE_AWS_ROLE_ARN = 'arn:aws:iam::<aws_account_id>:role/lighthouse-snowflake-role'
 --     STORAGE_ALLOWED_LOCATIONS = (
 --         's3://nordhjem-partner-feeds/',
---         's3://nordhjem-knowledge-base/',
 --         's3://nordhjem-iot-archive/'
 --     )
 --     COMMENT = 'S3 integration for NordHjem external data sources';
@@ -54,14 +53,13 @@
 --     AZURE_TENANT_ID = '<azure_tenant_id>'
 --     STORAGE_ALLOWED_LOCATIONS = (
 --         'azure://nordhjemstorage.blob.core.windows.net/partner-feeds/',
---         'azure://nordhjemstorage.blob.core.windows.net/knowledge-base/'
 --     )
 --     COMMENT = 'Azure Blob integration for NordHjem external data sources';
 
 -- ─────────────────────────────────────────────────────────────────────────────
 -- API Integration — Cortex AI Features
 -- ─────────────────────────────────────────────────────────────────────────────
--- Cortex Analyst and Cortex Search are built-in Snowflake features that do
+-- Cortex Analyst is a built-in Snowflake feature that does
 -- not require explicit API integrations in most configurations. They use the
 -- warehouse specified in the service/query definition (AI_WH).
 --

@@ -31,10 +31,10 @@ CREATE WAREHOUSE IF NOT EXISTS SERVING_WH
     INITIALLY_SUSPENDED = TRUE
     COMMENT = 'Lighthouse serving workloads — Streamlit, BI queries, Dynamic Tables';
 
--- AI warehouse — Cortex Analyst, Cortex Search, ML workloads
+-- AI warehouse — Cortex Analyst and advanced analytics workloads
 CREATE WAREHOUSE IF NOT EXISTS AI_WH
     WITH WAREHOUSE_SIZE = 'MEDIUM'
     AUTO_SUSPEND = 120
     AUTO_RESUME = TRUE
     INITIALLY_SUSPENDED = TRUE
-    COMMENT = 'Lighthouse AI workloads — Cortex Analyst, Cortex Search';
+    COMMENT = 'Lighthouse AI workloads — Cortex Analyst and advanced analytics';

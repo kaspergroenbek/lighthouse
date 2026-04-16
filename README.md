@@ -3,7 +3,7 @@
 Lighthouse is a portfolio-grade data platform for NordHjem Energy, a fictional Nordic connected-home and energy services company.
 
 Version 1 of the project is designed to run with:
-- Snowflake for infrastructure, ingestion, governance, serving, and app hosting
+- Snowflake for infrastructure, ingestion, semantic, serving, and app hosting
 - dbt Cloud for transformation, testing, and documentation
 - GitHub as the source of truth
 
@@ -11,7 +11,7 @@ Version 1 of the project is designed to run with:
 
 The primary workflow is:
 1. GitHub stores the codebase
-2. Snowflake hosts raw, analytics, serving, semantic, governance, and Streamlit assets
+2. Snowflake hosts raw, analytics, semantic, serving, and Streamlit assets
 3. dbt Cloud runs the dbt project in `dbt/`
 
 The recommended setup path is documented in:
@@ -29,7 +29,6 @@ graph TB
         CRM[SaaS CRM]
         IOT[IoT Telemetry]
         PARTNER[Partner Feeds]
-        KB[Knowledge Base]
     end
     subgraph "Snowflake + dbt Cloud"
         RAW[RAW Layer]
@@ -40,22 +39,21 @@ graph TB
     end
     subgraph Consumption
         CORTEX_A[Cortex Analyst]
-        CORTEX_S[Cortex Search]
         DT[Dynamic Tables]
         APP[Streamlit App]
         DOCS[dbt Docs Catalog]
     end
     Sources --> RAW --> STG --> INT --> MARTS --> SEM
-    MARTS --> CORTEX_A & CORTEX_S & DT & APP & DOCS
+    MARTS --> CORTEX_A & DT & APP & DOCS
 ```
 
 ## Key Capabilities
 
-- 5 ingestion patterns: CDC, SaaS, batch, streaming, unstructured
+- 4 ingestion patterns: CDC, SaaS, batch, telemetry
 - 3-layer dbt ELT: staging -> intermediate -> marts
 - Kimball dimensional marts with conformed dimensions, facts, and bridges
-- Customer 360, billing, device, service, and knowledge data products
-- Snowflake-native semantic, governance, serving, and app layers
+- Customer 360, billing, device, and service data products
+- Snowflake-native semantic, serving, and app layers
 - dbt tests, contracts, snapshots, unit tests, and docs catalog
 
 ## Quick Start
@@ -97,11 +95,9 @@ lighthouse/
 |   |-- ingestion/          # local CLI-oriented loaders
 |   |-- ingestion_web/      # Snowsight-friendly loaders
 |   |-- orchestration/      # bootstrap and post-dbt entrypoints
-|   |-- governance/         # tags, masking, row access policies
 |   |-- semantic/           # semantic objects
-|   |-- cortex/             # Cortex Search service
 |   |-- serving/            # Dynamic Tables and serving SQL
-|   `-- monitoring/         # cost and monitoring SQL
+|   `-- ...
 |-- streamlit/              # Streamlit in Snowflake app
 |-- data/                   # synthetic source data
 |-- docs/                   # setup, architecture, ADRs, modeling docs
@@ -114,6 +110,7 @@ lighthouse/
 - `snowflake/orchestration/bootstrap_orchestrator.sql` is the preferred Snowflake-side bootstrap entrypoint.
 - `snowflake/orchestration/post_dbt_orchestrator.sql` is the preferred Snowflake-side post-dbt entrypoint.
 - The service area now follows a Kimball pattern with a ticket-grain fact and a ticket-to-customer bridge.
+- Unsupported or non-used branches have been removed so Version 1 only reflects the working platform.
 
 ## Documentation
 
@@ -121,6 +118,5 @@ lighthouse/
 - `docs/kimball-architecture.md`
 - `docs/ingestion-architecture.md`
 - `docs/semantic-layer-mapping.md`
-- `docs/governance-mapping.md`
 - `docs/data-product-catalog.md`
 - `docs/adr/`

@@ -8,8 +8,6 @@ This guide is the primary operating model for Version 1 of Lighthouse.
   - infrastructure deployment
   - raw data loading
   - semantic objects
-  - Cortex Search
-  - governance objects
   - serving objects
   - Streamlit app hosting
 - dbt Cloud:
@@ -61,8 +59,6 @@ This bootstrap flow loads:
 - CRM raw data
 - IoT raw data
 - partner feeds
-- knowledge base content
-- knowledge chunks
 
 ### 4. Validate raw layer
 
@@ -72,7 +68,6 @@ Run checks such as:
 SELECT COUNT(*) FROM LIGHTHOUSE_PROD_RAW.OLTP.customers;
 SELECT COUNT(*) FROM LIGHTHOUSE_PROD_RAW.CRM.accounts;
 SELECT COUNT(*) FROM LIGHTHOUSE_PROD_RAW.IOT.telemetry_events;
-SELECT COUNT(*) FROM LIGHTHOUSE_PROD_RAW.KNOWLEDGE_BASE.document_chunks;
 ```
 
 ## dbt Cloud Setup
@@ -159,10 +154,7 @@ USING (
 
 This creates:
 - semantic assets
-- Cortex Search assets
-- governance objects
 - serving objects
-- monitoring objects
 
 ## Streamlit Setup
 
@@ -178,9 +170,7 @@ Snowflake side:
 - `snowflake/infrastructure/`
 - `snowflake/ingestion_web/`
 - `snowflake/orchestration/`
-- `snowflake/governance/`
 - `snowflake/semantic/`
-- `snowflake/cortex/`
 - `snowflake/serving/`
 - `streamlit/`
 

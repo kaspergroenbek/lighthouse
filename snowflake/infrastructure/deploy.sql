@@ -47,7 +47,7 @@ BEGIN
 
     CREATE WAREHOUSE IF NOT EXISTS AI_WH
         WITH WAREHOUSE_SIZE = 'MEDIUM' AUTO_SUSPEND = 120 AUTO_RESUME = TRUE
-        INITIALLY_SUSPENDED = TRUE COMMENT = 'Lighthouse AI workloads — Cortex Analyst, Cortex Search';
+        INITIALLY_SUSPENDED = TRUE COMMENT = 'Lighthouse AI workloads — Cortex Analyst and advanced analytics';
 
     -- ═════════════════════════════════════════════════════════════════════
     -- 3. ROLES (environment-independent)
@@ -139,7 +139,6 @@ BEGIN
     EXECUTE IMMEDIATE 'CREATE SCHEMA IF NOT EXISTS ' || :db_raw || '.CRM';
     EXECUTE IMMEDIATE 'CREATE SCHEMA IF NOT EXISTS ' || :db_raw || '.IOT';
     EXECUTE IMMEDIATE 'CREATE SCHEMA IF NOT EXISTS ' || :db_raw || '.PARTNER_FEEDS';
-    EXECUTE IMMEDIATE 'CREATE SCHEMA IF NOT EXISTS ' || :db_raw || '.KNOWLEDGE_BASE';
 
     -- ANALYTICS schemas
     EXECUTE IMMEDIATE 'CREATE SCHEMA IF NOT EXISTS ' || :db_analytics || '.STAGING';
@@ -148,7 +147,6 @@ BEGIN
     EXECUTE IMMEDIATE 'CREATE SCHEMA IF NOT EXISTS ' || :db_analytics || '.SNAPSHOTS';
     EXECUTE IMMEDIATE 'CREATE SCHEMA IF NOT EXISTS ' || :db_analytics || '.SEMANTIC';
     EXECUTE IMMEDIATE 'CREATE SCHEMA IF NOT EXISTS ' || :db_analytics || '.TEST_RESULTS';
-    EXECUTE IMMEDIATE 'CREATE SCHEMA IF NOT EXISTS ' || :db_analytics || '.GOVERNANCE';
 
     -- SERVING schemas
     EXECUTE IMMEDIATE 'CREATE SCHEMA IF NOT EXISTS ' || :db_serving || '.REALTIME';
@@ -161,7 +159,6 @@ BEGIN
     EXECUTE IMMEDIATE 'CREATE OR REPLACE STAGE ' || :db_raw || '.CRM.crm_stage';
     EXECUTE IMMEDIATE 'CREATE OR REPLACE STAGE ' || :db_raw || '.IOT.iot_stage';
     EXECUTE IMMEDIATE 'CREATE OR REPLACE STAGE ' || :db_raw || '.PARTNER_FEEDS.partner_stage';
-    EXECUTE IMMEDIATE 'CREATE OR REPLACE STAGE ' || :db_raw || '.KNOWLEDGE_BASE.kb_stage';
 
     -- ═════════════════════════════════════════════════════════════════════
     -- 7. FILE FORMATS
@@ -200,11 +197,6 @@ BEGIN
          TYPE = ''PARQUET'' COMPRESSION = ''SNAPPY''';
 
     EXECUTE IMMEDIATE
-        'CREATE OR REPLACE FILE FORMAT ' || :db_raw || '.KNOWLEDGE_BASE.csv_format
-         TYPE = ''CSV'' FIELD_DELIMITER = '','' SKIP_HEADER = 1
-         FIELD_OPTIONALLY_ENCLOSED_BY = ''"''
-         NULL_IF = ('''', ''NULL'', ''null'', ''\\N'')
-         EMPTY_FIELD_AS_NULL = TRUE TRIM_SPACE = TRUE';
 
     -- ═════════════════════════════════════════════════════════════════════
     -- DONE

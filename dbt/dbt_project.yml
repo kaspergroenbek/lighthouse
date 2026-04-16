@@ -29,8 +29,6 @@ models:
         +tags: ['iot', 'staging']
       partner_feeds:
         +tags: ['partner', 'staging']
-      knowledge_base:
-        +tags: ['knowledge', 'staging']
     intermediate:
       +materialized: view
       +schema: INTERMEDIATE
@@ -65,8 +63,6 @@ models:
       customer:
         +group: customer
         +tags: ['customer', 'marts']
-      knowledge:
-        +tags: ['knowledge', 'marts']
 
 snapshots:
   lighthouse:
